@@ -3,3 +3,4 @@
 /cgi-bin
 /source/Config.php
 /storage/
+composer.lock
