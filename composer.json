@@ -1,0 +1,34 @@
+{
+  "name": "bladellano/site-vega",
+  "description": "Site Vega com Gerenciador",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Caio Dellano",
+      "email": "bladelano@gmail.com",
+      "role": "Developer",
+      "homepage": "https://www.dellanosiste.com.br"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source"
+    },
+    "files": [
+      "source/Config.php",
+      "source/Helpers.php"
+    ]
+  },
+  "require": {
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "coffeecode/router": "1.0.8",
+    "coffeecode/datalayer": "1.1.4",
+    "league/plates": "v4.0.0-alpha",
+    "matthiasmullie/minify": "1.3.61",
+    "coffeecode/paginator": "^1.0",
+    "coffeecode/uploader": "1.0.*",
+    "ausi/slug-generator": "^1.1"
+  }
+}
