@@ -3,7 +3,7 @@
 
 Site e gerenciador de conteúdo do portal.
 
-# Configuração do Banco de Dados
+### Configuração do Banco de Dados
 - Renomear o arquivo para source/Config.php
 ```
 /**
@@ -25,7 +25,7 @@ define("DATA_LAYER_CONFIG", [
     ]
 ]);
 ```
-# Instalação dos componentes Composer
+### Instalação dos componentes Composer
 ```
 > composer install
 ```
