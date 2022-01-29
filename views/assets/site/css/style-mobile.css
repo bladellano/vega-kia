@@ -1,0 +1,106 @@
+/** Hide */
+@media (max-width: 576px) {
+  .wrap_cards_car {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wrap_card_car {
+    flex: 1 1 200px;
+    margin: 2px 5px;
+  }
+  .d-sm-none {
+    display: none;
+  }
+  .btn--success,
+  .btn--dark,
+  [name="search"] {
+    width: 94%;
+    margin: 6px auto;
+  }
+
+  #slider .flex-viewport {
+    height: 350px;
+  }
+  #slider.flexslider .flex-viewport ul li img {
+    height: 350px;
+  }
+  .custom-navigation a img {
+    width: 50px;
+  }
+
+  /**/
+  .section_kia h2 {
+    font-size: 28px;
+  }
+  .section_kia h4 {
+    font-size: 20px;
+  }
+  .section_kia h2 + hr {
+    width: 100px;
+  }
+  .section_kia {
+    padding: 2px 0;
+  }
+  .wrap_target_car {
+    width: 100% !important;
+    margin: 8px 0;
+  }
+  /**/
+  footer .container .row .col-md-3 {
+    text-align: center;
+  }
+  .footer_menu_itens ul {
+    text-align: center;
+  }
+  .legenda h5 {
+    font-size: 20px;
+  }
+  .legenda p {
+    font-size: 12px;
+  }
+  .card_consorcio_seguros .legenda {
+    height: 48px;
+  }
+  .card_consorcio_seguros {
+    background-size: cover;
+  }
+  .card_consorcio_seguros:hover {
+    background-size: cover;
+  }
+  /**/
+  .interest-options > [type="radio"] + i,
+  .interest-options > [type="checkbox"] + i {
+    width: 52px;
+  }
+  /**/
+  footer .container-fluid.copyright .container .row {
+    display: block;
+  }
+  footer .container-fluid.copyright .container .row div {
+    text-align: center;
+    margin: 8px 0;
+  }
+}
+
+/** Show */
+@media (min-width: 576px) {
+  .d-sm-block {
+    display: inline-block;
+  }
+  .d-md-none {
+    display: none !important;
+  }
+}
+
+/** Tablet */
+@media (max-width: 1180px) {
+  .wrap_target_car {
+    width: 90%;
+  }
+  .navbar-nav > li > a {
+    font-size: 10px;
+  }
+  .container_header div {
+    flex: 1 1 50px;
+  }
+}

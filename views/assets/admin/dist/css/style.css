@@ -1,0 +1,11 @@
+/** Custom Css */
+#previewImg {
+  width: 210px;
+  object-fit: cover;
+  height: 138px;
+}
+
+input[type="text"],
+select {
+  background-color: #fffcc8 !important;
+}

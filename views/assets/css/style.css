@@ -1,0 +1,103 @@
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+/* Custom top navbar */
+.bg--navbar {
+  background-color: #312d2c !important;
+}
+.bg--navbar .nav-link {
+  color: #fff !important;
+}
+
+/* Custom brand image logo */
+.brand--img--top {
+  height: 30px;
+  margin-top: -9px;
+}
+
+/* Custom footer */
+footer {
+  border-top: 2px solid #f4823f;
+  background-color: #312d2c;
+  bottom: 0;
+  width: 100%;
+  padding: 14px 0;
+}
+
+footer p {
+  margin: 0 auto;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Button custom */
+.btn--default,
+.btn--default:hover {
+  background-color: #f4823f;
+  border: 1px solid #f4823f;
+}
+
+/* Custom Paginator */
+
+.paginator {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.paginator_item {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 4px 12px;
+  background: #f4823f;
+  color: #fff;
+  text-decoration: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.paginator_item:hover {
+  background: #f4823f;
+  color: #fff;
+  text-decoration: none;
+}
+
+.paginator_active,
+.paginator_active:hover {
+  background: #cccccc;
+}
+
+/* Preview image product */
+#previewImg {
+  width: 140px;
+  height: 140px;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
+/* Custom card */
+.card {
+  margin-bottom: 10px;
+}
+.card img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+/* Custom container */
+.container {
+  margin-top: 20px;
+  min-height: 844px;
+}
+
+.disabled--buy--button {
+  pointer-events: none;
+  color: #666;
+}
