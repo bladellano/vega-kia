@@ -74,13 +74,27 @@
                             NOVOS <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <?php foreach (getCarsMenu() as $car) : ?>
-                                <li><a href="<?= SITE['root'] . DS . "novos" . DS . $car->slug ?>"><?= $car->nome_titulo ?></a></li>
-                            <?php endforeach; ?>
+
+                            <div class="sub_menu">
+
+                                <?php foreach (getCarsMenu() as $car) : ?>
+
+                                    <div class="col">
+                                        <a href="<?= SITE['root'] . DS . "novos" . DS . $car->slug ?>">
+                                            <img src="<?= SITE['root'] . DS . $car->imagem_thumb ?>" alt="<?= $car->nome_titulo ?>">
+                                            <h4><?= $car->nome_titulo ?></h4>
+                                        </a>
+                                    </div>
+
+                                <?php endforeach; ?>
+
+                            </div>
+
                         </ul>
                     </li>
 
                     <li><a href="<?= SITE['root'] ?>/semi-novos">SEMI-NOVOS</a></li>
+
                     <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#servicos">PEÇA E ACESSÓRIOS</a></li>
                     <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#consorcio-seguros">CONSÓRCIO</a></li>
                     <li><a href=" #about">TEST DRIVE</a></li>

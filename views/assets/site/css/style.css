@@ -37,6 +37,43 @@
   box-sizing: border-box;
 }
 
+/* Mega menu */
+.sub_menu {
+  padding: 25px 15px;
+  display: flex;
+  justify-content: normal;
+  line-height: 24px;
+  min-width: 1080px;
+  flex-wrap: wrap;
+}
+
+.sub_menu .col {
+  text-align: center;
+  margin: 4px;
+}
+
+.sub_menu .col img {
+  width: 142px;
+  height: 126px;
+  object-fit: cover;
+  transition: 0.2s;
+}
+.sub_menu .col img:hover {
+  transform: scale(1.2);
+}
+
+.sub_menu p {
+  color: #000;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.sub_menu h4 {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 /* Custom Title Car*/
 
 .title_car {
@@ -53,7 +90,7 @@
   padding: 16px 0;
 }
 .buttons_show_images_car .btn img {
-  filter:invert(100);
+  filter: invert(100);
   height: 36px;
   margin-right: 8px;
 }
