@@ -4,3 +4,4 @@
 /source/Config.php
 /storage/
 composer.lock
+error_log

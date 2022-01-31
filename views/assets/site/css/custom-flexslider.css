@@ -45,6 +45,7 @@
   left: 50%;
   background-color: transparent;
   margin: 0;
+  z-index: 2;
 }
 .flexslider {
   margin: 0;
@@ -94,7 +95,7 @@
 
 .nav-carousel {
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -108,9 +109,23 @@
   cursor: pointer;
   -webkit-filter: drop-shadow(2px 3px 9px rgba(0, 0, 0, 0.3));
   opacity: 0.2;
-  transition: .3s;
+  transition: 0.3s;
 }
 .nav-carousel a img:hover {
-  
   opacity: 0.7;
+}
+
+.flex-direction-nav a.flex-next::before {
+  content: "\f054";
+}
+
+.flex-direction-nav a.flex-prev::before {
+  content: "\f053";
+}
+
+.flex-direction-nav a::before {
+  font-family: "FontAwesome";
+  font-size: 40px;
+  display: inline-block;
+  color: #fff;
 }

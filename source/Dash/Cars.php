@@ -98,6 +98,9 @@ class Cars extends Controller
 
                 $carImage = new CarImage();
 
+                if (!in_array($image["type"], $uploadImg::isAllowed()))
+                    continue;
+
                 $carImage->imagem = $uploadImg->upload($image, md5(uniqid(time())));
                 $carImage->imagem_thumb = $uploadImg->upload($image, "thumb_" . md5(uniqid(time())), 600);
                 $carImage->id_carro = $carId;
