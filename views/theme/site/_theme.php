@@ -28,6 +28,10 @@
         </div>
     </div>
 
+    <div class="topo" style="">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
     <!-- Header -->
     <div class="header_info">
         <div class="container">

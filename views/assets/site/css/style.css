@@ -36,6 +36,25 @@
 *::after {
   box-sizing: border-box;
 }
+
+/* Botão topo */
+
+.topo {
+  background-color: var(--kia-preto-noturno);
+  width: 48px;
+  height: 45px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+  z-index: 4;
+  font-size: 20px;
+  position: fixed;
+  bottom: -2px;
+  right: 2%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
 /* Page */
 .page {
   font-family: "Kia-Light";

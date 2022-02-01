@@ -1,5 +1,23 @@
 $(function () {
 
+    /* Exibição do botão topo */
+    $(window).scroll(function (e) {
+
+        if ($(this).scrollTop() - 1000 > 0) {
+            $('.topo').fadeIn();
+        } else {
+            $('.topo').fadeOut();
+        }
+    });
+
+    $('.topo').click(function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+    });
+
+    /** Custom clicked button front */
     $('.card_consorcio_seguros.consorcio').click(function (e) {
         window.location.href = e.target.dataset.url;
     });
@@ -18,7 +36,6 @@ $(function () {
         itemMargin: 5,
         asNavFor: '#slider',
         customDirectionNav: $(".nav-carousel a"),
-        // customDirectionNav: $(".custom-navigation_ a")
     });
 
     $('#slider').flexslider({
@@ -27,7 +44,6 @@ $(function () {
         animationLoop: false,
         slideshow: false,
         sync: "#carousel",
-        // controlsContainer: $(".custom-controls-container"),
         customDirectionNav: $(".custom-navigation a")
 
     });

@@ -57,9 +57,9 @@
 
             <!-- Custom buttons -->
             <div class="row buttons_show_images_car">
-                <div class="col-md-6"><a href="#" class="btn btn-default btn-block">
+                <div class="col-md-6"><a href="<?=SITE['root']?>/agende-seu-teste-drive" class="btn btn-default btn-block">
                     <img src="<?= SITE['root'] . DS ?>views/assets/site/images/steering-wheel.png" alt=""> Agende seu <b>Teste Drive</b></a></div>
-                <div class="col-md-6"><a href="#" class="btn btn-default btn-block">
+                <div class="col-md-6"><a href="<?=SITE['root']?>/avalie-seu-usado" class="btn btn-default btn-block">
                     <img src="<?= SITE['root'] . DS ?>views/assets/site/images/sedan-car-front.png" alt="">Avalie seu <b>usado</b></a></div>
             </div>
 
