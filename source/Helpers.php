@@ -11,7 +11,7 @@ function buildBreadcrumb(): string
 {
     // echo '<pre>$_SERVER<br />'; print_r($_SERVER); echo '</pre>';die;
     $breadcrumb = array_filter(explode('/', $_SERVER['REDIRECT_URL']));
-    array_shift($breadcrumb);
+    // array_shift($breadcrumb);
     echo '<pre>$breadcrumb<br />'; print_r($breadcrumb); echo '</pre>';die;
 
     $acc = "";
