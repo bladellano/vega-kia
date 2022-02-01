@@ -49,13 +49,13 @@
 
 .sub_menu .col {
   text-align: center;
-  margin: 4px;
+  margin: 20px;
 }
 
 .sub_menu .col img {
   width: 142px;
-  height: 126px;
-  object-fit: cover;
+  height: 86px;
+  object-fit: contain;
   transition: 0.2s;
 }
 .sub_menu .col img:hover {
