@@ -26,8 +26,9 @@ class Web extends Controller
     /**
      * Monta tela principal
      */
-    public function home(): void
+    public function home($data = []): void
     {
+        // echo '<pre>$data<br />'; print_r($data); echo '</pre>';die;
 
         $banners = (new Banner)->find()->order("id DESC")->fetch(true) ?? [];
 
@@ -35,23 +36,24 @@ class Web extends Controller
             "title" => "Home",
             "banners" => $banners,
         ]);
-        // $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
-        // $products = $products->find("status = :status", "status=1")->order("id DESC")->fetch(true);
-
-        /* $products = new Product();
-
-        if (!empty($search)) {
-
-            $params = http_build_query([
-                'status' => 1,
-                'name' =>  "%" . $search . "%"
-            ]);
-
-            $products = $products->find("status = :status AND name like :name", $params)->order("id DESC")->fetch(true);
-            $products = !$products ? [] : $products;
-       */
     }
 
+    public function page($data): void
+    {
+
+        $params = http_build_query([
+            'slug' => $data['slug'],
+            'type' =>  'page'
+        ]);
+
+        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)
+            ->order('id DESC')->fetch() ?? [];
+
+        echo $this->view->render("theme/site/page", [
+            "title" => $page->title,
+            "page" => $page,
+        ]);
+    }
 
     /** Métodos Car */
     public function semiNew(): void
@@ -61,25 +63,25 @@ class Web extends Controller
         ]);
     }
 
-    public function news():void
+    public function news(): void
     {
-        $newsCars = (new Car())->find("novo = :novo",'novo=1')->fetch(true) ?? [];
+        $newsCars = (new Car())->find("novo = :novo", 'novo=1')->fetch(true) ?? [];
 
         echo $this->view->render("theme/site/novos", [
             "title" => "Novos",
             "newsCars" => $newsCars,
         ]);
     }
-    public function getCar($data):void
+    public function getCar($data): void
     {
-        $car = (new Car())->find("slug = :slug","slug={$data['slug']}")->fetch();
+        $car = (new Car())->find("slug = :slug", "slug={$data['slug']}")->fetch();
 
         $carImages = (new CarImage())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
 
         echo $this->view->render("theme/site/car", [
             "title" => "Novos",
             "car" => $car,
-            "carImages"=> $carImages
+            "carImages" => $carImages
         ]);
     }
 

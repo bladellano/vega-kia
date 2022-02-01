@@ -2,24 +2,9 @@
 
 <div class="container">
 
-    <?php
-    $breadcrumb = array_filter(explode('/', $_SERVER['REQUEST_URI']));
-    array_shift($breadcrumb);
-    ?>
-
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="<?= SITE['root'] ?>">Home</a>
-            </li>
-            <?php
-            $acc = "";
-            foreach ($breadcrumb as $link) : ?>
-                <?php $acc .= DS . $link ?>
-                <li class="breadcrumb-item">
-                    <a href="<?= SITE['root'] . $acc ?>"><?= ucfirst($link) ?></a>
-                </li>
-            <?php endforeach; ?>
+            <?=buildBreadcrumb()?>           
         </ol>
     </nav>
 

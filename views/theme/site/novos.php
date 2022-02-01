@@ -1,8 +1,14 @@
 <?php $v->layout("theme/site/_theme"); ?>
 
-<div class="container">
+<div class="container page">
 
-    <h1>Novos!!!</h1>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <?= buildBreadcrumb() ?>
+        </ol>
+    </nav>
+
+    <h1>Novos</h1>
 
     <ul>
         <?php foreach ($newsCars as $c) : ?>
@@ -10,13 +16,4 @@
         <?php endforeach; ?>
     </ul>
 
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quidem deleniti aspernatur nobis doloremque magni provident saepe ea accusantium. Iste eaque rerum pariatur, tenetur unde voluptatum! Iste aliquam magni impedit!</p>
-
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quidem deleniti aspernatur nobis doloremque magni provident saepe ea accusantium. Iste eaque rerum pariatur, tenetur unde voluptatum! Iste aliquam magni impedit!</p>
-
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quidem deleniti aspernatur nobis doloremque magni provident saepe ea accusantium. Iste eaque rerum pariatur, tenetur unde voluptatum! Iste aliquam magni impedit!</p>
-
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quidem deleniti aspernatur nobis doloremque magni provident saepe ea accusantium. Iste eaque rerum pariatur, tenetur unde voluptatum! Iste aliquam magni impedit!</p>
-
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quidem deleniti aspernatur nobis doloremque magni provident saepe ea accusantium. Iste eaque rerum pariatur, tenetur unde voluptatum! Iste aliquam magni impedit!</p>
 </div>

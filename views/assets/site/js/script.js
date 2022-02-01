@@ -1,5 +1,13 @@
 $(function () {
 
+    $('.card_consorcio_seguros.consorcio').click(function (e) {
+        window.location.href = e.target.dataset.url;
+    });
+
+    $('.card_consorcio_seguros.seguro').click(function (e) {
+        window.location.href = e.target.dataset.url;
+    });
+
     // The slider being synced must be initialized first
     $('#carousel').flexslider({
         animation: "slide",

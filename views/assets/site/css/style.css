@@ -36,6 +36,21 @@
 *::after {
   box-sizing: border-box;
 }
+/* Page */
+.page {
+  font-family: "Kia-Light";
+}
+.page h1 {
+  font-family: "Kia-Bold";
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  color: #000;
+}
+.page .content_page {
+  font-size: 16px;
+}
 
 /* Mega menu */
 .sub_menu {
@@ -202,9 +217,17 @@
 }
 
 /* Custom breadcrumb Site */
-
+.breadcrumb {
+  padding: 15px 4px;
+}
 .breadcrumb .breadcrumb-item a {
-  color: #666;
+  color: #333;
+}
+.breadcrumb > li + li:before {
+  font-family: "fontAwesome";
+  content: "\f105";
+  padding: 0 8px;
+  font-size: 18px;
 }
 
 /* Footer */
@@ -254,10 +277,13 @@ footer p.icon_socials img {
 footer p.icon_socials a {
   text-decoration: none !important;
 }
-.footer_menu_itens ul li {
+.footer_menu_itens ul li a {
   color: inherit;
   transition: 0.2s;
   cursor: pointer;
+}
+.footer_menu_itens ul li a:hover {
+  text-decoration: none !important;
 }
 .footer_menu_itens ul:not(.modelos) li:hover {
   color: var(--kia-vermelho-vibrante);

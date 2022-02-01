@@ -97,10 +97,10 @@
 
                     <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#servicos">PEÇA E ACESSÓRIOS</a></li>
                     <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#consorcio-seguros">CONSÓRCIO</a></li>
-                    <li><a href=" #about">TEST DRIVE</a></li>
+                    <li><a href="<?= SITE['root'] ?>/test-drive">TEST DRIVE</a></li>
                     <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#servicos">AGENDAMENTO</a></li>
-                    <li><a href="#about">VENDA DIRETA</a></li>
-                    <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#vega-kia">SOBRE</a></li>
+                    <li><a href="<?= SITE['root'] ?>/venda-direta">VENDA DIRETA</a></li>
+                    <li><a href="<?= SITE['root'] ?>/sobre">SOBRE</a></li>
                     <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#showroom">FALE CONOSCO</a></li>
                     <li>
                         <a href="#" class="btn btn-success btn--success d-sm-block d-md-none">COMPRE AGORA! <i class="fa fa-whatsapp"></i></a>
@@ -164,14 +164,14 @@
                     <div class="footer_menu_itens">
                         <h3>Site Map</h3>
                         <ul>
-                            <li>Novos</li>
-                            <li>Seminovos</li>
-                            <li>Peças e acessórios</li>
-                            <li>Consórcio</li>
-                            <li>Test Drive</li>
-                            <li>Agendamento</li>
-                            <li>Venda Direta</li>
-                            <li>Fale Conosco</li>
+                            <li><a href="<?= SITE['root'] ?>/novos">Novos</a></li>
+                            <li><a href="<?= SITE['root'] ?>/semi-novos">Semi-novos</a></li>
+                            <li><a href="<?= SITE['root'] ?>/pecas-e-acessorios">Peças e acessórios</a></li>
+                            <li><a class="scroll" href="<?= SITE['root'] ?>/#consorcio-seguros">Consórcio</a></li>
+                            <li><a href="<?= SITE['root'] ?>/test-drive">Test Drive</a></li>
+                            <li><a class="scroll" href="<?= SITE['root'] ?>/#servicos">Agendamento</a></li>
+                            <li><a href="<?= SITE['root'] ?>/venda-direta">Venda Direta</a></li>
+                            <li><a class="scroll" href="<?= SITE['root'] ?>/#showroom">Fale Conosco</a></li>
                         </ul>
                     </div>
                 </div>

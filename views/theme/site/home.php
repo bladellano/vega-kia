@@ -187,21 +187,21 @@
                 <div class="card_services">
                     <img src="views/assets/site/images/servicos01.png" alt="">
                     <h3>Assitência técnica</h3>
-                    <button class="btn btn-default btn-lg">Agende aqui</button>
+                    <a href="<?=SITE['root']?>/assistencia-tecnica" class="btn btn-default btn-lg">Agende aqui</a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card_services">
                     <img src="views/assets/site/images/servicos03.png" alt="">
                     <h3>Peças e acessórios</h3>
-                    <button class="btn btn-default btn-lg">Compre aqui</button>
+                    <a href="<?=SITE['root']?>/pecas-e-acessorios" class="btn btn-default btn-lg">Compre aqui</a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card_services">
                     <img src="views/assets/site/images/servicos02.png" alt="">
                     <h3>Revisão preço fechado</h3>
-                    <button class="btn btn-default btn-lg">Agende aqui</button>
+                    <a href="<?=SITE['root']?>/revisao-preco-fechado" class="btn btn-default btn-lg">Agende aqui</a>
                 </div>
             </div>
         </div>
@@ -214,7 +214,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="card_consorcio_seguros consorcio">
+                <div class="card_consorcio_seguros consorcio" data-url="<?=SITE['root']?>/consorcio-kia">
                     <div class="legenda">
                         <h5>Consórcio KIA</h5>
                         <p>Com parcelas que cabem no seu bolso.</p>
@@ -222,7 +222,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card_consorcio_seguros seguro">
+                <div class="card_consorcio_seguros seguro" data-url="<?=SITE['root']?>/seguros">
                     <div class="legenda">
                         <h5>Seguros Vega Kia</h5>
                         <p>A melhor proposta para seu perfil.</p>

@@ -2,9 +2,24 @@
 //FOCO
 use Source\Models\Car;
 
-function getCarsMenu():array
+function getCarsMenu(): array
 {
     return (new Car())->find("novo = :novo", 'novo=1')->fetch(true) ?? [];
+}
+
+function buildBreadcrumb(): string
+{
+    $breadcrumb = array_filter(explode('/', $_SERVER['REQUEST_URI']));
+    array_shift($breadcrumb);
+
+    $acc = "";
+    $html = "<li class='breadcrumb-item'><a href='" . SITE['root'] . "'>Home</a></li>";
+    foreach ($breadcrumb as $link) :
+        $acc .= DS . $link;
+        $html .= "<li class='breadcrumb-item'><a href='" . SITE['root'] . $acc . "'>" . ucfirst($link) . "</a></li>";
+    endforeach;
+
+    return $html;
 }
 
 /**

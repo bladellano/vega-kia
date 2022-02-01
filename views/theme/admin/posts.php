@@ -40,6 +40,7 @@
                                      <th style="width: 10px">#</th>
                                      <th>Título</th>
                                      <th>Descrição</th>
+                                     <th>Slug</th>
                                      <th>Tipo</th>
                                      <th>Criado</th>
                                      <th style="width: 60px"></th>
@@ -53,6 +54,7 @@
                                          <td><?= $p->id ?></td>
                                          <td><a href="posts/edit/<?=$p->id?>"><?= $p->title ?></a></td>
                                          <td><?= $p->description ?></td>
+                                         <td><?= $p->slug ?></td>
                                          <td><?= $p->type ?></td>
                                          <td><?= convertDatePtbr($p->created_at)?></td>
                                          <td>

@@ -34,7 +34,6 @@ class Posts extends Controller
 
     public function register($data): void
     {
-        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
         $post = new \Source\Models\Post;
 
@@ -81,7 +80,6 @@ class Posts extends Controller
     public function update($data): void
     {
 
-        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
 
