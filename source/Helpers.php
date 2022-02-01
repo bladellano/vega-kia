@@ -9,7 +9,7 @@ function getCarsMenu(): array
 
 function buildBreadcrumb(): string
 {
-    $breadcrumb = array_filter(explode('/', $_SERVER['REQUEST_URI']));
+    $breadcrumb = array_filter(explode('/', $_SERVER['REDIRECT_URL']));
     array_shift($breadcrumb);
 
     $acc = "";
