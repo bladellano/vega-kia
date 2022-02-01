@@ -5,3 +5,4 @@
 /storage/
 composer.lock
 error_log
+php.ini
