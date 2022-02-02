@@ -128,7 +128,7 @@
 
 <!-- Sua via com mais emoção -->
 <div class="img_fluid_car">
-    <img src="<?= asset("images/cerato/cerato01.jpg", "site") ?>" alt="TITULO">
+    <img src="<?= asset("images/cerato/cerato01.jpg", "site",false) ?>" alt="TITULO">
     <div class="legend">Sua vida com mais emoção.</div>
 </div>
 
@@ -139,14 +139,14 @@
 
     <div class="row">
         <div class="col-md-6">
-            <img class="img-responsive two_columns" src="<?= asset("images/cerato/cerato02.jpg", "site") ?>" alt="">
+            <img class="img-responsive two_columns" src="<?= asset("images/cerato/cerato02.jpg", "site",false) ?>" alt="">
             <h3>Tecnologia dos espelhos retrovisores</h3>
             <p>
                 Para agregar à tecnologia de ponta do sedan, o Kia Cerato 2.0 possui espelhos retrovisores externos com rebatimento e regulagem elétrica, setas integradas em LED e sistema anti-embaçamento.
             </p>
         </div>
         <div class="col-md-6">
-            <img class="img-responsive two_columns" src="<?= asset("images/cerato/cerato03.jpg", "site") ?>" alt="">
+            <img class="img-responsive two_columns" src="<?= asset("images/cerato/cerato03.jpg", "site",false) ?>" alt="">
             <h3>Porta-malas espaçoso</h3>
             <p>
                 Com capacidade de 520 litros, o porta-malas do Kia Cerato 2.0 está entre os maiores do segmento, com espaço suficiente para acomodar as bagagens de toda a família ou grupo de amigos.
@@ -161,7 +161,7 @@
 <!-- Interior -->
 
 <div class="img_fluid_car">
-    <img src="<?= asset("images/cerato/cerato04.jpg", "site") ?>" alt="TITULO">
+    <img src="<?= asset("images/cerato/cerato04.jpg", "site",false) ?>" alt="TITULO">
     <div class="legend">Interior</div>
 </div>
 
@@ -171,7 +171,7 @@
 
     <div class="row">
         <div class="col-md-6">
-            <img class="img-responsive" src="<?= asset("images/cerato/cerato05.jpg", "site") ?>" alt="">
+            <img class="img-responsive" src="<?= asset("images/cerato/cerato05.jpg", "site",false) ?>" alt="">
         </div>
         <div class="col-md-6">
             <h3>Novo motor Nu-2 flex 2.0 L de 167 cv no etanol e 157 cv na gasolina.</h3>
@@ -186,7 +186,7 @@
 
 <!-- Segurança -->
 <div class="img_fluid_car">
-    <img src="<?= asset("images/cerato/cerato06.jpg", "site") ?>" alt="TITULO">
+    <img src="<?= asset("images/cerato/cerato06.jpg", "site",false) ?>" alt="TITULO">
     <div class="legend">Segurança</div>
 </div>
 
