@@ -1,5 +1,5 @@
 <?php $v->layout("theme/admin/_theme"); ?>
-
+<div class="login_form_callback"> <?= flash(); ?></div>
 <h1>Conteudo Admin</h1>
 <ul>
     <li>Dashboard</li>

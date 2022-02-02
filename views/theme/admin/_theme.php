@@ -78,7 +78,7 @@
         <a href="<?=SITE['root']?>/admin/users" class="nav-link">Usuários</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="<?=SITE['root']?>/admin/logout" class="nav-link">Sair</a>
       </li>
     </ul>
 

@@ -22,6 +22,7 @@ $app->namespace("Source\Controllers");
 $app->group(null);
 $app->get("/", "Web:home", "web.home");
 $app->get("/{slug}", "Web:page", "web.page");
+
 /** Páginas da Web */
 $app->get("/semi-novos", "Web:semiNew", "web.seminew");
 $app->get("/novos", "Web:news", "web.news");
@@ -32,9 +33,16 @@ $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
  */
 
 $app->group('admin')->namespace('Source\Dash');
+
+
 $app->get("/", "Admin:home", "admin.home");
 
 $app->get("/{errcode}", "Admin:error", "admin.error");
+
+/** Login */
+$app->get("/login", "Auth:home", "auth.home");
+$app->post("/login", "Auth:login", "auth.login");
+$app->get("/logout", "Auth:logout", "auth.logout");
 
 /** Posts */
 $app->get("/posts", "Posts:home", "posts.home");
@@ -60,6 +68,13 @@ $app->post("/cars/update/{id}", "Cars:update", "cars.update");
 $app->get("/cars/delete/{id}", "Cars:delete", "cars.delete");
 $app->get("/cars/edit/{id}", "Cars:edit", "cars.edit");
 
+/** Users */
+$app->get("/users", "Users:home", "users.home");
+$app->get("/users/create", "Users:create", "users.create");
+$app->post("/users/register", "Users:register", "users.register");
+$app->post("/users/update/{id}", "Users:update", "users.update");
+$app->get("/users/delete/{id}", "Users:delete", "users.delete");
+$app->get("/users/edit/{id}", "Users:edit", "users.edit");
 
 /**
  * ERRORS

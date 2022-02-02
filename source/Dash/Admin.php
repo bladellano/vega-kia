@@ -3,13 +3,18 @@
 namespace Source\Dash;
 
 use Source\Controllers\Controller;
+use Source\Authenticator\CheckUserLogged;
 
 class Admin extends Controller
 {
+    use CheckUserLogged;
 
     public function __construct($router)
     {
         parent::__construct($router);
+
+        if (!$this->check())
+            return  header("Location: " . $this->router->route("auth.login"));
     }
 
 
