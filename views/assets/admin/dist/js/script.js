@@ -13,7 +13,7 @@ $(function () {
 
     //Editor 
     $('.summernote').summernote({
-        height: 150, 
+        height: 450, 
     });
 
     /**

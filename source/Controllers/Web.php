@@ -5,7 +5,6 @@ namespace Source\Controllers;
 use Source\Models\Banner;
 use Source\Models\Car;
 use Source\Models\Car\CarImage;
-use Source\Models\Product;
 
 /**
  * Class Web
@@ -26,10 +25,8 @@ class Web extends Controller
     /**
      * Monta tela principal
      */
-    public function home($data = []): void
+    public function home(): void
     {
-        // echo '<pre>$data<br />'; print_r($data); echo '</pre>';die;
-
         $banners = (new Banner)->find()->order("id DESC")->fetch(true) ?? [];
 
         echo $this->view->render("theme/site/home", [
@@ -48,6 +45,12 @@ class Web extends Controller
 
         $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)
             ->order('id DESC')->fetch() ?? [];
+
+        /** Página não encontrada */
+        if (!$page) {
+            header("Location: " . $this->router->route("web.home"));
+            exit;
+        }
 
         echo $this->view->render("theme/site/page", [
             "title" => $page->title,
@@ -83,52 +86,6 @@ class Web extends Controller
             "car" => $car,
             "carImages" => $carImages
         ]);
-    }
-
-    /**
-     * Monta a tela de compra do produto
-     * @param $data
-     */
-    public function buy($data)
-    {
-        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
-
-        $product = (new Product())->findById($data['id']);
-
-        die($this->view->render("theme/buy", [
-            "title" => "Compra",
-            "product" => $product,
-            "menu" => false
-        ]));
-    }
-
-    /**
-     * Dá baixa no estoque do produto
-     * @param $data
-     */
-    public function purchased($data)
-    {
-        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
-
-        $product = (new Product())->findById($data['id']);
-
-        $product->amount = --$product->amount;
-
-        if (!$product->save()) {
-
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => $product->fail()->getMessage()
-            ]);
-            return;
-        }
-
-        flash("success", "Compra efetuada com sucesso!");
-
-        echo $this->ajaxResponse("redirect", [
-            "url" => site() . "/compra/{$product->id}"
-        ]);
-        return;
     }
 
     /**
