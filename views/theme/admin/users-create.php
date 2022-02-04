@@ -32,7 +32,7 @@
                      <!-- form start -->
 
                      <?php if (isset($user->id)) : ?>
-                         <form action="<?= SITE['root'] ?>/admin/users/update/<?= $user->id ?>" method="POST" enctype="multipart/form-data" autocomplete="off">
+                         <form action="<?= SITE['root'] ?>/admin/users/update/<?= $user->id ?>" method="POST" autocomplete="off">
                          <?php else : ?>
                              <form action="<?= SITE['root'] ?>/admin/users/register" method="POST" enctype="multipart/form-data" autocomplete="off">
                              <?php endif; ?>
