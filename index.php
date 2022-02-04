@@ -71,7 +71,7 @@ $app->get("/cars/edit/{id}", "Cars:edit", "cars.edit");
 /** Users */
 $app->get("/users", "Users:home", "users.home");
 $app->get("/users/create", "Users:create", "users.create");
-$app->post("/users/register", "Users:register", "users.register");
+$app->post("/users/store", "Users:register", "users.register");
 $app->post("/users/update/{id}", "Users:update", "users.update");
 $app->get("/users/delete/{id}", "Users:delete", "users.delete");
 $app->get("/users/edit/{id}", "Users:edit", "users.edit");
