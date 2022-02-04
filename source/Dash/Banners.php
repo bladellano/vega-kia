@@ -2,9 +2,9 @@
 
 namespace Source\Dash;
 
-use Source\Controllers\Controller;
+use Source\Dash\Controller as DashController;
 
-class Banners extends Controller
+class Banners extends DashController
 {
 
     public function __construct($router)

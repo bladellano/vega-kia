@@ -34,7 +34,6 @@ $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
 
 $app->group('admin')->namespace('Source\Dash');
 
-
 $app->get("/", "Admin:home", "admin.home");
 
 $app->get("/{errcode}", "Admin:error", "admin.error");

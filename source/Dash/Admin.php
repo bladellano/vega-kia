@@ -2,21 +2,15 @@
 
 namespace Source\Dash;
 
-use Source\Controllers\Controller;
-use Source\Authenticator\CheckUserLogged;
+use Source\Dash\Controller as DashController;
 
-class Admin extends Controller
+class Admin extends DashController
 {
-    use CheckUserLogged;
 
     public function __construct($router)
     {
         parent::__construct($router);
-
-        if (!$this->check())
-            return  header("Location: " . $this->router->route("auth.login"));
     }
-
 
     public function home(): void
     {

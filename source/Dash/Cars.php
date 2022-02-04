@@ -6,11 +6,11 @@ use CoffeeCode\Uploader\Image;
 use Source\Models\Car\CarImage;
 use Source\Models\Car\CarCidade;
 use Source\Models\Car\CarModelo;
-use Source\Controllers\Controller;
+use Source\Dash\Controller as DashController;
 use Source\Models\Car\CarCombustivel;
 use Source\Models\Car\CarUnidadeLoja;
 
-class Cars extends Controller
+class Cars extends DashController
 {
 
     private $modelos;

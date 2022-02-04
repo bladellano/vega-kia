@@ -2,10 +2,10 @@
 
 namespace Source\Dash;
 
-use Source\Controllers\Controller;
+use Source\Dash\Controller as DashController;
 use Source\Security\PasswordHash;
 
-class Users extends Controller
+class Users extends DashController
 {
 
     public function __construct($router)
@@ -35,9 +35,9 @@ class Users extends Controller
     public function register($data): void
     {
         $user = new \Source\Models\User;
-        
+
         foreach ($data as $key => $value) $user->{$key} = $value;
-        
+
         if (in_array("", $data)) {
             echo $this->ajaxResponse("message", [
                 "type" => "error",
