@@ -34,7 +34,7 @@
                      <?php if (isset($user->id)) : ?>
                          <form action="<?= SITE['root'] ?>/admin/users/update/<?= $user->id ?>" method="POST" autocomplete="off">
                          <?php else : ?>
-                             <form action="<?= SITE['root'] ?>/admin/users/store" method="POST" autocomplete="off">
+                             <form action="<?= SITE['root'] ?>/admin/users/register" method="POST" autocomplete="off">
                              <?php endif; ?>
 
                              <div class="card-body">
