@@ -39,7 +39,10 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Título</th>
-                                    <th>Descrição</th>
+                                    <th>Subtítulo</th>
+                                    <th>Slug</th>
+                                    <th>Valor</th>
+                                    <th>Cor</th>
                                     <th>Imagem</th>
                                     <th>Criado</th>
                                     <th style="width: 60px"></th>
@@ -52,8 +55,12 @@
                                     <tr>
                                         <td><?= $c->id ?></td>
                                         <td><a href="cars/edit/<?= $c->id ?>"><?= $c->nome_titulo ?></a></td>
-                                        <td><?= $c->description ?></td>
-                                        <td> <img class="img-fluid" height="100" width="100" src="<?= SITE['root'] . DS . $c->image_thumb ?>" alt="SEM IMAGEM"></td>
+                                        <td><?= $c->nome_subtitulo ?></td>
+                                        <td><?= $c->slug ?></td>
+                                        <td>R$ <?= $c->valor ?></td>
+
+                                        <td><input type="color" class="form-control form-control-color" value="<?= $c->cor ?>" title="Cor do veículo"></td>
+                                        <td> <img class="img-fluid" height="100" width="100" src="<?= SITE['root'] . DS . $c->imagem_thumb ?>" alt="SEM IMAGEM"></td>
                                         <td><?= convertDatePtbr($c->created_at) ?></td>
                                         <td>
                                             <a href="cars/edit/<?= $c->id ?>" class="btn btn-default btn-sm" title="Editar"><i class="fas fa-pencil-alt"></i></a>
