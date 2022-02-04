@@ -34,8 +34,6 @@ class Users extends Controller
 
     public function register($data): void
     {
-        echo '<pre>$data<br />'; print_r($data); echo '</pre>';die;
-        
         $user = new \Source\Models\User;
         
         foreach ($data as $key => $value) $user->{$key} = $value;
