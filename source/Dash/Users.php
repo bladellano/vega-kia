@@ -36,6 +36,7 @@ class Users extends Controller
     {
         
         $user = new \Source\Models\User;
+        echo '<pre>$user <br />'; print_r($user ); echo '</pre>';die;
         
         foreach ($data as $key => $value) $user->{$key} = $value;
         
