@@ -57,7 +57,7 @@
                                         <td><a href="cars/edit/<?= $c->id ?>"><?= $c->nome_titulo ?></a></td>
                                         <td><?= $c->nome_subtitulo ?></td>
                                         <td><?= $c->slug ?></td>
-                                        <td>R$ <?= $c->valor ?></td>
+                                        <td>R$ <?=money( $c->valor ) ?></td>
 
                                         <td><input type="color" class="form-control form-control-color" value="<?= $c->cor ?>" title="Cor do veículo"></td>
                                         <td> <img class="img-fluid" height="100" width="100" src="<?= SITE['root'] . DS . $c->imagem_thumb ?>" alt="SEM IMAGEM"></td>
