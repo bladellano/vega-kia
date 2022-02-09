@@ -1,5 +1,25 @@
 $(function () {
 
+
+    $('.closeBtn').click(function (e) {
+        e.preventDefault();
+        $(this).parent().fadeOut();
+    });
+
+    $('.openBtn').click(function () {
+
+        let title = $(this).find('p').text();
+        let content = $(this).data('content');
+        let image = $(this).find('img')[0].src;
+
+        $('.pop_con img').attr('src',image);
+        $('.pop_con dl dt').text(title);
+        $('.pop_con dl dd').text(content);
+
+        $('.popup_wrap').fadeIn();
+    });
+
+
     /* Exibição do botão topo */
     $(window).scroll(function (e) {
 

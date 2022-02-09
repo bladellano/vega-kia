@@ -100,7 +100,6 @@
                     <li><a href="<?= SITE['root'] ?>/semi-novos">SEMI-NOVOS</a></li>
 
                     <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#servicos">PEÇA E ACESSÓRIOS</a></li>
-                    <!-- <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#consorcio-seguros">CONSÓRCIO</a></li> -->
                     <li><a href="<?= SITE['root'] ?>/consorcio">CONSÓRCIO</a></li>
                     <li><a href="<?= SITE['root'] ?>/test-drive">TEST DRIVE</a></li>
                     <li><a href="<?= SITE['root'] ?>/agendamento">AGENDAMENTO</a></li>
