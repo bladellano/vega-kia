@@ -4,16 +4,41 @@
  */
 $(function () {
 
+    /**
+     * Seta os tipos de imagens para detalhes do carro.
+     */
+    $('.setTypeImage').change(function () {
+
+        let title = $(this).parent().prev().prev().find('[name="title"]').val();
+        let description = $(this).parent().prev().find('[name="description"]').val();
+        let id = $(this).data('id');
+        let type = $(this).val();
+
+        $.ajax({
+            type: "POST",
+            url: "/admin/cars/set-type-image",
+            data: { id, type, title, description },
+            dataType: "JSON",
+            beforeSend: function () {
+                ajax_load('open');
+            },
+            success: function (su) {
+                if (su.success)
+                    ajax_load('close');
+            }
+        })
+    });
+
     //Máscaras
-    $('#valor').mask('#.##0,00', {reverse: true});
-    $('#quilometragem').mask('#.##0.000', {reverse: true});
+    $('#valor').mask('#.##0,00', { reverse: true });
+    $('#quilometragem').mask('#.##0.000', { reverse: true });
 
     //Input File    
     bsCustomFileInput.init();
 
     //Editor 
     $('.summernote').summernote({
-        height: 450, 
+        height: 450,
     });
 
     /**

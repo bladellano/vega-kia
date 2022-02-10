@@ -81,10 +81,22 @@ class Web extends Controller
 
         $carImages = (new CarImage())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
 
+        $buildImagesFront = array_map(function ($item) {
+            return [
+                "tipo" => $item->tipo,
+                "titulo" => $item->titulo,
+                "desricao" => $item->descricao,
+                "imagem" => $item->imagem
+            ];
+        }, $carImages);
+
+        $buildImagesFront = groupByColumn($buildImagesFront, "tipo", 0);
+
         echo $this->view->render("theme/site/car", [
             "title" => "Novos",
             "car" => $car,
-            "carImages" => $carImages
+            "carImages" => $carImages,
+            "buildImagesFront" => $buildImagesFront
         ]);
     }
 

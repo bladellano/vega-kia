@@ -22,9 +22,26 @@ class Cars extends DashController
         $this->modelos = (new CarModelo())->find()->order("nome ASC")->fetch(true) ?? [];
     }
 
+    /**
+     * Seta o tipo de imagem para exibir em detalhes do carro no front.
+     * @param [type] $data
+     * @return string
+     */
+    public function setTypeImage($data)
+    {
+        $image = (new CarImage())->findById($data['id']);
+        if ($image) {
+
+            $image->tipo = $data['type'];
+            $image->titulo = $data['title'];
+            $image->descricao = $data['description'];
+        }
+
+        echo json_encode(["success" => (int) $image->save()]);
+    }
+
     public function home(): void
     {
-
         $cars = (new \Source\Models\Car)->find()->order('id DESC')->fetch(true) ?? [];
 
         echo $this->view->render("theme/admin/cars", [
@@ -122,6 +139,28 @@ class Cars extends DashController
         $unidadesLojas = (new CarUnidadeLoja())->find()->fetch(true) ?? [];
         $combustiveis = (new CarCombustivel())->find()->fetch(true) ?? [];
 
+        $tipos = [
+            'FULL_BANNER_1',
+            'BANNER_1_1',
+            'BANNER_1_2',
+            'BANNER_1_3',  
+            
+            'FULL_BANNER_2',
+            'BANNER_2_1',
+            'BANNER_2_2',
+            'BANNER_2_3', 
+
+            'FULL_BANNER_3',
+            'BANNER_3_1',
+            'BANNER_3_2',
+            'BANNER_3_3', 
+
+            'BANNER_COLUMN_1',
+            'BANNER_COLUMN_2',
+
+            'FULL_BANNER_COLUMN'
+        ];
+
         $car = (new \Source\Models\Car())->findById($data['id']);
 
         $carImages = (new CarImage())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
@@ -135,6 +174,7 @@ class Cars extends DashController
             "unidadesLojas" => $unidadesLojas,
             "combustiveis" => $combustiveis,
             "imagensCarro" => $carImages,
+            "tipos" => $tipos
         ]);
     }
 

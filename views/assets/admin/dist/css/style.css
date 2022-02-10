@@ -9,3 +9,25 @@ input[type="text"],
 select {
   background-color: #fffcc8 !important;
 }
+
+.car_galery {
+  width: 100%;
+}
+.car_galery ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.car_galery ul li {
+  display: flex;
+  margin-bottom: 8px;
+  flex: 1 1 400px;
+}
+.car_galery ul li img {
+  width: 150px;
+  object-fit: cover;
+  height: 150px;
+  margin: 0 8px;
+}

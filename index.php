@@ -67,6 +67,8 @@ $app->post("/cars/update/{id}", "Cars:update", "cars.update");
 $app->get("/cars/delete/{id}", "Cars:delete", "cars.delete");
 $app->get("/cars/edit/{id}", "Cars:edit", "cars.edit");
 
+$app->post("/cars/set-type-image", "Cars:setTypeImage", "cars.settypeimage");
+
 /** Users */
 $app->get("/users", "Users:home", "users.home");
 $app->get("/users/create", "Users:create", "users.create");

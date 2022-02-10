@@ -115,3 +115,29 @@ function normalizeFiles(&$files)
 
     return $_files;
 }
+
+/**
+ * Cria um novo array agrupado por nome da chave.
+ * @param [type] $inputArray
+ * @param [type] $nameColumn
+ * @param boolean $oneMoreLevel
+ * @return void
+ */
+function groupByColumn($inputArray, $nameColumn,$oneMoreLevel = true)
+{
+    $resultMap = [];
+
+    foreach ($inputArray as $data) {
+        if (!isset($resultMap[$data[$nameColumn]])) {
+            $resultMap[$data[$nameColumn]] = [];
+        }
+        if($oneMoreLevel):
+            $resultMap[$data[$nameColumn]][] = $data;
+        else:
+            $resultMap[$data[$nameColumn]] = $data;
+        endif;
+
+    }
+
+    return $resultMap;
+}

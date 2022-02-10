@@ -1,6 +1,10 @@
 $(function () {
 
 
+    /**
+     * Botão para abrir/fechar o pop-up
+     * Popula o pop-up com informação do carro
+     */
     $('.closeBtn').click(function (e) {
         e.preventDefault();
         $(this).parent().fadeOut();

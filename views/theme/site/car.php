@@ -141,24 +141,21 @@
 </div>
 <!-- /.container -->
 
-<!-- FOCO -->
-
-
 <div class="images_agrupadas">
     <div class="principal">
-        <p>Sua vida com mais emoção</p>
-        <img src="<?= asset("images/cerato/cerato01_cortado.jpg", "site", false) ?>">
+        <p><?= $buildImagesFront['FULL_BANNER_1']['titulo']?></p>
+        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_1']['imagem']?>">
     </div>
     <div class="menores">
         <ul>
-            <li class="openBtn" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially"><img src="<?= asset("images/cerato/cerato03.jpg", "site", false) ?>">
-                <p>Paddle shift</p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_1']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_1']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_1']['titulo']?></p>
             </li>
-            <li class="openBtn" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially"><img src="<?= asset("images/cerato/cerato02.jpg", "site", false) ?>">
-                <p>Transmissão automática</p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_2']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_2']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_2']['titulo']?></p>
             </li>
-            <li class="openBtn" data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially"><img src="<?= asset("images/cerato/cerato05.jpg", "site", false) ?>">
-                <p>Drive mode</p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_3']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_3']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_3']['titulo']?></p>
             </li>
         </ul>
     </div>
@@ -201,10 +198,30 @@
 
 <!-- Interior -->
 
-<div class="img_fluid_car">
+<div class="images_agrupadas">
+    <div class="principal">
+        <p><?= $buildImagesFront['FULL_BANNER_1']['titulo']?></p>
+        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_1']['imagem']?>">
+    </div>
+    <div class="menores">
+        <ul>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_1']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_1']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_1']['titulo']?></p>
+            </li>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_2']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_2']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_2']['titulo']?></p>
+            </li>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_3']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_3']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_3']['titulo']?></p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- <div class="img_fluid_car">
     <img src="<?= asset("images/cerato/cerato04.jpg", "site", false) ?>" alt="TITULO">
     <div class="legend">Interior</div>
-</div>
+</div> -->
 
 <hr>
 <!-- Uma colunas/imagens -->
@@ -226,10 +243,30 @@
 <hr>
 
 <!-- Segurança -->
-<div class="img_fluid_car">
+
+<div class="images_agrupadas">
+    <div class="principal">
+        <p><?= $buildImagesFront['FULL_BANNER_1']['titulo']?></p>
+        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_1']['imagem']?>">
+    </div>
+    <div class="menores">
+        <ul>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_1']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_1']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_1']['titulo']?></p>
+            </li>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_2']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_2']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_2']['titulo']?></p>
+            </li>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_3']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_3']['imagem']?>">
+                <p><?= $buildImagesFront['BANNER_1_3']['titulo']?></p>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- <div class="img_fluid_car">
     <img src="<?= asset("images/cerato/cerato06.jpg", "site", false) ?>" alt="TITULO">
     <div class="legend">Segurança</div>
-</div>
+</div> -->
 
 <!-- Versões -->
 

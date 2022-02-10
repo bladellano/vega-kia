@@ -137,7 +137,7 @@
                                              <option value="">--</option>
 
                                              <?php foreach ($unidadesLojas as $u) : ?>
-                                                 <option value="<?= $u->id ?>" <?= (isset($car->id_unidade_loja) && $car->id_unidade_loja == $u->id) ? 'selected' : '' ?>><?= $u->nome ?></option>
+                                                 <option value="<?= $u->id ?>" <?= (isset($car->id_unidade_loja) && $car->id_unidade_loja == $u->id) ? 'selected' : '' ?> ><?= $u->nome ?></option>
                                              <?php endforeach ?>
 
                                          </select>
@@ -170,13 +170,41 @@
                                  </div>
 
                                  <div class="row">
-                                     <?php if (isset($car->id)) : ?>
-                                         <?php foreach ($imagensCarro as $i) : ?>
-                                             <div class="col-md-2">
-                                                 <img class="img-fluid" src="<?= SITE['root'] . DS . $i->imagem_thumb ?>" alt="<?= $i->id ?>">
+                                     <div class="col-md-12">
+                                         <div class="form-group">
+                                             <label>Configuração de imagens de detalhes do Carro</label>
+                                         </div>
+
+                                         <?php if (isset($car->id)) : ?>
+                                             <div class="car_galery">
+                                                 <ul>
+                                                     <?php foreach ($imagensCarro as $i) : ?>
+                                                         <li>
+                                                             <img class="img-fluid" src="<?= SITE['root'] . DS . $i->imagem_thumb ?>" alt="<?= $i->id ?>">
+
+                                                             <div class="row">
+                                                                 <div class="col-md-12">
+                                                                     <input value="<?= isset($i->titulo) ? $i->titulo : "" ?>" type="text" name="title" class="form-control" placeholder="Título">
+                                                                 </div>
+                                                                 <div class="col-md-12">
+                                                                     <input value="<?= isset($i->descricao) ? $i->descricao : "" ?>" type="text" name="description" class="form-control" placeholder="Descrição">
+                                                                 </div>
+                                                                 <div class="col-md-12">
+                                                                     <select name="type_image" data-id="<?= $i->id ?>" class="form-control setTypeImage">
+                                                                         <option value="">--Selecione um tipo--</option>
+                                                                         <?php foreach ($tipos as $t) : ?>
+                                                                            <option value="<?=$t?>" <?= (isset($i->tipo) && $i->tipo == $t) ? 'selected' : '' ?>><?=$t?></option>
+                                                                         <?php endforeach ?> 
+                                                                     </select>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                     <?php endforeach ?>
+                                                 </ul>
                                              </div>
-                                         <?php endforeach ?>
-                                     <?php endif; ?>
+
+                                         <?php endif; ?>
+                                     </div>
                                  </div>
 
                              </div> <!-- /.card-body -->
