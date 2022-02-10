@@ -9,8 +9,8 @@ $(function () {
      */
     $('.setTypeImage').change(function () {
 
-        let title = $(this).parent().prev().prev().find('[name="title"]').val();
-        let description = $(this).parent().prev().find('[name="description"]').val();
+        let title = $(this).parent().parent().parent().siblings().find('[name="title"]').val();
+        let description = $(this).parent().parent().parent().siblings().find('[name="description"]').val();
         let id = $(this).data('id');
         let type = $(this).val();
 

@@ -11,7 +11,7 @@ select {
 }
 
 .car_galery {
-  width: 100%;
+  width: 80%;
 }
 .car_galery ul {
   list-style: none;
@@ -30,4 +30,12 @@ select {
   object-fit: cover;
   height: 150px;
   margin: 0 8px;
+}
+
+.emptyType {
+  filter: opacity(40%);
+  border: 2px dashed #f00;
+}
+.emptyType:hover {
+  filter: none;
 }
