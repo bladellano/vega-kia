@@ -192,7 +192,7 @@
                                                                  <div class="col-md-12">
 
                                                                      <div class="row">
-                                                                         <div class="col-md-10">
+                                                                         <div class="col-md-8">
                                                                              <select name="type_image" data-id="<?= $i->id ?>" class="form-control setTypeImage">
                                                                                  <option value="">--Selecione um tipo--</option>
                                                                                  <?php foreach ($tipos as $t) : ?>
@@ -200,9 +200,12 @@
                                                                                  <?php endforeach ?>
                                                                              </select>
                                                                          </div>
-                                                                         <div class="col-md-2">
+                                                                         <div class="col-md-4">
                                                                              <a onclick='$("[name=type_image][data-id=<?= $i->id ?>]").trigger("change");' class="btn btn-primary btn-sm">
                                                                                  <i class="fas fa-save"></i>
+                                                                             </a>
+                                                                             <a href="<?=SITE['root'] ?>/admin/cars/delete-image/<?=$i->id?>" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-sm btnDeleteImage">
+                                                                                 <i class="fas fa-trash"></i>
                                                                              </a>
                                                                          </div>
                                                                      </div><!-- ./row -->

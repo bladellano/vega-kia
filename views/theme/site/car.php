@@ -73,9 +73,9 @@
             <!-- Custom buttons -->
             <div class="row buttons_show_images_car">
                 <div class="col-md-6"><a href="<?= SITE['root'] ?>/agende-seu-teste-drive" class="btn btn-default btn-block">
-                        <img src="<?= SITE['root'] . DS ?>views/assets/site/images/steering-wheel.png" alt=""> Agende seu <b>Teste Drive</b></a></div>
+                        <img src="<?= SITE['root'] . DS ?>views/assets/site/images/steering-wheel.png" alt="SEM IMAGEM"> Agende seu <b>Teste Drive</b></a></div>
                 <div class="col-md-6"><a href="<?= SITE['root'] ?>/avalie-seu-usado" class="btn btn-default btn-block">
-                        <img src="<?= SITE['root'] . DS ?>views/assets/site/images/sedan-car-front.png" alt="">Avalie seu <b>usado</b></a></div>
+                        <img src="<?= SITE['root'] . DS ?>views/assets/site/images/sedan-car-front.png" alt="SEM IMAGEM">Avalie seu <b>usado</b></a></div>
             </div>
 
         </div>
@@ -141,34 +141,29 @@
 </div>
 <!-- /.container -->
 
+<!-- BANNERS 1 -->
 <div class="images_agrupadas">
     <div class="principal">
-        <p><?= $buildImagesFront['FULL_BANNER_1']['titulo']?></p>
-        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_1']['imagem']?>">
+        <p><?= $buildImagesFront['FULL_BANNER_1']['titulo'] ?? '--' ?></p>
+        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_1']['imagem'] ?>" alt="SEM IMAGEM">
     </div>
     <div class="menores">
         <ul>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_1']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_1']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_1']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_1']['descricao'] ?? '--' ?>">
+                <img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_1']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_1_1']['titulo'] ?? '--' ?></p>
             </li>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_2']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_2']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_2']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_2']['descricao'] ?? '--' ?>">
+                <img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_2']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_1_2']['titulo'] ?? '--' ?></p>
             </li>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_3']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_3']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_3']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_3']['descricao'] ?? '--' ?>">
+                <img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_3']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_1_3']['titulo'] ?? '--' ?></p>
             </li>
         </ul>
     </div>
 </div>
-
-<hr>
-
-
-<!-- Sua via com mais emoção -->
-<!-- <div class="img_fluid_car">
-    <img src="<?= asset("images/cerato/cerato01.jpg", "site", false) ?>" alt="TITULO">
-    <div class="legend">Sua vida com mais emoção.</div>
-</div> -->
 
 <hr>
 
@@ -177,18 +172,21 @@
 
     <div class="row">
         <div class="col-md-6">
-            <img class="img-responsive two_columns" src="<?= asset("images/cerato/cerato02.jpg", "site", false) ?>" alt="">
-            <h3>Tecnologia dos espelhos retrovisores</h3>
-            <p>
-                Para agregar à tecnologia de ponta do sedan, o Kia Cerato 2.0 possui espelhos retrovisores externos com rebatimento e regulagem elétrica, setas integradas em LED e sistema anti-embaçamento.
+            <div class="wrapImage">
+                <img class="img-responsive two_columns" src="<?= SITE('root') . DS . $buildImagesFront['BANNER_COLUMN_1']['imagem'] ?>" alt="SEM IMAGEM">
+            </div>
+            <h3 class="titleColumnTwoDetailCar"><?= $buildImagesFront['BANNER_COLUMN_1']['titulo'] ?? '--' ?></h3>
+            <p class="descriptionDetailCar">
+                <?= $buildImagesFront['BANNER_COLUMN_1']['descricao'] ?? '--' ?>
             </p>
         </div>
         <div class="col-md-6">
-            <img class="img-responsive two_columns" src="<?= asset("images/cerato/cerato03.jpg", "site", false) ?>" alt="">
-            <h3>Porta-malas espaçoso</h3>
-            <p>
-                Com capacidade de 520 litros, o porta-malas do Kia Cerato 2.0 está entre os maiores do segmento, com espaço suficiente para acomodar as bagagens de toda a família ou grupo de amigos.
-
+            <div class="wrapImage">
+                <img class="img-responsive two_columns" src="<?= SITE('root') . DS . $buildImagesFront['BANNER_COLUMN_2']['imagem'] ?>" alt="SEM IMAGEM">
+            </div>
+            <h3 class="titleColumnTwoDetailCar"><?= $buildImagesFront['BANNER_COLUMN_2']['titulo'] ?? '--' ?></h3>
+            <p class="descriptionDetailCar">
+                <?= $buildImagesFront['BANNER_COLUMN_2']['descricao'] ?? '--' ?>
             </p>
         </div>
     </div>
@@ -197,44 +195,42 @@
 <hr>
 
 <!-- Interior -->
-
+<!-- BANNERS 2 -->
 <div class="images_agrupadas">
     <div class="principal">
-        <p><?= $buildImagesFront['FULL_BANNER_1']['titulo']?></p>
-        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_1']['imagem']?>">
+        <p><?= $buildImagesFront['FULL_BANNER_2']['titulo'] ?? '--' ?></p>
+        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_2']['imagem'] ?>" alt="SEM IMAGEM">
     </div>
     <div class="menores">
         <ul>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_1']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_1']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_1']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_2_1']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_2_1']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_2_1']['titulo'] ?? '--' ?></p>
             </li>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_2']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_2']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_2']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_2_2']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_2_2']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_2_2']['titulo'] ?? '--' ?></p>
             </li>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_3']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_3']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_3']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_2_3']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_2_3']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_2_3']['titulo'] ?? '--' ?></p>
             </li>
         </ul>
     </div>
 </div>
 
-<!-- <div class="img_fluid_car">
-    <img src="<?= asset("images/cerato/cerato04.jpg", "site", false) ?>" alt="TITULO">
-    <div class="legend">Interior</div>
-</div> -->
-
 <hr>
-<!-- Uma colunas/imagens -->
+
+<!-- Uma coluna -->
 <div class="container">
 
     <div class="row">
         <div class="col-md-6">
-            <img class="img-responsive" src="<?= asset("images/cerato/cerato05.jpg", "site", false) ?>" alt="">
+            <div class="wrapImage">
+                <img class="img-responsive two_columns" src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_COLUMN']['imagem'] ?>" alt="SEM IMAGEM">
+            </div>
         </div>
         <div class="col-md-6">
-            <h3>Novo motor Nu-2 flex 2.0 L de 167 cv no etanol e 157 cv na gasolina.</h3>
-            <p>
-                O salto em tecnologia da nova geração do Kia Cerato 2.0 também se traduz em novo patamar de motorização. Sob o capô alongado do sedã está o motor Nu2 de quatro cilindros, 2.0 litros, flex, 16 válvulas. Com gasolina, o novo motor desenvolve até 157 cv a 6.200 rpm e torque de 19,2kgm a 4.700 rpm. Com etanol, a potência sobe para 167 cv a 6.200 rpm, com torque de 20,6 kgm a 4.700 rpm.
+            <h3 class="titleColumnDetailCar"><?= $buildImagesFront['FULL_BANNER_COLUMN']['titulo'] ?? '--' ?></h3>
+            <p class="descriptionDetailCar">
+                <?= $buildImagesFront['FULL_BANNER_COLUMN']['descricao'] ?? '--' ?>
             </p>
         </div>
     </div>
@@ -243,30 +239,26 @@
 <hr>
 
 <!-- Segurança -->
-
+<!-- Banners 3 -->
 <div class="images_agrupadas">
     <div class="principal">
-        <p><?= $buildImagesFront['FULL_BANNER_1']['titulo']?></p>
-        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_1']['imagem']?>">
+        <p><?= $buildImagesFront['FULL_BANNER_3']['titulo'] ?? '--' ?></p>
+        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_3']['imagem'] ?>" alt="SEM IMAGEM">
     </div>
     <div class="menores">
         <ul>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_1']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_1']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_1']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_3_1']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_3_1']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_3_1']['titulo'] ?? '--' ?></p>
             </li>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_2']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_2']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_2']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_3_2']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_3_2']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_3_2']['titulo'] ?? '--' ?></p>
             </li>
-            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_1_3']['desricao']?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_1_3']['imagem']?>">
-                <p><?= $buildImagesFront['BANNER_1_3']['titulo']?></p>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_3_3']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_3_3']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_3_3']['titulo'] ?? '--' ?></p>
             </li>
         </ul>
     </div>
 </div>
-<!-- <div class="img_fluid_car">
-    <img src="<?= asset("images/cerato/cerato06.jpg", "site", false) ?>" alt="TITULO">
-    <div class="legend">Segurança</div>
-</div> -->
 
 <!-- Versões -->
 
@@ -274,7 +266,6 @@
     <div class="container">
         <h2>Versões</h2>
         <hr>
-
         <!-- Tabs -->
         <ul class="nav nav-tabs custom_car" role="tablist">
             <li class="nav-item active">
@@ -293,7 +284,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <img class="img-responsive" src="<?= SITE['root'] . DS . $car->imagem ?>" alt="">
+                            <img class="img-responsive" src="<?= SITE['root'] . DS . $car->imagem ?>" alt="SEM IMAGEM">
                         </div>
                         <div class="col-md-6 text-left">
 
@@ -332,7 +323,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <img class="img-responsive" src="<?= SITE['root'] . DS . $car->imagem ?>" alt="">
+                            <img class="img-responsive" src="<?= SITE['root'] . DS . $car->imagem ?>" alt="SEM IMAGEM">
                         </div>
                         <div class="col-md-6 text-left">
 
@@ -374,7 +365,7 @@
 
         <div class="row buttons_show_images_car">
             <div class="col-md-12">
-                <a href="#" class="btn btn-default btn-block"><img src="<?= SITE['root'] . DS ?>views/assets/site/images/key.png" alt="">Tenho interesse</a>
+                <a href="#" class="btn btn-default btn-block"><img src="<?= SITE['root'] . DS ?>views/assets/site/images/key.png" alt="SEM IMAGEM">Tenho interesse</a>
             </div>
         </div>
 

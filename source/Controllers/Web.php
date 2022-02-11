@@ -85,7 +85,7 @@ class Web extends Controller
             return [
                 "tipo" => $item->tipo,
                 "titulo" => $item->titulo,
-                "desricao" => $item->descricao,
+                "descricao" => $item->descricao,
                 "imagem" => $item->imagem
             ];
         }, $carImages);

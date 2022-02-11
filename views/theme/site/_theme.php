@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<?= asset("css/flexslider.css", 'site'); ?>">
     <link rel="stylesheet" href="<?= asset("css/custom-flexslider.css", 'site'); ?>">
 
-    <link rel="stylesheet" href="<?= asset("css/style.css", 'site'); ?>">
+    <link rel="stylesheet" href="<?= asset("css/style.css", 'site',0); ?>">
     <link rel="stylesheet" href="<?= asset("css/style-mobile.css", 'site'); ?>">
     <title>VEGA KIA | <?= $title ?></title>
     <link rel="icon" type="image/png" sizes="96x96" href="<?= asset("images/favicon.png", 'site'); ?>">

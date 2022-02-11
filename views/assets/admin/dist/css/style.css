@@ -11,7 +11,7 @@ select {
 }
 
 .car_galery {
-  width: 80%;
+  width: 98%;
 }
 .car_galery ul {
   list-style: none;
@@ -23,7 +23,7 @@ select {
 .car_galery ul li {
   display: flex;
   margin-bottom: 8px;
-  flex: 1 1 400px;
+  width: 500px;
 }
 .car_galery ul li img {
   width: 150px;

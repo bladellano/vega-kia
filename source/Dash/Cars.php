@@ -22,6 +22,22 @@ class Cars extends DashController
         $this->modelos = (new CarModelo())->find()->order("nome ASC")->fetch(true) ?? [];
     }
 
+    public function deleteImage($data)
+    {
+        $image = (new CarImage())->findById($data['id']);
+        $idCar = $image->id_carro;
+
+        if (file_exists($image->imagem)) {
+            unlink($image->imagem);
+            unlink($image->imagem_thumb);
+        }
+
+        $image->destroy();
+
+        header("Location: " .  SITE['root'] . "/admin/cars/edit/{$idCar}");
+        exit;
+    }
+
     /**
      * Seta o tipo de imagem para exibir em detalhes do carro no front.
      * @param [type] $data
@@ -143,17 +159,17 @@ class Cars extends DashController
             'FULL_BANNER_1',
             'BANNER_1_1',
             'BANNER_1_2',
-            'BANNER_1_3',  
-            
+            'BANNER_1_3',
+
             'FULL_BANNER_2',
             'BANNER_2_1',
             'BANNER_2_2',
-            'BANNER_2_3', 
+            'BANNER_2_3',
 
             'FULL_BANNER_3',
             'BANNER_3_1',
             'BANNER_3_2',
-            'BANNER_3_3', 
+            'BANNER_3_3',
 
             'BANNER_COLUMN_1',
             'BANNER_COLUMN_2',
@@ -186,9 +202,28 @@ class Cars extends DashController
 
         $car = (new \Source\Models\Car())->findById($data['id']);
 
-        /** Substituição */
-        $uploadImg = new \CoffeeCode\Uploader\Image('storage/images', 'banners');
+        /** Imagens do Carro */
+        $uploadImg = new \CoffeeCode\Uploader\Image('storage/images', 'carros');
 
+        $files = normalizeFiles($_FILES['file']);
+
+        if (!$files[0]['error']) {
+
+            foreach ($files as $image) {
+
+                $carImage = new CarImage();
+
+                if (!in_array($image["type"], $uploadImg::isAllowed()))
+                    continue;
+
+                $carImage->imagem = $uploadImg->upload($image, md5(uniqid(time())));
+                $carImage->imagem_thumb = $uploadImg->upload($image, "thumb_" . md5(uniqid(time())), 600);
+                $carImage->id_carro = $car->id;
+                $carImage->save();
+            }
+        }
+
+        /** Substituição */
         if (!$_FILES['imageCar']['error'] && in_array($_FILES['imageCar']["type"], $uploadImg::isAllowed())) {
 
             if (file_exists($car->imagem)) {
