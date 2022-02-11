@@ -86,7 +86,7 @@
                                      <textarea name="descricao" id="descricao" cols="30" rows="5" class="summernote"><?= isset($car->descricao) ? $car->descricao : "" ?></textarea>
                                  </div>
 
-                                 <?php if (isset($car->id)) : ?>
+                                 <?php if (isset($car->id) && count($versoes) ) : ?>
 
                                      <?php foreach ($versoes as $ver) : ?>
 
@@ -143,9 +143,6 @@
                                          </div>
                                      </div>
                                  <?php endif; ?>
-
-
-
 
                                  <hr>
 
