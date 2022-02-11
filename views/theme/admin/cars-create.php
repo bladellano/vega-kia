@@ -43,36 +43,111 @@
 
                                  <!--  -->
                                  <div class="row">
-                                     <div class="form-group col-md-4">
-                                         <label for="nome_titulo">Título</label>
-                                         <input value="<?= isset($car->nome_titulo) ? $car->nome_titulo : "" ?>" type="text" class="form-control" id="nome_titulo" name="nome_titulo">
+                                     <div class="form-group col-md-3">
+                                         <label for="content">Imagem do Carro</label>
+                                         <div class="custom-file">
+                                             <input type="file" class="custom-file-input" id="customFile" name="imageCar" onchange="previewFile(this)">
+                                             <label class="custom-file-label" for="customFile">Choose file</label>
+                                         </div>
+                                         <?php if (isset($car->id)) : ?>
+                                             <img src="<?= SITE['root'] . DS . $car->imagem_thumb ?>" id="previewImg"></img>
+                                         <?php else : ?>
+                                             <img style="display:none" id="previewImg"></img>
+                                         <?php endif; ?>
                                      </div>
 
-                                     <div class="form-group col-md-4">
-                                         <label for="nome_subtitulo">Subtítulo</label>
-                                         <input value="<?= isset($car->nome_subtitulo) ? $car->nome_subtitulo : "" ?>" type="text" class="form-control" id="nome_subtitulo" name="nome_subtitulo">
+                                     <div class="col-md-9">
+                                         <div class="form-group col-md-12">
+                                             <label for="nome_titulo">Título (nome do carro)</label>
+                                             <input value="<?= isset($car->nome_titulo) ? $car->nome_titulo : "" ?>" type="text" class="form-control" id="nome_titulo" name="nome_titulo">
+                                         </div>
+
+                                         <div class="form-group col-md-12">
+                                             <label for="nome_subtitulo">Subtítulo (breve descrição do carro)</label>
+                                             <input value="<?= isset($car->nome_subtitulo) ? $car->nome_subtitulo : "" ?>" type="text" class="form-control" id="nome_subtitulo" name="nome_subtitulo">
+                                         </div>
+
+                                         <div class="form-group col-md-12">
+                                             <label for="id_modelo">Modelo</label>
+                                             <select name="id_modelo" id="id_modelo" class="form-control">
+                                                 <option value="">--</option>
+                                                 <?php foreach ($modelos as $m) : ?>
+                                                     <option value="<?= $m->id ?>" <?= (isset($car->id_modelo) && $car->id_modelo == $m->id) ? 'selected' : '' ?>><?= $m->nome ?></option>
+                                                 <?php endforeach ?>
+                                             </select>
+                                         </div>
                                      </div>
 
-                                     <div class="form-group col-md-4">
-                                         <label for="id_modelo">Modelo</label>
-                                         <select name="id_modelo" id="id_modelo" class="form-control">
-                                             <option value="">--</option>
-                                             <?php foreach ($modelos as $m) : ?>
-                                                 <option value="<?= $m->id ?>" <?= (isset($car->id_modelo) && $car->id_modelo == $m->id) ? 'selected' : '' ?>><?= $m->nome ?></option>
-                                             <?php endforeach ?>
-                                         </select>
-                                     </div>
 
-                                     <!-- <div class="form-group col-md-6">
-                                         <label for="versao">Versão</label>
-                                         <input value="<?= isset($car->versao) ? $car->versao : "" ?>" type="text" class="form-control" id="versao" name="versao" placeholder="Ex.: E.473">
-                                     </div> -->
                                  </div>
 
                                  <div class="form-group">
                                      <label for="descricao">Descrição</label>
                                      <textarea name="descricao" id="descricao" cols="30" rows="5" class="summernote"><?= isset($car->descricao) ? $car->descricao : "" ?></textarea>
                                  </div>
+
+                                 <?php if (isset($car->id)) : ?>
+
+                                     <?php foreach ($versoes as $ver) : ?>
+
+                                         <div class="row wrapVersions pb-2">
+
+                                             <div class="form-group col-md-4">
+                                                 <label for="nome">Versão</label>
+                                                 <input value="<?= isset($ver->nome) ? $ver->nome : "" ?>" type="text" class="form-control" id="nome" name="dataVersao[nome][]" placeholder="Ex.: E.473">
+                                             </div>
+                                             <div class="form-group col-md-4">
+                                                 <label for="ano">Ano</label>
+                                                 <input value="<?= isset($ver->ano) ? $ver->ano : "" ?>" type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000">
+                                             </div>
+                                             <div class="form-group col-md-4">
+                                                 <label for="modelo">Modelo</label>
+                                                 <input value="<?= isset($ver->modelo) ? $ver->modelo : "" ?>" type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000">
+                                             </div>
+                                             <div class="form-group col-md-12">
+                                                 <label for="descricao">Principais características</label>
+                                                 <textarea name="dataVersao[descricao][]" cols="30" rows="5" class="summernote">
+                                                     <?= isset($ver->descricao) ? $ver->descricao : "" ?>
+                                                    </textarea>
+                                             </div>
+                                             <div class="col-md-12">
+                                                 <a href="#" class="btn btn-default btn-sm btnAddWrapVersion"><i class="fas fa-plus"></i></a>
+                                                 <a href="#" class="btn btn-default btn-sm btnRemoveWrapVersion"><i class="fas fa-minus"></i></a>
+                                             </div>
+                                         </div>
+
+                                     <?php endforeach; ?>
+
+                                 <?php else : ?>
+                                     <div class="row wrapVersions pb-2">
+
+                                         <div class="form-group col-md-4">
+                                             <label for="nome">Versão</label>
+                                             <input type="text" class="form-control" id="nome" name="dataVersao[nome][]" placeholder="Ex.: E.473">
+                                         </div>
+                                         <div class="form-group col-md-4">
+                                             <label for="ano">Ano</label>
+                                             <input type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000">
+                                         </div>
+                                         <div class="form-group col-md-4">
+                                             <label for="modelo">Modelo</label>
+                                             <input type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000">
+                                         </div>
+                                         <div class="form-group col-md-12">
+                                             <label for="descricao">Principais características</label>
+                                             <textarea name="dataVersao[descricao][]" cols="30" rows="5" class="summernote"></textarea>
+                                         </div>
+                                         <div class="col-md-12">
+                                             <a href="#" class="btn btn-default btn-sm btnAddWrapVersion"><i class="fas fa-plus"></i></a>
+                                             <a href="#" class="btn btn-default btn-sm btnRemoveWrapVersion"><i class="fas fa-minus"></i></a>
+                                         </div>
+                                     </div>
+                                 <?php endif; ?>
+
+
+
+
+                                 <hr>
 
                                  <!--  -->
                                  <div class="row">
@@ -145,20 +220,6 @@
 
                                  </div>
 
-                                 <div class="form-group">
-                                     <label for="content">Imagem do Carro</label>
-                                     <div class="custom-file">
-                                         <input type="file" class="custom-file-input" id="customFile" name="imageCar" onchange="previewFile(this)">
-                                         <label class="custom-file-label" for="customFile">Choose file</label>
-                                     </div>
-                                 </div>
-
-                                 <?php if (isset($car->id)) : ?>
-                                     <img src="<?= SITE['root'] . DS . $car->imagem_thumb ?>" id="previewImg"></img>
-                                 <?php else : ?>
-                                     <img style="display:none" id="previewImg"></img>
-                                 <?php endif; ?>
-
                                  <hr>
 
                                  <div class="form-group">
@@ -196,7 +257,7 @@
                                                                              <select name="type_image" data-id="<?= $i->id ?>" class="form-control setTypeImage">
                                                                                  <option value="">--Selecione um tipo--</option>
                                                                                  <?php foreach ($tipos as $t) : ?>
-                                                                                     <option value="<?= $t ?>" <?= (isset($i->tipo) && $i->tipo == $t) ? 'selected' : '' ?> ><?= $t ?></option>
+                                                                                     <option value="<?= $t ?>" <?= (isset($i->tipo) && $i->tipo == $t) ? 'selected' : '' ?>><?= $t ?></option>
                                                                                  <?php endforeach ?>
                                                                              </select>
                                                                          </div>
@@ -204,7 +265,7 @@
                                                                              <a onclick='$("[name=type_image][data-id=<?= $i->id ?>]").trigger("change");' class="btn btn-primary btn-sm">
                                                                                  <i class="fas fa-save"></i>
                                                                              </a>
-                                                                             <a href="<?=SITE['root'] ?>/admin/cars/delete-image/<?=$i->id?>" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-sm btnDeleteImage">
+                                                                             <a href="<?= SITE['root'] ?>/admin/cars/delete-image/<?= $i->id ?>" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-sm btnDeleteImage">
                                                                                  <i class="fas fa-trash"></i>
                                                                              </a>
                                                                          </div>

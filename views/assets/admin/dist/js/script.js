@@ -5,6 +5,50 @@
 $(function () {
 
     /**
+     * Controla div de versões
+     */
+
+    $('body').delegate(".btnAddWrapVersion", "click", function (e) {
+        e.preventDefault();
+
+        let content = `
+        <div class="row wrapVersions pb-2">
+
+        <div class="form-group col-md-4">
+            <label for="nome">Versão</label>
+            <input type="text" class="form-control" id="nome" name="dataVersao[nome][]" placeholder="Ex.: E.473">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="ano">Ano</label>
+            <input type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="modelo">Modelo</label>
+            <input type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="descricao">Principais características</label>
+            <textarea name="dataVersao[descricao][]" cols="30" rows="5" class="summernoteVersion"></textarea>
+        </div>
+        <div class="col-md-12">
+            <a href="#" class="btn btn-default btn-sm btnAddWrapVersion"><i class="fas fa-plus"></i></a>
+            <a href="#" class="btn btn-default btn-sm btnRemoveWrapVersion"><i class="fas fa-minus"></i></a>
+        </div
+    </div>`;
+
+        $('.wrapVersions:last').after(content);
+
+        runSummernote('.wrapVersions:last textarea');
+    });
+
+    $('body').delegate(".btnRemoveWrapVersion", "click", function (e) {
+        e.preventDefault();
+        if ($('.wrapVersions').length > 1)
+            $('.wrapVersions:last').remove()
+    });
+
+
+    /**
      * Seta os tipos de imagens para detalhes do carro.
      */
     $('.setTypeImage').change(function () {
@@ -37,9 +81,7 @@ $(function () {
     bsCustomFileInput.init();
 
     //Editor 
-    $('.summernote').summernote({
-        height: 450,
-    });
+    runSummernote();
 
     /**
      * Datatables para tabelas que possuirem a class .table
@@ -95,5 +137,11 @@ function previewFile(e) {
         }
         reader.readAsDataURL(file);
     }
+}
+
+function runSummernote(element = '.summernote', height = 350) {
+    return $(element).summernote({
+        height: height,
+    });
 }
 

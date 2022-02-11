@@ -9,6 +9,7 @@ use Source\Models\Car\CarModelo;
 use Source\Dash\Controller as DashController;
 use Source\Models\Car\CarCombustivel;
 use Source\Models\Car\CarUnidadeLoja;
+use Source\Models\Car\CarVersao;
 
 class Cars extends DashController
 {
@@ -154,6 +155,7 @@ class Cars extends DashController
         $cidades = (new CarCidade())->find()->fetch(true) ?? [];
         $unidadesLojas = (new CarUnidadeLoja())->find()->fetch(true) ?? [];
         $combustiveis = (new CarCombustivel())->find()->fetch(true) ?? [];
+        $versoes = (new CarVersao())->find("id_carro = :id_carro", "id_carro={$data['id']}")->fetch(true) ?? [];
 
         $tipos = [
             'FULL_BANNER_1',
@@ -190,12 +192,30 @@ class Cars extends DashController
             "unidadesLojas" => $unidadesLojas,
             "combustiveis" => $combustiveis,
             "imagensCarro" => $carImages,
-            "tipos" => $tipos
+            "tipos" => $tipos,
+            "versoes" => $versoes
         ]);
     }
 
     public function update($data): void
     {
+
+        /**
+         * Criando versões
+         */
+        if (!empty($data['dataVersao']['nome'][0])) {
+
+            $normalizedFields = normalizeFiles($data['dataVersao'], 'nome');
+
+            foreach ($normalizedFields as $fields) {
+
+                $versao = new CarVersao();
+                $versao->id_carro = $data['id'];
+                foreach ($fields as $key => $value) $versao->{$key} = $value;
+                $versao->save();
+            }
+        }
+
 
         $data['valor'] = moneyToDB($data['valor']);
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['nome_titulo']);
@@ -236,6 +256,9 @@ class Cars extends DashController
         }
 
         unset($data['id']);
+        unset($data['title']);
+        unset($data['description']);
+        unset($data['type_image']);
 
         foreach ($data as $key => $value) $car->{$key} = $value;
 

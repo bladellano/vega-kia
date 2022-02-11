@@ -102,11 +102,11 @@ function convertDatePtbr($strdate)
     return $DateTime->format("d/m/Y H:i:s");
 }
 
-function normalizeFiles(&$files)
+function normalizeFiles(&$files, $name = 'name')
 {
     if (!count($files)) return [];
     $_files       = [];
-    $_files_count = count($files['name']);
+    $_files_count = count($files[$name]);
     $_files_keys  = array_keys($files);
 
     for ($i = 0; $i < $_files_count; $i++)
@@ -123,7 +123,7 @@ function normalizeFiles(&$files)
  * @param boolean $oneMoreLevel
  * @return void
  */
-function groupByColumn($inputArray, $nameColumn,$oneMoreLevel = true)
+function groupByColumn($inputArray, $nameColumn, $oneMoreLevel = true)
 {
     $resultMap = [];
 
@@ -131,12 +131,11 @@ function groupByColumn($inputArray, $nameColumn,$oneMoreLevel = true)
         if (!isset($resultMap[$data[$nameColumn]])) {
             $resultMap[$data[$nameColumn]] = [];
         }
-        if($oneMoreLevel):
+        if ($oneMoreLevel) :
             $resultMap[$data[$nameColumn]][] = $data;
-        else:
+        else :
             $resultMap[$data[$nameColumn]] = $data;
         endif;
-
     }
 
     return $resultMap;

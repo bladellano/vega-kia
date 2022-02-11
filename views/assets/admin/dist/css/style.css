@@ -10,6 +10,12 @@ select {
   background-color: #fffcc8 !important;
 }
 
+.wrapVersions {
+  background-color: #ccc;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
 .car_galery {
   width: 98%;
 }
