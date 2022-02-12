@@ -1,5 +1,5 @@
 <?php
-//FOCO
+
 use Source\Models\Car;
 
 function getCarsMenu(): array

@@ -5,6 +5,7 @@ namespace Source\Controllers;
 use Source\Models\Banner;
 use Source\Models\Car;
 use Source\Models\Car\CarImage;
+use Source\Models\Car\CarVersao;
 
 /**
  * Class Web
@@ -28,10 +29,12 @@ class Web extends Controller
     public function home(): void
     {
         $banners = (new Banner)->find()->order("id DESC")->fetch(true) ?? [];
+        $cars = (new Car)->find()->order("id DESC")->fetch(true) ?? [];
 
         echo $this->view->render("theme/site/home", [
             "title" => "Home",
             "banners" => $banners,
+            "cars" => $cars
         ]);
     }
 
@@ -75,11 +78,30 @@ class Web extends Controller
             "newsCars" => $newsCars,
         ]);
     }
+
+    public function getCarHome($data)
+    {
+        $car = (new Car())->findById($data['id']);
+
+        echo json_encode([
+            "id" => $car->id,
+            "nome_titulo" => $car->nome_titulo,
+            "slug" => $car->slug,
+            "imagem_thumb" => $car->imagem_thumb,
+            "descricao" => $car->descricao
+        ]);
+
+        exit;
+    }
+
     public function getCar($data): void
     {
         $car = (new Car())->find("slug = :slug", "slug={$data['slug']}")->fetch();
 
         $carImages = (new CarImage())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
+        shuffle($carImages);
+
+        $versions = (new CarVersao())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
 
         $buildImagesFront = array_map(function ($item) {
             return [
@@ -96,7 +118,8 @@ class Web extends Controller
             "title" => "Novos",
             "car" => $car,
             "carImages" => $carImages,
-            "buildImagesFront" => $buildImagesFront
+            "buildImagesFront" => $buildImagesFront,
+            "versions" => $versions
         ]);
     }
 

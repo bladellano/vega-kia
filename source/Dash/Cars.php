@@ -203,6 +203,12 @@ class Cars extends DashController
         /**
          * Criando versões
          */
+
+         /** Apaga as versões que já existem */
+        $carVersions = (new CarVersao())->find("id_carro = :id_carro", "id_carro={$data['id']}")->fetch(true) ?? [];
+        foreach ($carVersions as $ver)
+            $ver->destroy();
+
         if (!empty($data['dataVersao']['nome'][0])) {
 
             $normalizedFields = normalizeFiles($data['dataVersao'], 'nome');
@@ -211,7 +217,7 @@ class Cars extends DashController
 
                 $versao = new CarVersao();
                 $versao->id_carro = $data['id'];
-                foreach ($fields as $key => $value) $versao->{$key} = $value;
+                foreach ($fields as $key => $value) $versao->{$key} = trim($value);
                 $versao->save();
             }
         }
@@ -259,6 +265,7 @@ class Cars extends DashController
         unset($data['title']);
         unset($data['description']);
         unset($data['type_image']);
+        unset($data['dataVersao']);
 
         foreach ($data as $key => $value) $car->{$key} = $value;
 

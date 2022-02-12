@@ -78,7 +78,6 @@
                                          </div>
                                      </div>
 
-
                                  </div>
 
                                  <div class="form-group">
@@ -86,7 +85,7 @@
                                      <textarea name="descricao" id="descricao" cols="30" rows="5" class="summernote"><?= isset($car->descricao) ? $car->descricao : "" ?></textarea>
                                  </div>
 
-                                 <?php if (isset($car->id) && count($versoes) ) : ?>
+                                 <?php if (isset($car->id) && count($versoes)) : ?>
 
                                      <?php foreach ($versoes as $ver) : ?>
 
@@ -274,7 +273,12 @@
                                                      <?php endforeach ?>
                                                  </ul>
                                              </div>
+                                         <?php endif; ?>
 
+                                         <?php if (!count($imagensCarro)) : ?>
+                                             <div class="alert alert-warning" role="alert">
+                                                 Nenhuma imagem para o carro.
+                                             </div>
                                          <?php endif; ?>
                                      </div>
                                  </div>

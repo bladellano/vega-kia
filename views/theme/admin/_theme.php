@@ -980,7 +980,6 @@
 <!-- ChartJS -->
 <script src="<?=asset("plugins/chart.js/Chart.min.js",'admin');?>"></script>
 
-<!-- FOCO poderá ser utilizado no futuro -->
 <!-- Sparkline -->
 <!-- <script src="plugins/sparklines/sparkline.js"></script> -->
 <!-- <script src="<?=asset("plugins/sparklines/sparkline.js",'admin');?>"></script> -->
@@ -1008,7 +1007,6 @@
 <!-- Script customizado -->
 <script src="<?=asset("dist/js/script.js",'admin');?>"></script>
 
-<!-- FOCO poderá ser utilizado no futuro -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!-- <script src="/dist/js/pages/dashboard.js"></script> -->
 <!-- <script src="<?=asset("dist/js/pages/dashboard.js",'admin');?>"></script> -->

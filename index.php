@@ -28,6 +28,8 @@ $app->get("/semi-novos", "Web:semiNew", "web.seminew");
 $app->get("/novos", "Web:news", "web.news");
 $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
 
+$app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");
+
 /**
  * ADMIN
  */

@@ -11,7 +11,6 @@ class CarImage extends DataLayer
         parent::__construct("vc_imagens_carros", ["imagem", "imagem_thumb", "id_carro"]);
     }
 
-    //FOCO
     public function save_(): bool
     {
 

@@ -2,6 +2,33 @@ $(function () {
 
 
     /**
+     * Exibe os detalhes do carro na página inicial com o click
+     */
+
+    $('.btnShowCar').click(function (e) {
+
+        let idCar = e.currentTarget.dataset.idCar;
+
+        $.ajax({
+            type: "GET",
+            url: `/get-car-home/${idCar}`,
+            dataType: "JSON",
+            success: function (su) {
+
+                if (su.id) {
+
+                    $('.wrap_target_car h2').text(su.nome_titulo);
+                    $('.wrap_target_car img').attr('src', su.imagem_thumb);
+                    $('.wrap_target_car .itens_car').html(su.descricao);
+                    $('.wrap_target_car a').attr('href',`novos/${su.slug}`);
+                }
+
+            }
+        });
+
+    });
+
+    /**
      * Botão para abrir/fechar o pop-up
      * Popula o pop-up com informação do carro
      */
@@ -16,7 +43,7 @@ $(function () {
         let content = $(this).data('content');
         let image = $(this).find('img')[0].src;
 
-        $('.pop_con img').attr('src',image);
+        $('.pop_con img').attr('src', image);
         $('.pop_con dl dt').text(title);
         $('.pop_con dl dd').text(content);
 

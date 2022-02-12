@@ -8,10 +8,10 @@
             <span class="fa fa-times"></span>
         </a>
         <div class="pop_con">
-            <img src="https://picsum.photos/id/237/200/300">
+            <img src="" alt="SEM IMAGE">
             <dl>
-                <dt>Ar-Condicionado</dt>
-                <dd>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio dicta voluptas, tempora suscipit cumque soluta perspiciatis nostrum iure atque molestiae ducimus architecto repudiandae possimus qui perferendis, maiores quis nisi exercitationem.</dd>
+                <dt>...</dt>
+                <dd>...</dd>
             </dl>
         </div>
     </div>
@@ -194,7 +194,6 @@
 
 <hr>
 
-<!-- Interior -->
 <!-- BANNERS 2 -->
 <div class="images_agrupadas">
     <div class="principal">
@@ -218,7 +217,7 @@
 
 <hr>
 
-<!-- Uma coluna -->
+<!-- UMA COLUNA -->
 <div class="container">
 
     <div class="row">
@@ -238,8 +237,7 @@
 
 <hr>
 
-<!-- Segurança -->
-<!-- Banners 3 -->
+<!-- BANNERS 3 -->
 <div class="images_agrupadas">
     <div class="principal">
         <p><?= $buildImagesFront['FULL_BANNER_3']['titulo'] ?? '--' ?></p>
@@ -260,106 +258,61 @@
     </div>
 </div>
 
-<!-- Versões -->
+<!-- VERSÕES -->
 
 <section id="vega-kia" class="section_kia">
     <div class="container">
         <h2>Versões</h2>
         <hr>
+
         <!-- Tabs -->
         <ul class="nav nav-tabs custom_car" role="tablist">
-            <li class="nav-item active">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#e473" role="tab" aria-controls="e473" aria-selected="true">E.473</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#e497" role="tab" aria-controls="e497" aria-selected="false">E.497</a>
-            </li>
+
+            <?php
+            $i = 0;
+            foreach ($versions as $v) : ?>
+                <?php $active = $i == 0 ? "active" : ""; ?>
+                <li class="nav-item <?= $active ?>">
+                    <a class="nav-link <?= $active ?>" id="<?= str_replace(".", "", $v->nome) ?>-tab" data-toggle="tab" href="#<?= str_replace(".", "", $v->nome) ?>">
+                        <?= $v->nome ?>
+                    </a>
+                </li>
+            <?php $i++;
+            endforeach; ?>
+
         </ul>
 
         <div class="tab-content">
 
-            <div class="tab-pane fade active in" id="e473" role="tabpanel" aria-labelledby="e473-tab">
+            <?php
+            $i = 0;
+            foreach ($versions as $v) : ?>
+                <?php $active = $i == 0 ? "active in" : ""; ?>
+                <div class="tab-pane fade <?= $active ?>" id="<?= str_replace(".", "", $v->nome) ?>" role="tabpanel" aria-labelledby="<?= str_replace(".", "", $v->nome) ?>-tab">
 
-                <div class="content_tab">
+                    <div class="content_tab">
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img class="img-responsive" src="<?= SITE['root'] . DS . $car->imagem ?>" alt="SEM IMAGEM">
-                        </div>
-                        <div class="col-md-6 text-left">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="img-responsive" src="<?= SITE['root'] . DS . $car->imagem ?>" alt="SEM IMAGEM">
+                            </div>
+                            <div class="col-md-6 text-left">
 
-                            <div class="title_car_details">Cerato E.473</div>
+                                <div class="title_car_details"><?= $car->nome_titulo ?> <?= $v->nome ?></div>
 
-                            <div class="sub_title_car">Ano 2021, Modelo 2022</div>
+                                <div class="sub_title_car">Ano <?= $v->ano ?>, Modelo <?= $v->modelo ?></div>
 
-                            <div class="sub_title_car">Principais Características</div>
+                                <div class="sub_title_car">Principais Características</div>
 
-                            <li> Motor 2.0L Flex, 4 Cil, 16V, Dual CVVT, 167cv no etanol</li>
-                            <li> Transmissão Automática de 6 velocidades com opção de trocas sequenciais</li>
-                            <li> Ar-condicionado manual com filtro Antipólen</li>
-                            <li> Saída de ar condicionado para o banco traseiro</li>
-                            <li> Volante multifuncional com controle de som, computador de bordo e piloto automático</li>
-                            <li> Escapamento com ponteira cromada</li>
-                            <li> Espelhos retrovisores externos c/ regulagem elétrica</li>
-                            <li> Assistente de partida em rampa – HAC</li>
-                            <li> Câmera de ré com gráfico auxiliar de manobra e visor no sistema multimídia</li>
-                            <li> Controle de Estabilidade – ESC</li>
-                            <li> Controle de Tração – TCS</li>
-                            <li> Luz diurna de navegação em LED (DRL)</li>
-                            <li> Sensor de monitoramento de pressão dos pneus – TPMS</li>
-                            <li> Sistema de condução Economy / Comfort</li>
-                            <li> Sistema de condução "SPORT" nas trocas sequenciais</li>
-                            <li> Sistema Multimídia, com tela de 8" sensível ao toque (Apple CarPlay e Android Auto)</li>
+                                <?= $v->descricao ?>
 
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.content_tab -->
 
-            </div>
-            <div class="tab-pane fade" id="e497" role="tabpanel" aria-labelledby="e497-tab">
-
-                <div class="content_tab">
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img class="img-responsive" src="<?= SITE['root'] . DS . $car->imagem ?>" alt="SEM IMAGEM">
-                        </div>
-                        <div class="col-md-6 text-left">
-
-                            <div class="title_car_details">Cerato E.497</div>
-
-                            <div class="sub_title_car">Ano 2021, Modelo 2022</div>
-
-                            <div class="sub_title_car">Principais Características</div>
-
-                            <li> Motor 2.0L Flex, 4 Cil, 16V, Dual CVVT, 167cv no etanol</li>
-                            <li> Transmissão Automática de 6 velocidades com opção de trocas sequenciais</li>
-                            <li> Ar-condicionado automático digital Dual Zone com filtro Antipólen</li>
-                            <li> Bancos com revestimento em Altaica</li>
-                            <li> Bancos dianteiros com aquecimento em três níveis</li>
-                            <li> Botão "Start/Stop" para partida do motor por reconhecimento da chave "Smart Key"</li>
-                            <li> Chave "Smart Key" para travamento e abertura das portas e acionamento do alarme a distância</li>
-                            <li> Paddle shift</li>
-                            <li> Saída de ar condicionado para o banco traseiro</li>
-                            <li> Volante multifuncional com controle de som, computador de bordo e piloto automático</li>
-                            <li> Escapamento com ponteira cromada</li>
-                            <li> Espelhos retrovisores externos c/ rebatimento e regulagem elétrica e setas integradas em LED</li>
-                            <li> Lanternas de posicionamento dianteiras e traseiras em LED</li>
-                            <li> Assistente de partida em rampa – HAC</li>
-                            <li> Câmera de ré com gráfico auxiliar de manobra e visor no sistema multimídia</li>
-                            <li> Controle de Estabilidade – ESC</li>
-                            <li> Controle de Tração – TCS</li>
-                            <li> Luz diurna de navegação em LED (DRL)</li>
-                            <li> Sensor de monitoramento de pressão dos pneus – TPMS</li>
-                            <li> Sistema de condução Economy/ Smart / Comfort</li>
-                            <li> Sistema de condução "SPORT" nas trocas sequenciais</li>
-                            <li> Sistema Multimidia, com tela de 8" sensível ao toque (Apple CarPlay e Android Auto)</li>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.content_tab -->
-            </div>
+            <?php $i++;
+            endforeach; ?>
 
         </div>
 

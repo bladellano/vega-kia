@@ -5,12 +5,12 @@
     <div id="slider" class="flexslider">
         <ul class="slides">
 
-        <?php foreach($banners as $b): ?>
-            <li>
-                <img src="<?=$b->image?>" />
-            </li>
-         <?php endforeach; ?>   
-   
+            <?php foreach ($banners as $b) : ?>
+                <li>
+                    <img src="<?= $b->image ?>" />
+                </li>
+            <?php endforeach; ?>
+
         </ul>
     </div>
 
@@ -26,12 +26,12 @@
     <div id="carousel" class="flexslider d-sm-none">
         <ul class="slides">
 
-        <?php foreach($banners as $b): ?>
-            <li>
-                <img src="<?=$b->image_thumb?>" />
-            </li>
-         <?php endforeach; ?>  
-            
+            <?php foreach ($banners as $b) : ?>
+                <li>
+                    <img src="<?= $b->image_thumb ?>" />
+                </li>
+            <?php endforeach; ?>
+
         </ul>
     </div>
 </div>
@@ -58,51 +58,28 @@
 
                         <div class="wrap_cards_car">
 
-                            <div class="wrap_card_car">
-                                <div class="card_car">
-                                    <img class="img-responsive" src="views/assets/site/images/1637093221182.jpeg" alt="">
-                                    <h3>Kia Carnival</h3>
-                                </div>
-                            </div>
+                            <ul>
+                                <?php foreach ($cars as $c) : ?>
+                                    <li class="btnShowCar" data-id-car="<?= $c->id ?>">
+                                        <img class="img-responsive" src="<?= $c->imagem_thumb ?>" alt="SEM IMAGEM">
+                                        <p><?= $c->nome_titulo ?></p>
+                                    </li>
+                                <?php endforeach; ?>
 
-                            <div class="wrap_card_car">
-                                <div class="card_car">
-                                    <img class="img-responsive" src="views/assets/site/images/1637093221182.jpeg" alt="">
-                                    <h3>Kia Carnival</h3>
-                                </div>
-                            </div>
+                            </ul>
 
-                            <div class="wrap_card_car">
-                                <div class="card_car">
-                                    <img class="img-responsive" src="views/assets/site/images/1637093221182.jpeg" alt="">
-                                    <h3>Kia Carnival</h3>
-                                </div>
-                            </div>
-
-                            <div class="wrap_card_car">
-                                <div class="card_car">
-                                    <img class="img-responsive" src="views/assets/site/images/1637093221182.jpeg" alt="">
-                                    <h3>Kia Carnival</h3>
-                                </div>
-                            </div>
                         </div>
-
 
                     </div>
                     <div class="col-md-8">
                         <div class="wrap_target_car">
-                            <h2>Cerato E.473</h2>
-                            <img class="img-responsive" src="views/assets/site/images/car_target.png" alt="">
-                            <ul class="itens_car">
-                                <li> Abertura interna do porta-malas e da tampa de combustível</li>
-                                <li> Ar-condicionado manual com filtro Antipólen</li>
-                                <li> Banco do motorista com ajustes de inclinação do encosto, altura e distância dos
-                                    assentos</li>
-                                <li> Banco do passageiro com bolsa porta-revistas no encosto</li>
-                                <li> Banco traseiro bipartido (60/40) e rebatível para ampliação do porta-malas</li>
-                            </ul>
+                            <h2><?= $cars[0]->nome_titulo ?></h2>
+                            <img class="img-responsive" src="<?= $cars[0]->imagem_thumb ?>" alt="">
+                            <div class="itens_car">
+                                <?= $cars[0]->descricao ?>
+                            </div>
 
-                            <button class="btn btn-lg btn--veja--mais">Veja mais detalhes</button>
+                            <a href="novos/<?= $cars[0]->slug ?>" class="btn btn-lg btn--veja--mais">Veja mais detalhes</a>
 
                         </div>
 
@@ -187,21 +164,21 @@
                 <div class="card_services">
                     <img src="views/assets/site/images/servicos01.png" alt="">
                     <h3>Assitência técnica</h3>
-                    <a href="<?=SITE['root']?>/assistencia-tecnica" class="btn btn-default btn-lg">Agende aqui</a>
+                    <a href="<?= SITE['root'] ?>/assistencia-tecnica" class="btn btn-default btn-lg">Agende aqui</a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card_services">
                     <img src="views/assets/site/images/servicos03.png" alt="">
                     <h3>Peças e acessórios</h3>
-                    <a href="<?=SITE['root']?>/pecas-e-acessorios" class="btn btn-default btn-lg">Compre aqui</a>
+                    <a href="<?= SITE['root'] ?>/pecas-e-acessorios" class="btn btn-default btn-lg">Compre aqui</a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card_services">
                     <img src="views/assets/site/images/servicos02.png" alt="">
                     <h3>Revisão preço fechado</h3>
-                    <a href="<?=SITE['root']?>/revisao-preco-fechado" class="btn btn-default btn-lg">Agende aqui</a>
+                    <a href="<?= SITE['root'] ?>/revisao-preco-fechado" class="btn btn-default btn-lg">Agende aqui</a>
                 </div>
             </div>
         </div>
@@ -214,7 +191,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="card_consorcio_seguros consorcio" data-url="<?=SITE['root']?>/consorcio-kia">
+                <div class="card_consorcio_seguros consorcio" data-url="<?= SITE['root'] ?>/consorcio-kia">
                     <div class="legenda">
                         <h5>Consórcio KIA</h5>
                         <p>Com parcelas que cabem no seu bolso.</p>
@@ -222,7 +199,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card_consorcio_seguros seguro" data-url="<?=SITE['root']?>/seguros">
+                <div class="card_consorcio_seguros seguro" data-url="<?= SITE['root'] ?>/seguros">
                     <div class="legenda">
                         <h5>Seguros Vega Kia</h5>
                         <p>A melhor proposta para seu perfil.</p>
@@ -232,4 +209,3 @@
         </div>
     </div>
 </section>
-
