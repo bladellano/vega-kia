@@ -105,7 +105,7 @@ class Web extends Controller
 
             echo $this->ajaxResponse("message", [
                 "type" => "error",
-                "message" => "Problema ao enviar e-mail!"
+                "message" => $mailer->ErrorInfo,
             ]);
             return;
         }

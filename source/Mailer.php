@@ -17,9 +17,6 @@ class Mailer
 	public function __construct($fromAdress, $fromName, $subject, $body = "")
 	{
 
-		// var_dump(MAIL);
-
-		// echo '<pre>$fromAdress<br />'; print_r($fromAdress); echo '</pre>';die;
 		$this->mail = new PHPMailer();
 		$this->mail->isSMTP();
 		$this->mail->SMTPOptions = array(
