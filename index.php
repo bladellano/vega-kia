@@ -30,7 +30,7 @@ $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
 
 $app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");
 
-$app->post("/mail/send-form-contact", "Web:sendFormContact", "web.sendformcontact");
+$app->post("/send-form-contact_", "Web:sendFormContact", "web.sendformcontact");
 
 /**
  * ADMIN
