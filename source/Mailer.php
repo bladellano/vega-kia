@@ -26,7 +26,7 @@ class Mailer
 				'allow_self_signed' => true
 			)
 		);
-		$this->mail->SMTPDebug = 1;
+		$this->mail->SMTPDebug = 0;
 		$this->mail->Debugoutput = 'html';
 		$this->mail->Host = Mailer::HOST;
 		$this->mail->Port = 587;
