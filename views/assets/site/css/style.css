@@ -627,7 +627,6 @@ footer p.icon_socials a {
 }
 
 /* Card car*/
-/* FOCO */
 
 .wrap_cards_car ul {
   list-style: none;
@@ -756,10 +755,11 @@ footer p.icon_socials a {
 }
 
 .wrap_form input[type="text"],
+.wrap_form select,
 .wrap_form textarea {
   background-color: #000;
   width: 100%;
-  padding: 10px;
+  padding: 6px;
   margin-bottom: 10px;
   display: block;
   border: 1px solid #fff;

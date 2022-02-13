@@ -14,6 +14,10 @@
 
     <link rel="stylesheet" href="<?= asset("css/style.css", 'site',0); ?>">
     <link rel="stylesheet" href="<?= asset("css/style-mobile.css", 'site'); ?>">
+
+    <link rel="stylesheet" href="<?=asset("css/message.css"); ?>">
+    <link rel="stylesheet" href="<?=asset("css/load.css"); ?>">
+
     <title>VEGA KIA | <?= $title ?></title>
     <link rel="icon" type="image/png" sizes="96x96" href="<?= asset("images/favicon.png", 'site'); ?>">
 </head>
@@ -219,6 +223,9 @@
 
     <script src="<?= asset("js/jquery.flexslider.js", 'site'); ?>"></script>
     <script src="<?= asset("js/script.js", 'site'); ?>"></script>
+
+    <?= $v->section("scripts"); ?>
+    
 </body>
 
 </html>

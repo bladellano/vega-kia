@@ -40,7 +40,8 @@ class Cars extends DashController
     }
 
     /**
-     * Seta o tipo de imagem para exibir em detalhes do carro no front.
+     * Seta o tipo de imagem para exibir 
+     * em detalhes do carro no front.
      * @param [type] $data
      * @return string
      */

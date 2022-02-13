@@ -2,6 +2,7 @@
 
 namespace Source\Controllers;
 
+use Source\Mailer;
 use Source\Models\Banner;
 use Source\Models\Car;
 use Source\Models\Car\CarImage;
@@ -77,6 +78,44 @@ class Web extends Controller
             "title" => "Novos",
             "newsCars" => $newsCars,
         ]);
+    }
+
+    /**
+     * Form de contato principal do site
+     * @param [type] $data
+     * @return void
+     */
+    public function sendFormContact($data)
+    {
+        $data['ciencia'] = (isset($data['ciencia'])) ? "SIM" : "NÃO";
+
+        if (in_array("", $data) || $data['ciencia'] == "NÃO") {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos"
+            ]);
+            return;
+        }
+
+        $message = $this->view->render("theme/site/email-sent", ["data" => $data]);
+
+        $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato", utf8_decode($message));
+
+        if (!$mailer->send()) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Problema ao enviar e-mail!"
+            ]);
+            return;
+        }
+
+        flash("success", "Enviado com sucesso!");
+
+        echo $this->ajaxResponse("redirect", [
+            "url" => $this->router->route("web.home")
+        ]);
+        return;
     }
 
     public function getCarHome($data)

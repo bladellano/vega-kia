@@ -16,14 +16,15 @@
 
     <div class="custom-navigation">
         <a href="#" class="flex-prev">
-            <img src="views/assets/site/images/left.png">
+            <img src="views/assets/site/images/seta-com-sombra.png">
         </a>
         <a href="#" class="flex-next">
-            <img src="views/assets/site/images/right.png">
+            <img style="transform: rotateY(180deg);" src="views/assets/site/images/seta-com-sombra.png">
         </a>
     </div>
 
-    <div id="carousel" class="flexslider d-sm-none">
+    <!-- Por enquanto suspenso -->
+    <!-- <div id="carousel" class="flexslider d-sm-none">
         <ul class="slides">
 
             <?php foreach ($banners as $b) : ?>
@@ -33,7 +34,7 @@
             <?php endforeach; ?>
 
         </ul>
-    </div>
+    </div> -->
 </div>
 
 <!-- Vega-kia -->
@@ -42,7 +43,6 @@
         <h2>Vega Kia</h2>
         <hr>
         <h4>Com apenas um clique e conheça nossa linha de veículos e faça uma cotação. Vem que sai negócio!</h4>
-
     </div>
 </section>
 
@@ -90,62 +90,7 @@
 
             <div class="col-md-4">
 
-                <div class="wrap_form">
-                    <h3>Tenho interesse nesse modelo.</h3>
-                    <h4>Faça uma cotação agora mesmo, para isso, preencha o formulário abaixo que entraremos em
-                        contato rapidamente.</h4>
-                    <p>*Campo obrigatórios</p>
-                    <input type="text" placeholder="*Nome">
-                    <input type="text" placeholder="*Email">
-                    <input type="text" placeholder="*Serviço de interesse">
-                    <input type="text" placeholder="Telefone">
-                    <textarea name="" id="" cols="30" rows="4" placeholder="*Mensagem"></textarea>
-                    <div class="row">
-                        <div class="col-md-6">Financiamento:
-
-                            <label class="interest-options">
-                                <input type="radio" class="interest-options" name="financiamento" value="SIM">
-                                <i class="fa fa-thumbs-o-up"></i>
-                                <p>SIM</p>
-                            </label>
-
-                            <label class="interest-options">
-                                <input type="radio" class="interest-options" name="financiamento" value="NÃO">
-                                <i class="fa fa-thumbs-o-down"></i>
-                                <p>NÃO</p>
-                            </label>
-
-                        </div>
-
-                        <div class="col-md-6">
-                            <p> Usar veículo usado como parte do pagamento? </p>
-
-                            <label class="interest-options">
-                                <input type="radio" class="interest-options" name="usar_veiculo_usado" value="SIM">
-                                <i class="fa fa-thumbs-o-up"></i>
-                                <p>SIM</p>
-                            </label>
-
-                            <label class="interest-options">
-                                <input type="radio" class="interest-options" name="usar_veiculo_usado" value="NÃO">
-                                <i class="fa fa-thumbs-o-down"></i>
-                                <p>NÃO</p>
-                            </label>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <p class="text-justify"><input type="checkbox" name="" id=""> Ao enviar esses dados,
-                                declaro ciência que meus dados pessoais serão tratados
-                                conforme a Política de Privacidade.</p>
-                        </div>
-                    </div>
-                    <button class="btn btn-default btn-lg btn-block">Enviar mensagem</button>
-
-                </div>
-                <!-- End wrap_form -->
+                <?php include('form-contact-dark.php') ?>
 
             </div>
         </div>

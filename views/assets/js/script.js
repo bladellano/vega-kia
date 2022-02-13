@@ -4,14 +4,14 @@ $(function () {
     /**
      * Aplica máscara para formato monetário
      */
-    $('.money').mask('#.##0,00', { reverse: true });
 
-    $(function () {
-        $('.toggle-one').bootstrapToggle({
-            on: 'Sim',
-            off: 'Não'
-        });
-    })
+    // $('.money').mask('#.##0,00', { reverse: true });
+
+    // $('.toggle-one').bootstrapToggle({
+    //     on: 'Sim',
+    //     off: 'Não'
+    // });
+    
 });
 
 /**
