@@ -1,4 +1,4 @@
-<form action="<?= SITE['root'] ?>/contact-form-submission" method="POST">
+<form action="<?= SITE['root'] ?>/form-submission" method="POST">
 
     <div class="wrap_form">
         <h3>Tenho interesse nesse modelo.</h3>
