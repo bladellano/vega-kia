@@ -17,9 +17,9 @@ class Mailer
 	public function __construct($fromAdress, $fromName, $subject, $body = "")
 	{
 
-		var_dump(MAIL);
+		// var_dump(MAIL);
 
-		echo '<pre>$fromAdress<br />'; print_r($fromAdress); echo '</pre>';die;
+		// echo '<pre>$fromAdress<br />'; print_r($fromAdress); echo '</pre>';die;
 		$this->mail = new PHPMailer();
 		$this->mail->isSMTP();
 		$this->mail->SMTPOptions = array(
@@ -29,7 +29,7 @@ class Mailer
 				'allow_self_signed' => true
 			)
 		);
-		$this->mail->SMTPDebug = 0;
+		$this->mail->SMTPDebug = 1;
 		$this->mail->Debugoutput = 'html';
 		$this->mail->Host = Mailer::HOST;
 		$this->mail->Port = 587;
