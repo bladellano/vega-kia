@@ -420,6 +420,11 @@ footer h4 {
   font-weight: bold;
 }
 
+footer .logoVegaKia {
+
+  filter: invert(100%);
+  width: 200px;
+}
 footer .logo_kia {
   filter: invert(100%);
   width: 110px;
@@ -776,6 +781,35 @@ footer p.icon_socials a {
 
 /* Custom header info */
 
+.header_info .row.elementsRight div {
+  display: flex;
+  justify-content: center;
+}
+.header_info .row.elementsRight div:first-child {
+  justify-content: right;
+}
+
+.header_info .elementsCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header_info .elementsCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_info .container .row {
+  display: flex;
+}
+.header_info .container .row div img {
+  width: 236px;
+}
+
+/**/
+
+
 .container_header {
   display: flex;
   flex-wrap: wrap;
@@ -784,6 +818,9 @@ footer p.icon_socials a {
   width: 100%;
   text-align: center;
   flex: 1 1 200px;
+  display: flex;
+  align-self: baseline;
+  justify-content: center;
 }
 .header_info {
   background-color: rgba(40, 32, 32, 0.2);
@@ -800,7 +837,7 @@ footer p.icon_socials a {
 .header_info,
 .header_info a,
 .header_info p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .header_info .logo_kia {

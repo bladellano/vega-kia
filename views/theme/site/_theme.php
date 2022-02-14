@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="<?= asset("css/flexslider.css", 'site'); ?>">
     <link rel="stylesheet" href="<?= asset("css/custom-flexslider.css", 'site'); ?>">
 
-    <link rel="stylesheet" href="<?= asset("css/style.css", 'site',0); ?>">
+    <link rel="stylesheet" href="<?= asset("css/style.css", 'site', 0); ?>">
     <link rel="stylesheet" href="<?= asset("css/style-mobile.css", 'site'); ?>">
 
-    <link rel="stylesheet" href="<?=asset("css/message.css"); ?>">
-    <link rel="stylesheet" href="<?=asset("css/load.css"); ?>">
+    <link rel="stylesheet" href="<?= asset("css/message.css"); ?>">
+    <link rel="stylesheet" href="<?= asset("css/load.css"); ?>">
 
     <title>VEGA KIA | <?= $title ?></title>
     <link rel="icon" type="image/png" sizes="96x96" href="<?= asset("images/favicon.png", 'site'); ?>">
@@ -39,27 +39,36 @@
     <!-- Header -->
     <div class="header_info">
         <div class="container">
-            <div class="container_header">
-                <div style="text-align: left;">
-                    <a href="<?= SITE['root'] ?>" style="text-decoration:none">
-                        <img class="logo_vega" src="<?= asset("images/logo_vega_preto.png", 'site'); ?>" alt="LOGO_VEGA">
-                        <img class="logo_kia" src="<?= asset("images/logo_kia.svg", 'site'); ?>" alt="LOGO_KIA">
-                    </a>
-                </div>
-                <div style="width: 44%;">
-                    <p class="btn d-sm-none"><i class="fa fa-map-marker"></i> BR, KM 1</p>
-                </div>
-                <div>
-                    <a href="#" class="btn btn-success btn--success d-sm-none">COMPRE AGORA! <i class="fa fa-whatsapp"></i></a>
-                </div>
-                <div>
-                    <a href="#" class="btn btn-default d-sm-none btn--dark"><i class="fa fa-phone-square"></i> 91 - 3245.2564
-                    </a>
-                </div>
-                <div><input type="text" name="search" class="form-control d-sm-none"></div>
-            </div>
 
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="<?= SITE['root'] ?>" style="text-decoration:none">
+                        <img src="<?= asset("images/selo-pros-documentos.png", 'site'); ?>" alt="VEGA|KIA">
+                    </a>
+                </div>
+                <div class="col-md-9 elementsCenter">
+
+                    <div class="row elementsRight">
+
+                        <div class="col-md-3">
+                            <p class="btn d-sm-none"><i class="fa fa-map-marker"></i> BR, KM 1</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="https://api.whatsapp.com/send?phone=5591993779776" target="_blank" class="btn btn-success btn--success d-sm-none">COMPRE AGORA! <i class="fa fa-whatsapp"></i></a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="btn btn-default d-sm-none btn--dark"><i class="fa fa-phone-square"></i> 91 - 3245.2564 </a>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="search" class="form-control d-sm-none">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+    </div>
     </div>
 
     <!-- Navbar -->
@@ -103,7 +112,7 @@
 
                     <li><a href="<?= SITE['root'] ?>/semi-novos">SEMI-NOVOS</a></li>
 
-                    <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#servicos">PEÇA E ACESSÓRIOS</a></li>
+                    <li><a href="<?= SITE['root'] ?>/pecas-e-acessorios">PEÇAS E ACESSÓRIOS</a></li>
                     <li><a href="<?= SITE['root'] ?>/consorcio">CONSÓRCIO</a></li>
                     <li><a href="<?= SITE['root'] ?>/test-drive">TEST DRIVE</a></li>
                     <li><a href="<?= SITE['root'] ?>/agendamento">AGENDAMENTO</a></li>
@@ -143,8 +152,8 @@
 
                 <div class="col-md-3">
 
-                    <img class="logo_vega" src="<?= asset("images/logo_vega_preto.png", 'site'); ?>" alt="LOGO_VEGA">
-                    <img class="logo_kia" src="<?= asset("images/logo_kia.svg", 'site'); ?>" alt="LOGO_KIA">
+                    <img class="logoVegaKia" src="<?= asset("images/selo-pros-documentos.png", 'site'); ?>" alt="VEGA|KIA">
+
                     <h4>Funcionamento:</h4>
                     <p>2ª a 6ª: 08h às 18h<br>
                         Sábado: 08h às 12h.
@@ -161,10 +170,13 @@
                     <div class="footer_menu_itens">
                         <h3>Modelos</h3>
                         <ul>
-                            <li>Kia Stonic Hybrid</li>
-                            <li>Kia Cerato</li>
-                            <li>Kia Carnival</li>
-                            <li>Kia Bongo</li>
+
+                            <?php foreach (getCarsMenu() as $c) : ?>
+
+                                <li> <a href="<?= SITE['root'] . DS . "novos" . DS . $c->slug ?>"> <?=$c->nome_titulo?> </a> </li>
+
+                            <?php endforeach; ?>
+
                         </ul>
                     </div>
                 </div>
@@ -225,7 +237,7 @@
     <script src="<?= asset("js/script.js", 'site'); ?>"></script>
 
     <?= $v->section("scripts"); ?>
-    
+
 </body>
 
 </html>
