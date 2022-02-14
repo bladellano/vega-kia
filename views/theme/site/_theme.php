@@ -24,6 +24,13 @@
 
 <body>
 
+    <div class="socialNetworks">
+        <p>Redes Sociais Vega</p>
+        <a href="https://www.instagram.com/vegakiabr/" target="_blank"> <img src="<?=asset("images/instagram.png","site")?>" alt="Instagram"> </a>
+        <a href="#" target="_blank"> <img src="<?=asset("images/facebook.png","site")?>" alt="Facebook"> </a>
+        <a href="https://api.whatsapp.com/send?phone=5591993779776"" target="_blank"> <img src="<?=asset("images/whatsapp.png","site")?>" alt="Whatsapp"> </a>
+    </div>
+
     <!--AJAX LOAD-->
     <div class="ajax_load">
         <div class="ajax_load_box">
@@ -160,11 +167,11 @@
                     </p>
                     <h4>Localização:</h4>
                     <p>BR, KM 1.</p>
-                    <h4>Redes Sociais:</h4>
+                    <!-- <h4>Redes Sociais:</h4>
                     <p class="icon_socials">
                         <a href="#"><img src="<?= asset("images/facebook.png", 'site'); ?>" alt="FACEBOOK"> </a>
                         <a href="#"><img src="<?= asset("images/instagram.png", 'site'); ?>" alt="INSTAGRAM"> </a>
-                    </p>
+                    </p> -->
                 </div>
                 <div class="col-md-3">
                     <div class="footer_menu_itens">
