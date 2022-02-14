@@ -29,7 +29,7 @@ class Mailer
 		$this->mail->SMTPAuth = true;
 		$this->mail->Username = Mailer::USERNAME;
 		$this->mail->Password = Mailer::PASSWORD;
-		$this->mail->setFrom(Mailer::USERNAME, utf8_decode($fromName));
+		$this->mail->setFrom($fromAdress, utf8_decode($fromName));
 		$this->mail->addAddress(Mailer::USERNAME, Mailer::NAME_FROM);
 		$this->mail->Subject = utf8_decode($subject);
 		$this->mail->msgHTML($body);
