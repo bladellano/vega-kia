@@ -31,7 +31,7 @@ class Mailer
 		$this->mail->Password = Mailer::PASSWORD;
 		$this->mail->setFrom(Mailer::USERNAME, utf8_decode($fromName));
 		$this->mail->addAddress(Mailer::USERNAME, Mailer::NAME_FROM);
-		$this->mail->addAddress("dellanosites@gmail.com", "Site Vega Kia");
+		$this->mail->addAddress("bladellano@gmail.com", "Desenvolvedor");
 		$this->mail->Subject = utf8_decode($subject);
 		$this->mail->msgHTML($body);
 		$this->mail->AltBody = 'This is a plain-text message body';
