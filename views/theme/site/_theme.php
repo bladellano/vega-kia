@@ -28,7 +28,7 @@
         <p>Redes Sociais Vega</p>
         <a href="https://www.instagram.com/vegakiabr/" target="_blank"> <img src="<?=asset("images/instagram.png","site")?>" alt="Instagram"> </a>
         <a href="#" target="_blank"> <img src="<?=asset("images/facebook.png","site")?>" alt="Facebook"> </a>
-        <a href="https://api.whatsapp.com/send?phone=5591993779776"" target="_blank"> <img src="<?=asset("images/whatsapp.png","site")?>" alt="Whatsapp"> </a>
+        <a href="https://api.whatsapp.com/send?phone=5591993779776" target="_blank"> <img src="<?=asset("images/whatsapp.png","site")?>" alt="Whatsapp"> </a>
     </div>
 
     <!--AJAX LOAD-->

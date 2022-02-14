@@ -11,6 +11,8 @@ class Mailer
 	const NAME_FROM =  MAIL['mail_from_name'];
 	const HOST = MAIL['mail_host'];
 	const INBOX = MAIL['mail_email_inbox'];
+	const PORT = MAIL['mail_port'];
+	const SMTP_SECURE = MAIL['mail_smtp_secure'];
 
 	private $mail;
 
@@ -19,22 +21,22 @@ class Mailer
 
 		$this->mail = new PHPMailer();
 		$this->mail->isSMTP();
-		$this->mail->SMTPOptions = array(
-			'ssl' => array(
-				'verify_peer' => false,
-				'verify_peer_name' => false,
-				'allow_self_signed' => true
-			)
-		);
+		// $this->mail->SMTPOptions = array(
+		// 	'ssl' => array(
+		// 		'verify_peer' => false,
+		// 		'verify_peer_name' => false,
+		// 		'allow_self_signed' => true
+		// 	)
+		// );
 		$this->mail->SMTPDebug = 0;
 		$this->mail->Debugoutput = 'html';
 		$this->mail->Host = Mailer::HOST;
-		$this->mail->Port = 587;
-		$this->mail->SMTPSecure = 'tls';
+		$this->mail->Port = Mailer::PORT;
+		$this->mail->SMTPSecure = Mailer::SMTP_SECURE;
 		$this->mail->SMTPAuth = true;
 		$this->mail->Username = Mailer::USERNAME;
 		$this->mail->Password = Mailer::PASSWORD;
-		$this->mail->setFrom($fromAdress, utf8_decode($fromName));
+		$this->mail->setFrom(Mailer::USERNAME, utf8_decode($fromName));
 		$this->mail->addAddress(Mailer::INBOX, Mailer::NAME_FROM);
 		$this->mail->Subject = utf8_decode($subject);
 		$this->mail->msgHTML($body);
