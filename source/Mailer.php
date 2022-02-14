@@ -20,14 +20,7 @@ class Mailer
 	{
 
 		$this->mail = new PHPMailer();
-		$this->mail->isSMTP();
-		// $this->mail->SMTPOptions = array(
-		// 	'ssl' => array(
-		// 		'verify_peer' => false,
-		// 		'verify_peer_name' => false,
-		// 		'allow_self_signed' => true
-		// 	)
-		// );
+		$this->mail->isSMTP();	
 		$this->mail->SMTPDebug = 0;
 		$this->mail->Debugoutput = 'html';
 		$this->mail->Host = Mailer::HOST;
@@ -37,7 +30,7 @@ class Mailer
 		$this->mail->Username = Mailer::USERNAME;
 		$this->mail->Password = Mailer::PASSWORD;
 		$this->mail->setFrom(Mailer::USERNAME, utf8_decode($fromName));
-		$this->mail->addAddress(Mailer::INBOX, Mailer::NAME_FROM);
+		$this->mail->addAddress(Mailer::USERNAME, Mailer::NAME_FROM);
 		$this->mail->Subject = utf8_decode($subject);
 		$this->mail->msgHTML($body);
 		$this->mail->AltBody = 'This is a plain-text message body';
