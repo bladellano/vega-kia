@@ -20,6 +20,7 @@ $app->namespace("Source\Controllers");
  */
 
 $app->group(null);
+$app->post("/form-contact-us-submission", "Web:sendFormContactUs", "web.sendformcontactus");
 $app->get("/", "Web:home", "web.home");
 $app->get("/{slug}", "Web:page", "web.page");
 
@@ -32,7 +33,6 @@ $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
 
 $app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");
 
-$app->post("/form-contact-us-submission", "Web:sendFormContactUs", "web.sendformcontactus");
 $app->post("/form-submission", "Web:sendFormContact", "web.sendformcontact");
 $app->post("/form-scheduling-submission", "Web:sendFormScheduling", "web.sendformscheduling");
 
