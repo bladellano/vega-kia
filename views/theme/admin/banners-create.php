@@ -54,7 +54,8 @@
 
                                  <div class="form-group">
                                      <label for="content">Conteúdo</label>
-                                     <div id="summernote"><?= isset($banner->content) ? $banner->content : "" ?></div>
+                                     <textarea name="content" id="content" cols="30" rows="5" class="summernote"><?= isset($banner->content) ? $banner->content : "" ?></textarea>
+
                                  </div>
                                  <div class="form-group">
                                      <label for="content">Imagem</label>
@@ -69,16 +70,6 @@
                                     <?php else : ?>
                                         <img style="display:none" id="previewImg"></img>
                                     <?php endif; ?>
-
-                                 <!-- <div class="form-group">
-                                     <label for="type">Tipo</label>
-                                     <select name="type" id="type" class="form-control">
-                                         <option value="">--</option>
-                                         <option value="banner" <?= (isset($banner->type) && $banner->type == 'banner') ? 'selected' : '' ?>>banner</option>
-                                         <option value="page" <?= (isset($banner->type) && $banner->type == 'page') ? 'selected' : '' ?>>page</option>
-                                     </select>
-                                 </div> -->
-                                 <!--  -->
 
                              </div>
                              <!-- /.card-body -->
