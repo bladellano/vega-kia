@@ -42,11 +42,7 @@
 
                     <?php include('form-scheduling.php') ?>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btnSendForm">Enviar</button>
-                </div>
+                </div>           
             </div>
         </div>
     </div>

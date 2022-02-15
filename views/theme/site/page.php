@@ -22,7 +22,6 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <?php include('form-scheduling.php') ?>
-                    <button type="button" class="btn btn-primary btnSendForm">Enviar</button>
                 </div>
                 <div class="col-md-3"></div>
             </div>

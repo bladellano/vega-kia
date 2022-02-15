@@ -1,5 +1,6 @@
-<form action="<?= SITE['root'] ?>/form-scheduling-submission" method="post">
-<div class="login_form_callback"> <?= flash(); ?></div>
+<form class="formSchedulingSubmission" action="<?= SITE['root'] ?>/form-scheduling-submission" method="post">
+
+    <div class="login_form_callback"> <?= flash(); ?></div>
 
     <input type="hidden" name="typeForm" value="Pré-agendamento">
     <div class="row">
@@ -54,5 +55,10 @@
             <textarea class="form-control" rows="5" name="observacoes" placeholder="Observações"></textarea>
         </div>
 
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <button type="button" class="btn btn-primary btnSendForm">Enviar</button>
+        </div>
     </div>
 </form>

@@ -2,13 +2,13 @@ $(function () {
 
 
     /** Agendamento */
-    $('#btnScheduling').click(function(e){
+    $('#btnScheduling').click(function (e) {
         e.preventDefault();
         $('#preAgendamento').modal();
     });
 
-    $('.btnSendForm').click(function(e){
-        $('#preAgendamento form').submit();
+    $('.btnSendForm').click(function (e) {
+        $(this.form).submit();
     });
 
     /**
@@ -30,7 +30,7 @@ $(function () {
                     $('.wrap_target_car h2').text(su.nome_titulo);
                     $('.wrap_target_car img').attr('src', su.imagem_thumb);
                     $('.wrap_target_car .itens_car').html(su.descricao);
-                    $('.wrap_target_car a').attr('href',`novos/${su.slug}`);
+                    $('.wrap_target_car a').attr('href', `novos/${su.slug}`);
                 }
 
             }
