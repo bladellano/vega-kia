@@ -1,7 +1,7 @@
 <div class="container-fluid bg-default contactUs">
     <div class="container">
 
-        <form action="<?= SITE['root'] ?>/form-contact-us-submission" method="post">
+        <form action="<?= SITE['root'] ?>/formcontactussubmission" method="post">
 
             <div class="login_form_callback"> <?= flash(); ?></div>
 
