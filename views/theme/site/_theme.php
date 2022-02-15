@@ -152,7 +152,7 @@
                     <li><a href="<?= SITE['root'] ?>/sobre">SOBRE</a></li>
                     <li><a href="<?= SITE['root'] ?>/fale-conosco">FALE CONOSCO</a></li>
                     <li>
-                        <a href="#" class="btn btn-success btn--success d-sm-block d-md-none">COMPRE AGORA! <i class="fa fa-whatsapp"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=5591993779776" class="btn btn-success btn--success d-sm-block d-md-none">COMPRE AGORA! <i class="fa fa-whatsapp"></i></a>
                     </li>
                     <li>
                         <a href="#" class="btn btn-default btn--dark d-sm-block d-md-none"><i class="fa fa-phone-square"></i> 91 - 3245.2564

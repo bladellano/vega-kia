@@ -1,5 +1,19 @@
 /** Hide */
 @media (max-width: 576px) {
+  .header_info .container .row {
+    /* display: flex; */
+    flex-wrap: wrap;
+  }
+  .header_info .container .row div {
+    flex: 1 1 200px;
+    text-align: center;
+  }
+
+  .navbar-nav > li > a {
+    font-size: 14px !important;
+  }
+  /**/
+
   .wrap_cards_car {
     display: flex;
     flex-wrap: wrap;
@@ -18,14 +32,9 @@
     margin: 6px auto;
   }
 
-  #slider .flex-viewport {
-    height: 350px;
-  }
-  #slider.flexslider .flex-viewport ul li img {
-    height: 350px;
-  }
   .custom-navigation a img {
-    width: 50px;
+    width: 30px;
+    opacity: 0.6;
   }
 
   /**/
