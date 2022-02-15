@@ -51,7 +51,7 @@
                         <p> Aceito receber comunicação via e-mail</p> <input type="checkbox" name="aceita_receber_email"> <br />
                         <p> Aceito receber comunicação via sms</p> <input type="checkbox" name="aceita_receber_sms">
                     </div>
-                    <div class="col-md-6"><button class="btn btn-primary btn-sm pull-right">Enviar mensagem</button></div>
+                    <div class="col-md-6"><button class="btn btn-primary pull-right">Enviar mensagem</button></div>
                 </div>
             </div>
 

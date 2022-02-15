@@ -42,7 +42,7 @@
 
                     <?php include('form-scheduling.php') ?>
 
-                </div>           
+                </div>
             </div>
         </div>
     </div>
@@ -171,10 +171,29 @@
 
     <!-- Localização -->
     <section id="localizacao" class="section_kia">
-        <h2>Localização</h2>
-        <hr>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156238.78444678415!2d-48.43251937378271!3d-1.3165317458622527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a4f55eb3730de3%3A0x997334d1a788da76!2sVega%20Volkswagen!5e0!3m2!1spt-BR!2sbr!4v1641820185065!5m2!1spt-BR!2sbr" width="100%" height="380" frameborder="0" style="border:0;margin-bottom: -12px;" allowfullscreen="" aria-hidden="false" tabindex="0">
-        </iframe>
+<div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Localização</h2>
+                <hr>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156238.78444678415!2d-48.43251937378271!3d-1.3165317458622527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a4f55eb3730de3%3A0x997334d1a788da76!2sVega%20Volkswagen!5e0!3m2!1spt-BR!2sbr!4v1641820185065!5m2!1spt-BR!2sbr" width="100%" height="380" frameborder="0" style="border:0;margin-bottom: -12px;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                </iframe>
+            </div>
+            <div class="col-md-6">
+                <h2 class="customInstagram"><i class="fa fa-instagram"></i>Siga nosso insta</h2>
+                <hr>
+                <!-- Insta -->
+                <div id="pixlee_container"></div>
+                <script type="text/javascript">
+                    window.PixleeAsyncInit = function() {Pixlee.init({apiKey:'MoqEfw50dhrCppzvQ_Lk'});
+                    Pixlee.addSimpleWidget({widgetId:'35627'});};
+                </script>
+                <script src="//instafeed.assets.pxlecdn.com/assets/pixlee_widget_1_0_0.js"></script>
+                <!-- End insta -->
+            </div>
+        </div>
+        </div>
 
     </section>
 
@@ -192,11 +211,7 @@
                     </p>
                     <h4>Localização:</h4>
                     <p>BR, KM 1.</p>
-                    <!-- <h4>Redes Sociais:</h4>
-                    <p class="icon_socials">
-                        <a href="#"><img src="<?= asset("images/facebook.png", 'site'); ?>" alt="FACEBOOK"> </a>
-                        <a href="#"><img src="<?= asset("images/instagram.png", 'site'); ?>" alt="INSTAGRAM"> </a>
-                    </p> -->
+
                 </div>
                 <div class="col-md-3">
                     <div class="footer_menu_itens">

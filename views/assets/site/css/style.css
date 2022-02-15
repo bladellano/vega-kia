@@ -41,6 +41,37 @@ body {
   font-family: "Kia-Medium";
 }
 
+#pixlee_container {
+  height: 380px;
+  overflow: hidden;
+}
+.customInstagram {
+  color: #a30077;
+}
+.customInstagram i {
+  margin: 0 8px;
+}
+
+.customInstagram + hr {
+  border-color: #a30077 !important;
+}
+
+/* Localização */
+#localizacao {
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+#localizacao hr {
+  width: 100%;
+}
+
+.formSchedulingSubmission input,
+.formSchedulingSubmission select,
+.formSchedulingSubmission textarea {
+  border: 1px solid #666;
+}
 /* contactUs */
 
 .contactUs {
@@ -63,8 +94,8 @@ body {
   border: 1px solid var(--kia-preto-noturno);
 }
 .contactUs p {
-    display: inline;
-    font-size: 12px;
+  display: inline;
+  font-size: 12px;
 }
 
 /* Agendamento */
@@ -539,12 +570,6 @@ footer p.icon_socials a {
   font-weight: bold;
 }
 
-/* Localização */
-#localizacao {
-  padding: 0;
-  margin: 0;
-}
-
 /* Consorcio & Seguros */
 .card_consorcio_seguros.consorcio {
   background-image: url("../images/1074969176_Easy-Resize.com_.jpg");
@@ -599,7 +624,7 @@ footer p.icon_socials a {
   text-align: center;
 }
 .section_kia h2 {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: bold;
 }
 .section_kia h2 + hr {

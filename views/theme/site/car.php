@@ -81,6 +81,7 @@
         </div>
         <div class="col-md-4">
             <!-- Form de Contato -->
+            <div id="tenho-interesse"></div>
             <?php include('form-contact-dark.php') ?>
 
         </div>
@@ -265,7 +266,9 @@
 
         <div class="row buttons_show_images_car">
             <div class="col-md-12">
-                <a href="#" class="btn btn-default btn-block"><img src="<?= SITE['root'] . DS ?>views/assets/site/images/key.png" alt="SEM IMAGEM">Tenho interesse</a>
+                <a href="#tenho-interesse" class="btn btn-default btn-block nav-link scroll">
+                    <img src="<?= SITE['root'] . DS ?>views/assets/site/images/key.png" alt="SEM IMAGEM">Tenho interesse
+                </a>
             </div>
         </div>
 
