@@ -29,7 +29,7 @@
 
             <!-- Flexslider -->
             <div class="container_default">
-                <div id="slider" class="flexslider">
+                <div id="slider" class="flexslider cars">
                     <ul class="slides">
                         <!-- Imagens do Carro -->
 

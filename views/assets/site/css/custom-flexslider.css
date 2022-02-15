@@ -53,7 +53,10 @@
 }
 #slider.flexslider .flex-viewport ul li img {
   object-fit: cover;
-  max-width: 100%;
+  width: 100%;
+}
+
+#slider.flexslider.cars .flex-viewport ul li img {
   height: 666px;
 }
 
