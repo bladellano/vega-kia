@@ -41,22 +41,34 @@ body {
   font-family: "Kia-Medium";
 }
 
+/* Agendamento */
+.modal h5 {
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+}
+.modal small {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
 /*Redes Sociais*/
 
-.socialNetworks:hover{
+.socialNetworks:hover {
   transform: translateX(8px);
 }
 .socialNetworks {
-	transition: all 0.5s ease-in-out;
-	background-color: #fff;
-	position: fixed;
-	bottom: 20px;
-	padding: 10px 10px;
-	border-radius: 0 6px 6px 0;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-	z-index: 3;
-	left: 0;
-	margin-left: -8px;
+  transition: all 0.5s ease-in-out;
+  background-color: #fff;
+  position: fixed;
+  bottom: 20px;
+  padding: 10px 10px;
+  border-radius: 0 6px 6px 0;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  left: 0;
+  margin-left: -8px;
 }
 .socialNetworks p {
   margin: 0;
@@ -65,8 +77,8 @@ body {
   margin-right: 10px;
   text-decoration: none;
 }
-.socialNetworks a img{
-  height:32px ;
+.socialNetworks a img {
+  height: 32px;
 }
 
 /**/
@@ -451,7 +463,6 @@ footer h4 {
 }
 
 footer .logoVegaKia {
-
   filter: invert(100%);
   width: 200px;
 }
@@ -838,7 +849,6 @@ footer p.icon_socials a {
 }
 
 /**/
-
 
 .container_header {
   display: flex;

@@ -25,6 +25,7 @@ $app->get("/{slug}", "Web:page", "web.page");
 
 /** Páginas da Web */
 $app->get("/semi-novos", "Web:semiNew", "web.seminew");
+$app->get("/test-drive", "Web:testDrive", "web.testdrive");
 $app->get("/novos", "Web:news", "web.news");
 $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
 

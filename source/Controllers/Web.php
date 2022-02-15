@@ -62,6 +62,24 @@ class Web extends Controller
         ]);
     }
 
+    public function testDrive()
+    {
+
+        $params = http_build_query([
+            'slug' => 'test-drive',
+            'type' =>  'page'
+        ]);
+
+        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
+
+        echo $this->view->render("theme/site/page", [
+            "title" => $page->title,
+            "page" => $page,
+            "showForm" => 1
+        ]);
+        exit;
+    }
+
     /** Métodos Car */
     public function semiNew(): void
     {
@@ -92,7 +110,6 @@ class Web extends Controller
         }
 
         $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
-        // print($message); die;
 
         $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
 
@@ -103,7 +120,6 @@ class Web extends Controller
                 "message" => "Problema ao enviar e-mail!"
             ]);
             return;
-            
         } else {
 
             echo $this->ajaxResponse("message", [
@@ -112,8 +128,8 @@ class Web extends Controller
             ]);
             return;
         }
-
     }
+
     /**
      * Form de contato principal do site
      * @param [type] $data

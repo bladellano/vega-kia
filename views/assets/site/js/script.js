@@ -7,7 +7,7 @@ $(function () {
         $('#preAgendamento').modal();
     });
 
-    $('#preAgendamento .modal-footer button.btn-primary').click(function(e){
+    $('.btnSendForm').click(function(e){
         $('#preAgendamento form').submit();
     });
 
