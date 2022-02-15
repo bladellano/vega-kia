@@ -32,7 +32,6 @@ $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
 
 $app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");
 
-$app->group('form');
 $app->post("/form-submission", "Web:sendFormContact", "web.sendformcontact");
 $app->post("/form-scheduling-submission", "Web:sendFormScheduling", "web.sendformscheduling");
 $app->post("/form-contact-us-submission", "Web:sendFormContactUs", "web.sendformcontactus");
