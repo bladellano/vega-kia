@@ -34,7 +34,7 @@ $app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");
 
 $app->post("/form-submission", "Web:sendFormContact", "web.sendformcontact");
 $app->post("/form-scheduling-submission", "Web:sendFormScheduling", "web.sendformscheduling");
-$app->post("/form-contact-us-submission_", "Web:sendFormContactUs", "web.sendformcontactus");
+$app->post("/form-contact-us", "Web:sendFormContactUs", "web.sendformcontactus");
 
 /**
  * ADMIN
