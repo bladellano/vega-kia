@@ -1,6 +1,16 @@
 $(function () {
 
 
+    /** Agendamento */
+    $('#btnScheduling').click(function(e){
+        e.preventDefault();
+        $('#preAgendamento').modal();
+    });
+
+    $('#preAgendamento .modal-footer button.btn-primary').click(function(e){
+        $('#preAgendamento form').submit();
+    });
+
     /**
      * Exibe os detalhes do carro na página inicial com o click
      */

@@ -23,12 +23,95 @@
 </head>
 
 <body>
+    <!-- Large modal -->
+
+    <div class="modal fade" id="preAgendamento" tabindex="-1" role="dialog" aria-labelledby="preAgendamentoLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preAgendamentoLabel">PRÉ-AGENDAMENTO</h5>
+                    <small>Preencha o formulário e realize o pré-agendamento do seu serviço:</small>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="login_form_callback"> <?= flash(); ?></div>
+                </div>
+                <div class="modal-body">
+
+                    <form action="<?= SITE['root'] ?>/form-scheduling-submission" method="post">
+                    <input type="hidden" name="typeForm" value="Pré-agendamento">
+                        <div class="row">
+
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" name="nome" placeholder="Nome*">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="email" class="form-control" name="email" placeholder="E-mail*">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" name="telefone" placeholder="DDD + Fixo ou celular*">
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" name="quilometragem" placeholder="Quilometragem*">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" name="ano" placeholder="Ano*">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" name="placa" placeholder="Placa*">
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" name="modelo_e_versao" placeholder="Modelo e versão*">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <select name="" class="form-control">
+                                    <option value="">Selecione a loja</option>
+                                    <option value="BELÉM">BELÉM</option>
+                                    <option value="ANANINDEUA">ANANINDEUA</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <textarea class="form-control" rows="5" name="observacoes" placeholder="Observações"></textarea>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="socialNetworks">
         <p>Redes Sociais Vega</p>
-        <a href="https://www.instagram.com/vegakiabr/" target="_blank"> <img src="<?=asset("images/instagram.png","site")?>" alt="Instagram"> </a>
-        <a href="#" target="_blank"> <img src="<?=asset("images/facebook.png","site")?>" alt="Facebook"> </a>
-        <a href="https://api.whatsapp.com/send?phone=5591993779776" target="_blank"> <img src="<?=asset("images/whatsapp.png","site")?>" alt="Whatsapp"> </a>
+        <a href="https://www.instagram.com/vegakiabr/" target="_blank"> <img src="<?= asset("images/instagram.png", "site") ?>" alt="Instagram"> </a>
+        <a href="#" target="_blank"> <img src="<?= asset("images/facebook.png", "site") ?>" alt="Facebook"> </a>
+        <a href="https://api.whatsapp.com/send?phone=5591993779776" target="_blank"> <img src="<?= asset("images/whatsapp.png", "site") ?>" alt="Whatsapp"> </a>
     </div>
 
     <!--AJAX LOAD-->
@@ -39,7 +122,7 @@
         </div>
     </div>
 
-    <div class="topo" style="">
+    <div class="topo">
         <i class="fa fa-arrow-up"></i>
     </div>
 
@@ -122,7 +205,7 @@
                     <li><a href="<?= SITE['root'] ?>/pecas-e-acessorios">PEÇAS E ACESSÓRIOS</a></li>
                     <li><a href="<?= SITE['root'] ?>/consorcio">CONSÓRCIO</a></li>
                     <li><a href="<?= SITE['root'] ?>/test-drive">TEST DRIVE</a></li>
-                    <li><a href="<?= SITE['root'] ?>/agendamento">AGENDAMENTO</a></li>
+                    <li><a href="<?= SITE['root'] ?>/agendamento" id="btnScheduling">AGENDAMENTO</a></li>
                     <li><a href="<?= SITE['root'] ?>/venda-direta">VENDA DIRETA</a></li>
                     <li><a href="<?= SITE['root'] ?>/sobre">SOBRE</a></li>
                     <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#showroom">FALE CONOSCO</a></li>
@@ -180,7 +263,7 @@
 
                             <?php foreach (getCarsMenu() as $c) : ?>
 
-                                <li> <a href="<?= SITE['root'] . DS . "novos" . DS . $c->slug ?>"> <?=$c->nome_titulo?> </a> </li>
+                                <li> <a href="<?= SITE['root'] . DS . "novos" . DS . $c->slug ?>"> <?= $c->nome_titulo ?> </a> </li>
 
                             <?php endforeach; ?>
 

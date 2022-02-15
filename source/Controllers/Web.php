@@ -80,6 +80,35 @@ class Web extends Controller
         ]);
     }
 
+    public function sendFormScheduling($data)
+    {
+
+        if (in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos"
+            ]);
+            return;
+        }
+
+        $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
+        // print($message); die;
+
+        $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
+
+        if (!$mailer->send()) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Problema ao enviar e-mail!"
+            ]);
+            return;
+        }
+
+        flash("success", "Enviado com sucesso!");
+
+        return;
+    }
     /**
      * Form de contato principal do site
      * @param [type] $data
