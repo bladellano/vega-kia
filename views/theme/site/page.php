@@ -14,23 +14,29 @@
 
         <?= $page->content ?>
 
-        <?php if (isset($showForm)) : ?>
+        <?php if (isset($showForm) && $typeForm == 'container') : ?>
             <br>
             <h1>PRÉ-AGENDAMENTO</h1>
             <hr>
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <?php include('form-scheduling.php') ?>
+                    <?php include($showForm) ?>
                 </div>
                 <div class="col-md-3"></div>
             </div>
 
+            <hr>
         <?php endif; ?>
 
     </div>
-    <hr>
 </div>
+<!-- ./container -->
+
+<?php if (isset($showForm) && $typeForm == 'fluid') : ?>
+    <?php include($showForm) ?>
+<?php endif; ?>
+
 
 <?php $v->start("scripts"); ?>
 <script src="<?= asset("/js/jquery-ui.js"); ?>"></script>

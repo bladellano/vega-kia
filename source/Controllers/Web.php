@@ -62,7 +62,25 @@ class Web extends Controller
         ]);
     }
 
-    public function testDrive()
+    public function contactUs(): void
+    {
+        $params = http_build_query([
+            'slug' => 'fale-conosco',
+            'type' =>  'page'
+        ]);
+
+        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
+
+        echo $this->view->render("theme/site/page", [
+            "title" => $page->title,
+            "page" => $page,
+            "showForm" => 'form-contact-us.php',
+            "typeForm" => 'fluid'
+        ]);
+        exit;
+    }
+
+    public function testDrive(): void
     {
 
         $params = http_build_query([
@@ -75,7 +93,8 @@ class Web extends Controller
         echo $this->view->render("theme/site/page", [
             "title" => $page->title,
             "page" => $page,
-            "showForm" => 1
+            "showForm" => 'form-scheduling.php',
+            "typeForm" => 'container'
         ]);
         exit;
     }
@@ -96,6 +115,39 @@ class Web extends Controller
             "title" => "Novos",
             "newsCars" => $newsCars,
         ]);
+    }
+
+    public function sendFormContactUs($data)
+    {
+        $data['aceita_receber_email'] = isset($data['aceita_receber_email']) ? 'SIM' : 'NÃO';
+        $data['aceita_receber_sms'] = isset($data['aceita_receber_sms']) ? 'SIM' : 'NÃO';
+
+        if (in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos"
+            ]);
+            return;
+        }
+
+        $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
+        $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
+
+        if (!$mailer->send()) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Problema ao enviar e-mail!"
+            ]);
+            return;
+        } else {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "success",
+                "message" => "Enviado com sucesso!"
+            ]);
+            return;
+        }
     }
 
     public function sendFormScheduling($data)

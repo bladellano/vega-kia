@@ -41,6 +41,32 @@ body {
   font-family: "Kia-Medium";
 }
 
+/* contactUs */
+
+.contactUs {
+  background-color: #37444d;
+  margin: 26px 0;
+  color: #fff;
+  padding: 36px 0;
+}
+.contactUs h2 {
+  text-align: center;
+  font-family: "Kia-Bold";
+  font-size: 44px;
+}
+.contactUs button:hover {
+  background-color: var(--kia-preto-noturno);
+  border: 1px solid var(--kia-preto-noturno);
+}
+.contactUs button {
+  background-color: var(--kia-preto-noturno);
+  border: 1px solid var(--kia-preto-noturno);
+}
+.contactUs p {
+    display: inline;
+    font-size: 12px;
+}
+
 /* Agendamento */
 .modal h5 {
   color: #000;

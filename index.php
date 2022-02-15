@@ -26,6 +26,7 @@ $app->get("/{slug}", "Web:page", "web.page");
 /** Páginas da Web */
 $app->get("/semi-novos", "Web:semiNew", "web.seminew");
 $app->get("/test-drive", "Web:testDrive", "web.testdrive");
+$app->get("/fale-conosco", "Web:contactUs", "web.contactus");
 $app->get("/novos", "Web:news", "web.news");
 $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
 
@@ -33,6 +34,7 @@ $app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");
 
 $app->post("/form-submission", "Web:sendFormContact", "web.sendformcontact");
 $app->post("/form-scheduling-submission", "Web:sendFormScheduling", "web.sendformscheduling");
+$app->post("/form-contact-us-submission", "Web:sendFormContactUs", "web.sendformcontactus");
 
 /**
  * ADMIN

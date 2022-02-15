@@ -150,7 +150,7 @@
                     <li><a href="<?= SITE['root'] ?>/agendamento" id="btnScheduling">AGENDAMENTO</a></li>
                     <li><a href="<?= SITE['root'] ?>/venda-direta">VENDA DIRETA</a></li>
                     <li><a href="<?= SITE['root'] ?>/sobre">SOBRE</a></li>
-                    <li><a class="nav-link scroll" href="<?= SITE['root'] ?>/#showroom">FALE CONOSCO</a></li>
+                    <li><a href="<?= SITE['root'] ?>/fale-conosco">FALE CONOSCO</a></li>
                     <li>
                         <a href="#" class="btn btn-success btn--success d-sm-block d-md-none">COMPRE AGORA! <i class="fa fa-whatsapp"></i></a>
                     </li>
