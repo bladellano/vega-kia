@@ -30,6 +30,74 @@
     height: auto;
     overflow: hidden;
   }
+
+  #localizacao {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #slider.flexslider.cars .flex-viewport ul li img {
+    height: 280px;
+  }
+
+  .buttons_show_images_car div .btn {
+    max-width: 100%;
+    margin-bottom: 6px;
+  }
+  .title_car {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .images_agrupadas .principal img {
+    height: 280px;
+  }
+  .images_agrupadas .menores ul {
+    flex-wrap: wrap;
+  }
+  .images_agrupadas .menores ul li img {
+    height: 150px;
+  }
+  .descriptionDetailCar {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .img-responsive.two_columns {
+    height: 168px;
+  }
+  .content_tab .img-responsive {
+    min-height: 150px;
+  }
+  .popup_wrap {
+    width: 92%;
+  }
+  .popup_wrap .pop_con img {
+    height: 180px;
+  }
+  .images_agrupadas .principal p {
+    font-size: 18px;
+  }
+  .images_agrupadas .menores ul li p {
+    font-size: 18px;
+  }
+  .content_tab ul {
+    padding: 0;
+    padding-left: 12px;
+  }
+  .titleColumnDetailCar {
+    font-size: 22px;
+  }
+  .socialNetworks a img {
+    margin: 6px 0;
+  }
+  .socialNetworks {
+    width: 52px;
+  }
+
+  .socialNetworks p {
+    display: none;
+  }
   /**/
 
   .wrap_cards_car {

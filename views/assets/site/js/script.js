@@ -1,6 +1,8 @@
 $(function () {
 
 
+
+
     /** Agendamento */
     $('#btnScheduling').click(function (e) {
         e.preventDefault();
@@ -42,6 +44,12 @@ $(function () {
      * Botão para abrir/fechar o pop-up
      * Popula o pop-up com informação do carro
      */
+    document.addEventListener('keydown', function (event) {
+        if (event.key == "Escape") {
+            $('.popup_wrap').fadeOut();
+        }
+    });
+
     $('.closeBtn').click(function (e) {
         e.preventDefault();
         $(this).parent().fadeOut();
