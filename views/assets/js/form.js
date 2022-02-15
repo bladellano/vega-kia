@@ -27,6 +27,7 @@ $(function () {
                     let view = '<div class="message ' + su.message.type + '">' + su.message.message + '</div>';
                     $(".login_form_callback").html(view);
                     $(".message").effect("bounce");
+                    $('form')[0].reset();
                     return;
                 }
 
