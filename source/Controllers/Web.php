@@ -103,11 +103,16 @@ class Web extends Controller
                 "message" => "Problema ao enviar e-mail!"
             ]);
             return;
+            
+        } else {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "success",
+                "message" => "Enviado com sucesso!"
+            ]);
+            return;
         }
 
-        flash("success", "Enviado com sucesso!");
-
-        return;
     }
     /**
      * Form de contato principal do site
