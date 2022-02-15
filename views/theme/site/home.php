@@ -64,6 +64,7 @@
                                         <img class="img-responsive" src="<?= $c->imagem_thumb ?>" alt="SEM IMAGEM">
                                         <p><?= $c->nome_titulo ?></p>
                                     </li>
+                                    
                                 <?php endforeach; ?>
 
                             </ul>
