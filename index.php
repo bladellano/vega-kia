@@ -1,5 +1,9 @@
 <?php
 
+header("Access-Control-Allow-Headers: Authorization, Content-Type");
+header("Access-Control-Allow-Origin: *");
+// header('content-type: application/json; charset=utf-8');
+
 ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
