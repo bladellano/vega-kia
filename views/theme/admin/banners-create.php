@@ -55,7 +55,11 @@
                                  <div class="form-group">
                                      <label for="content">Conteúdo</label>
                                      <textarea name="content" id="content" cols="30" rows="5" class="summernote"><?= isset($banner->content) ? $banner->content : "" ?></textarea>
-
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="url">Url
+                                         <i class="fas fa-question-circle" style="cursor:pointer" title="Se estiver vazio, o conteúdo a ser exibido será do próprio banner registrado"></i> </label>
+                                     <input placeholder="https:// ou  http://" value="<?= isset($banner->url) ? $banner->url : "" ?>" type="text" class="form-control" id="url" name="url">
                                  </div>
                                  <div class="form-group">
                                      <label for="content">Imagem</label>
@@ -65,11 +69,11 @@
                                      </div>
                                  </div>
 
-                                    <?php if (isset($banner->id)) : ?>
-                                        <img src="<?=SITE['root'].DS.$banner->image_thumb?>" id="previewImg"></img>
-                                    <?php else : ?>
-                                        <img style="display:none" id="previewImg"></img>
-                                    <?php endif; ?>
+                                 <?php if (isset($banner->id)) : ?>
+                                     <img src="<?= SITE['root'] . DS . $banner->image_thumb ?>" id="previewImg"></img>
+                                 <?php else : ?>
+                                     <img style="display:none" id="previewImg"></img>
+                                 <?php endif; ?>
 
                              </div>
                              <!-- /.card-body -->

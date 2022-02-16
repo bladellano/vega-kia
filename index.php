@@ -37,6 +37,8 @@ $app->post("/form-submission", "Web:sendFormContact", "web.sendformcontact");
 $app->post("/form-scheduling-submission", "Web:sendFormScheduling", "web.sendformscheduling");
 $app->post("/formcontactussubmission", "Web:sendFormContactUs", "web.sendformcontactus");
 
+$app->get("/banner/{slug}", "Web:showBanner", "web.showbanner");
+
 /**
  * ADMIN
  */
@@ -67,6 +69,9 @@ $app->post("/banners/register", "Banners:register", "banners.register");
 $app->post("/banners/update/{id}", "Banners:update", "banners.update");
 $app->get("/banners/delete/{id}", "Banners:delete", "banners.delete");
 $app->get("/banners/edit/{id}", "Banners:edit", "banners.edit");
+    /** Banners - Métodos internos */
+    $app->get("/banners/change-order-banner/{id}", "Banners:changeOrderBanner", "banners.changeorderbanner");    
+
 
 /** Cars */
 $app->get("/cars", "Cars:home", "cars.home");

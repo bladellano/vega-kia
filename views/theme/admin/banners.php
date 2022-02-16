@@ -41,7 +41,9 @@
                                     <th>Título</th>
                                     <th>Descrição</th>
                                     <th>Imagem</th>
+                                    <th>Ordem</th>
                                     <th>Criado</th>
+                                    <th>Atualização</th>
                                     <th style="width: 60px"></th>
                                 </tr>
                             </thead>
@@ -53,9 +55,16 @@
                                         <td><?= $b->id ?></td>
                                         <td><a href="banners/edit/<?=$b->id?>"><?= $b->title ?></a></td>
                                         <td><?= $b->description ?></td>
-                                        <td> <img class="img-fluid" height="100" width="100" src="<?= SITE['root'].DS.$b->image_thumb ?>" alt="SEM IMAGEM"></td>
+                                        <td> <img height="100" width="200" src="<?= SITE['root'].DS.$b->image_thumb ?>" alt="SEM IMAGEM"></td>
+                                        <td style="text-align:center"> 
+                                            <input 
+                                                type="radio" name="changeOrder" 
+                                                onChange='window.location.href = "<?=SITE['root']?>/admin/banners/change-order-banner/<?= $b->id ?>"'
+                                            > 
+                                        </td>
                                         <td><?= convertDatePtbr($b->created_at)?></td>
-                                        <td>
+                                        <td><?= convertDatePtbr($b->updated_at)?></td>
+                                        <td style="width:70px">
                                             <a href="banners/edit/<?=$b->id?>" class="btn btn-default btn-sm" title="Editar"><i class="fas fa-pencil-alt"></i></a> 
                                             <a onclick="return confirm('Deseja realmente excluir este registro?')" href="banners/delete/<?=$b->id?>" class="btn btn-default btn-sm" title="Excluir"><i class="fas fa-trash-alt"></i></a> 
                                         </td>

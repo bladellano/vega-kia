@@ -15,7 +15,7 @@ class Banners extends DashController
     public function home(): void
     {
 
-        $banners = (new \Source\Models\Banner)->find()->order('id DESC')->fetch(true) ?? [];
+        $banners = (new \Source\Models\Banner)->find()->order('updated_at DESC')->fetch(true) ?? [];
 
         echo $this->view->render("theme/admin/banners", [
             "title" => "Banners",
@@ -34,8 +34,7 @@ class Banners extends DashController
 
     public function register($data): void
     {
-        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
-
+  
         $banner = new \Source\Models\Banner;
 
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
@@ -88,10 +87,33 @@ class Banners extends DashController
         ]);
     }
 
+    public function changeOrderBanner($data)
+    {
+        $banner = (new \Source\Models\Banner())->findById($data['id']);
+
+        if($banner){
+
+            $banner->registration_order = 1;
+
+            if (!$banner->save()) {
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" => $banner->fail()->getMessage()
+                ]);
+                return;
+            }
+
+            flash("success", "Ordem alterada com sucesso!");
+
+            header("Location: " . SITE['root'] . "/admin/banners");
+    
+            return;
+        }
+
+    }
+
     public function update($data): void
     {
-
-        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
 
@@ -111,7 +133,6 @@ class Banners extends DashController
             $data['image'] = $uploadImg->upload($file, md5(uniqid(time())));
             $data['image_thumb'] = $uploadImg->upload($file, "thumb_" . md5(uniqid(time())), 600);
         }
-
 
         unset($data['id']);
 

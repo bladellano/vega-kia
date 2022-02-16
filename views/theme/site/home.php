@@ -7,7 +7,15 @@
 
             <?php foreach ($banners as $b) : ?>
                 <li>
-                    <img src="<?= $b->image ?>" />
+                    <a 
+                    <?php if(empty($b->url)): ?>
+                        href="<?= SITE['root'] . '/banner/' . $b->slug ?>"
+                        <?php else: ?>
+                        target="_blank" href="<?= $b->url ?>"
+                    <?php endif; ?>
+                    >
+                        <img src="<?= $b->image ?>" />
+                    </a>
                 </li>
             <?php endforeach; ?>
 
@@ -64,7 +72,7 @@
                                         <img class="img-responsive" src="<?= $c->imagem_thumb ?>" alt="SEM IMAGEM">
                                         <p><?= $c->nome_titulo ?></p>
                                     </li>
-                                    
+
                                 <?php endforeach; ?>
 
                             </ul>

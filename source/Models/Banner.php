@@ -8,7 +8,7 @@ class Banner extends DataLayer
 {
     public function __construct()
     {
-        parent::__construct("banners", ["title", "description", "content","image"]);
+        parent::__construct("banners", ["title", "description", "content", "image"]);
     }
 
     public function save(): bool

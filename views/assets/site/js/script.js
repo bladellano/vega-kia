@@ -1,8 +1,5 @@
 $(function () {
 
-
-
-
     /** Agendamento */
     $('#btnScheduling').click(function (e) {
         e.preventDefault();

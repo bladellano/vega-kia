@@ -29,7 +29,7 @@ class Web extends Controller
      */
     public function home(): void
     {
-        $banners = (new Banner)->find()->order("id DESC")->fetch(true) ?? [];
+        $banners = (new Banner)->find()->order("updated_at DESC")->fetch(true) ?? [];
         $cars = (new Car)->find()->order("id DESC")->fetch(true) ?? [];
 
         echo $this->view->render("theme/site/home", [
@@ -116,6 +116,17 @@ class Web extends Controller
             "newsCars" => $newsCars,
         ]);
     }
+
+    public function showBanner($data): void
+    {
+        $banner = (new Banner())->find("slug = :slug", 'slug='.$data['slug'])->fetch() ?? [];
+
+        echo $this->view->render("theme/site/banner", [
+            "title" => "Banner",
+            "banner" => $banner,
+        ]);
+    }
+
 
     public function sendFormContactUs($data)
     {
