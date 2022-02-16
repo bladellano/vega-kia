@@ -43,7 +43,7 @@ body {
 
 #pixlee_container {
   height: 380px;
-  overflow: hidden;
+  overflow: auto;
 }
 .customInstagram {
   color: #a30077;
