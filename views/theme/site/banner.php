@@ -9,6 +9,7 @@
     </nav>
 
     <h1><?= $banner->title ?></h1>
+    <h5><?= $banner->description ?></h5>
     <hr>
     <div class="content_page">
 
