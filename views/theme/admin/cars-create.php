@@ -275,7 +275,7 @@
                                              </div>
                                          <?php endif; ?>
 
-                                         <?php if (!count($imagensCarro)) : ?>
+                                         <?php if (isset($imagensCarro) && !count($imagensCarro)) : ?>
                                              <div class="alert alert-warning" role="alert">
                                                  Nenhuma imagem para o carro.
                                              </div>
