@@ -183,26 +183,10 @@
                 <div class="col-md-6">
                     <h2 class="customInstagram"><i class="fa fa-instagram"></i>Siga nosso insta</h2>
                     <hr>
-
-                            <!-- Insta -->
-                            <div id="pixlee_container"></div>
-                    <script type="text/javascript">
-                        window.PixleeAsyncInit = function() {
-                            Pixlee.init({
-                                apiKey: 'MoqEfw50dhrCppzvQ_Lk'
-                            });
-                            Pixlee.addSimpleWidget({
-                                widgetId: '35627'
-                            });
-                        };
-                    </script>
-                    <script src="//instafeed.assets.pxlecdn.com/assets/pixlee_widget_1_0_0.js"></script>
-                    <!-- End insta -->
-
-
-                    <!-- <div id="pixlee_container">
+                    <div id="pixlee_container">
+                        <!-- LightWidget WIDGET -->
                         <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/85c10f09d4d456928cdd45d86c453639.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-                    </div> -->
+                    </div>
 
                 </div>
             </div>
