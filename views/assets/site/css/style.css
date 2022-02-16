@@ -97,6 +97,9 @@ body {
   display: inline;
   font-size: 12px;
 }
+.aligButtonContactUs {
+  text-align: right;
+}
 
 /* Agendamento */
 .modal h5 {

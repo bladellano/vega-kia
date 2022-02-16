@@ -98,6 +98,12 @@
   .socialNetworks p {
     display: none;
   }
+  .contactUs button {
+    margin-top: 10px;
+  }
+  .aligButtonContactUs {
+    text-align: center;
+  }
   /**/
 
   .wrap_cards_car {

@@ -37,12 +37,16 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group col-md-12">
-                        <input type="text" class="form-control" name="assunto" placeholder="Assunto*">
+                    <div class="row">
+
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control" name="assunto" placeholder="Assunto*">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea name="mensagem" class="form-control" cols="30" rows="3" placeholder="Mensagem*"></textarea>
+                        </div>
                     </div>
-                    <div class="form-group col-md-12">
-                        <textarea name="mensagem" class="form-control" cols="30" rows="3" placeholder="Mensagem*"></textarea>
-                    </div>
+
                 </div>
 
                 <div class="col-md-6">(*) campos obrigatórios</div>
@@ -51,7 +55,7 @@
                         <p> Aceito receber comunicação via e-mail</p> <input type="checkbox" name="aceita_receber_email"> <br />
                         <p> Aceito receber comunicação via sms</p> <input type="checkbox" name="aceita_receber_sms">
                     </div>
-                    <div class="col-md-6"><button class="btn btn-primary pull-right">Enviar mensagem</button></div>
+                    <div class="col-md-6 aligButtonContactUs"><button class="btn btn-primary">Enviar mensagem</button></div>
                 </div>
             </div>
 
