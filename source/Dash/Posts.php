@@ -80,7 +80,6 @@ class Posts extends DashController
     public function update($data): void
     {
 
-
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
 
         $post = (new \Source\Models\Post())->findById($data['id']);
@@ -110,8 +109,6 @@ class Posts extends DashController
     {
 
         $post = (new \Source\Models\Post())->findById($data['id']);
-
-        /*  if (file_exists($product->image)) unlink($product->image); */
 
         if (!$post->destroy()) {
             echo $this->ajaxResponse("message", [

@@ -37,7 +37,7 @@ class Web extends Controller
             SITE['name'],
             SITE['desc'],
             SITE['root'],
-            asset('images/selo-pros-documentos.png', 'site', 0),
+            asset('images/image-default-vega-kia.jpeg', 'site', 0),
         );
 
         echo $this->view->render("theme/site/home", [
@@ -55,8 +55,7 @@ class Web extends Controller
             'type' =>  'page'
         ]);
 
-        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)
-            ->order('id DESC')->fetch() ?? [];
+        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
 
         /** Página não encontrada */
         if (!$page) {
@@ -64,9 +63,17 @@ class Web extends Controller
             exit;
         }
 
+        /** Seo */
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . $page->title,
+            SITE['desc'] . $page->description,
+            DS . $page->slug,
+            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+        );
+
         echo $this->view->render("theme/site/page", [
-            "title" => $page->title,
             "page" => $page,
+            "head" => $head
         ]);
     }
 
@@ -79,8 +86,16 @@ class Web extends Controller
 
         $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
 
+        /** Seo */
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . $page->title,
+            SITE['desc'] . $page->description,
+            DS . $page->slug,
+            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+        );
+
         echo $this->view->render("theme/site/page", [
-            "title" => $page->title,
+            "head" =>  $head,
             "page" => $page,
             "showForm" => 'form-contact-us.php',
             "typeForm" => 'fluid'
@@ -98,8 +113,15 @@ class Web extends Controller
 
         $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
 
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . $page->title,
+            SITE['desc'] . $page->description,
+            DS . $page->slug,
+            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+        );
+
         echo $this->view->render("theme/site/page", [
-            "title" => $page->title,
+            "head" => $head,
             "page" => $page,
             "showForm" => 'form-scheduling.php',
             "typeForm" => 'container'
@@ -110,8 +132,17 @@ class Web extends Controller
     /** Métodos Car */
     public function semiNew(): void
     {
+        $title = "Semi-novos";
+
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . $title,
+            SITE['desc'] . "Semi-novos de veículos",
+            DS . "semi-novos",
+            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+        );
+
         echo $this->view->render("theme/site/semi-novos", [
-            "title" => "Semi-novos",
+            "head" => $head
         ]);
     }
 
@@ -274,8 +305,16 @@ class Web extends Controller
 
         $buildImagesFront = groupByColumn($buildImagesFront, "tipo", 0);
 
+        /** Seo */
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . $car->nome_titulo,
+            SITE['desc'] . $car->nome_subtitulo,
+            DS . $car->slug,
+            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+        );
+
         echo $this->view->render("theme/site/car", [
-            "title" => "Novos",
+            "head" => $head,
             "car" => $car,
             "carImages" => $carImages,
             "buildImagesFront" => $buildImagesFront,

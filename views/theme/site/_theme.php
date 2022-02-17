@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Dinamic head -->
-    
     <?php if(isset($head)): ?>
         <?=$head?>
     <?php endif;?>
