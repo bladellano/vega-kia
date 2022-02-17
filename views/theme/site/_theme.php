@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Dinamic head -->
-    <?=$head?>
+    
+    <?php if(isset($head)): ?>
+        <?=$head?>
+    <?php endif;?>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- Assets -->
