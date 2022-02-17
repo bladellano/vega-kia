@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Dinamic head -->
+    <?=$head?>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
+    
+    <!-- Assets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
@@ -18,7 +22,10 @@
     <link rel="stylesheet" href="<?= asset("css/message.css"); ?>">
     <link rel="stylesheet" href="<?= asset("css/load.css"); ?>">
 
-    <title>VEGA KIA | <?= $title ?></title>
+    <?php if(isset($title)): ?>
+        <title>VEGA KIA | <?= $title ?></title> 
+    <?php endif;?>
+
     <link rel="icon" type="image/png" sizes="96x96" href="<?= asset("images/favicon.png", 'site'); ?>">
 </head>
 

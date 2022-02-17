@@ -2,9 +2,10 @@
 
 namespace Source\Controllers;
 
+use Source\Seo;
 use Source\Mailer;
-use Source\Models\Banner;
 use Source\Models\Car;
+use Source\Models\Banner;
 use Source\Models\Car\CarImage;
 use Source\Models\Car\CarVersao;
 
@@ -32,10 +33,17 @@ class Web extends Controller
         $banners = (new Banner)->find()->order("updated_at DESC")->fetch(true) ?? [];
         $cars = (new Car)->find()->order("id DESC")->fetch(true) ?? [];
 
+        $head = (new Seo())->render(
+            SITE['name'],
+            SITE['desc'],
+            SITE['root'],
+            asset('images/selo-pros-documentos.png', 'site', 0),
+        );
+
         echo $this->view->render("theme/site/home", [
-            "title" => "Home",
             "banners" => $banners,
-            "cars" => $cars
+            "cars" => $cars,
+            "head" => $head
         ]);
     }
 
@@ -119,7 +127,7 @@ class Web extends Controller
 
     public function showBanner($data): void
     {
-        $banner = (new Banner())->find("slug = :slug", 'slug='.$data['slug'])->fetch() ?? [];
+        $banner = (new Banner())->find("slug = :slug", 'slug=' . $data['slug'])->fetch() ?? [];
 
         echo $this->view->render("theme/site/banner", [
             "title" => "Banner",
