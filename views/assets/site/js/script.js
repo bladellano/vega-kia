@@ -1,5 +1,27 @@
 $(function () {
 
+    /** Abre os links encontrados pela busca */
+    $('.tableSearch a').click(function (e) {
+
+        e.preventDefault();
+        let id = e.currentTarget.dataset.id;
+        let slug = e.currentTarget.dataset.slug;
+
+        if (!id || !slug)
+            return;
+
+        $.ajax({
+            type: "POST",
+            url: `/redirect-result`,
+            dataType: "JSON",
+            data: { id, slug },
+            success: function (su) {
+                window.location.href = su.url;
+            }
+        });
+
+    })
+
     /** Agendamento */
     $('#btnScheduling').click(function (e) {
         e.preventDefault();

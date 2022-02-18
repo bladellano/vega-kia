@@ -104,6 +104,11 @@
   .aligButtonContactUs {
     text-align: center;
   }
+
+  input[name="search"] {
+    padding: 20px 42px;
+  }
+
   /**/
 
   .wrap_cards_car {

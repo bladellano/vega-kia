@@ -101,7 +101,7 @@
                             <a href="#" class="btn btn-default d-sm-none btn--dark"><i class="fa fa-phone-square"></i> 91 - 3245.2564 </a>
                         </div>
                         <div class="col-md-3">
-                            <form action="<?= SITE['root'] ?>/search" method="GET" disable-ajax-form>
+                            <form action="<?= SITE['root'] ?>/busca" method="GET" disable-ajax-form>
                                 <input type="text" name="search" class="form-control d-sm-none">
                             </form>
 
@@ -171,7 +171,10 @@
                         </a>
                     </li>
                     <li>
-                        <input type="text" name="search" class="form-control d-sm-block d-md-none">
+                        <form action="<?= SITE['root'] ?>/busca" method="GET" disable-ajax-form>
+                            <input type="text" name="search" class="form-control d-sm-block d-md-none">
+
+                        </form>
                     </li>
                 </ul>
             </div>

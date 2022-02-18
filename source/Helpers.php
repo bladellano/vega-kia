@@ -16,6 +16,11 @@ function buildBreadcrumb(): string
     $html = "<li class='breadcrumb-item'><a href='" . SITE['root'] . "'>Home</a></li>";
     foreach ($breadcrumb as $link) :
         $acc .= DS . $link;
+
+        /** Remove os detalhes da query string */
+        if (strripos($link, "&") !== FALSE)
+            $link = substr($link, 0, strpos($link, '&'));
+
         $html .= "<li class='breadcrumb-item'><a href='" . SITE['root'] . $acc . "'>" . ucfirst($link) . "</a></li>";
     endforeach;
 

@@ -41,6 +41,18 @@ body {
   font-family: "Kia-Medium";
 }
 
+.tableSearch tbody tr td a {
+  color: #666;
+}
+.tableSearch tbody tr td a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: var(--kia-preto-noturno);
+  color: #fff;
+}
 #pixlee_container {
   height: 380px;
   overflow: auto;

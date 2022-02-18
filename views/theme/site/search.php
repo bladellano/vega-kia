@@ -12,12 +12,22 @@
     <hr>
     <div class="content_page">
 
-        <table class="table table-light">
+        <table class="table table-light tableSearch">
             <tbody>
                 <tr>
                     <td style="width:25%">Título</td>
                     <td>Descrição</td>
                 </tr>
+
+                <?php if (!count($result)) : ?>
+                    <tr>
+                        <td colspan="2">
+                            <div class="alert alert-warning text-center" role="alert">
+                                Nenhum resultado!
+                            </div>
+                        </td>
+                    </tr>
+                <?php endif; ?>
 
                 <?php foreach ($result as $r) : ?>
 
@@ -37,4 +47,5 @@
 <!-- ./container -->
 
 <?php $v->start("scripts"); ?>
+<script src="<?= asset("/js/highlight.js", 'site'); ?>"></script>
 <?php $v->end(); ?>

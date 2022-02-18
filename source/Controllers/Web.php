@@ -30,6 +30,9 @@ class Web extends Controller
     {
         extract($_REQUEST);
 
+        if (!isset($search))
+            header("Location: " . $this->router->route("web.home"));
+
         $connect = Connect::getInstance();
 
         $sql = "SELECT 
@@ -64,14 +67,73 @@ class Web extends Controller
 
         $result = $connect->query($sql);
         $result = $result->fetchAll();
-
+        $qtd = count($result);
+        
         echo $this->view->render("theme/site/search", [
-            "title" => "Resultado da busca",
+            "title" => "Resultado da busca ({$qtd})",
             "result" => $result,
         ]);
 
         exit;
     }
+
+
+    public function redirectResult()
+    {
+        $connect = Connect::getInstance();
+
+        extract($_REQUEST);
+
+        $sql = "SELECT
+        'banners' as thisTable,
+        b.id,
+        b.slug, 
+        b.title, 
+        b.description, 
+        b.content 
+        FROM banners b WHERE TRUE AND 
+        b.id = $id AND b.slug = '{$slug}'
+        -- 
+        UNION 
+        SELECT 
+        'posts' as thisTable,
+        p.id,
+        p.slug,
+        p.title, 
+        p.description, 
+        p.content 
+        FROM posts p WHERE TRUE AND 
+        p.id = $id AND p.slug = '{$slug}'
+        UNION 
+        SELECT 
+        'vc_carros' as thisTable,
+        c.id,
+        c.slug,
+        c.nome_titulo, 
+        c.nome_subtitulo, 
+        c.descricao 
+        FROM vc_carros c WHERE TRUE AND 
+        c.id = $id AND c.slug = '{$slug}'
+        ";
+
+        $result = $connect->query($sql);
+        $result = $result->fetch();
+
+        switch ($result->thisTable) {
+            case 'banners':
+                echo json_encode(['url' => SITE['root'] . DS . "banner/{$result->slug}"]);
+                break;
+            case 'posts':
+                echo json_encode(['url' => SITE['root'] . DS . "{$result->slug}"]);
+                break;
+            case 'vc_carros':
+                echo json_encode(['url' => SITE['root'] . DS . "novos/{$result->slug}"]);
+                break;
+        }
+        exit;
+    }
+
+
     /**
      * Monta tela principal
      */
