@@ -23,6 +23,8 @@ $app->group(null);
 $app->get("/", "Web:home", "web.home");
 $app->get("/{slug}", "Web:page", "web.page");
 
+$app->get("/search", "Web:search", "web.search");
+
 /** Páginas da Web */
 $app->get("/semi-novos", "Web:semiNew", "web.seminew");
 $app->get("/test-drive", "Web:testDrive", "web.testdrive");

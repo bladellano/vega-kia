@@ -2,6 +2,7 @@
 
 namespace Source\Controllers;
 
+use CoffeeCode\DataLayer\Connect;
 use Source\Seo;
 use Source\Mailer;
 use Source\Models\Car;
@@ -25,6 +26,52 @@ class Web extends Controller
         parent::__construct($router);
     }
 
+    public function search(): void
+    {
+        extract($_REQUEST);
+
+        $connect = Connect::getInstance();
+
+        $sql = "SELECT 
+        b.id,
+        b.slug, 
+        b.title, 
+        b.description, 
+        b.content 
+        FROM banners b WHERE TRUE AND 
+        b.title LIKE '%{$search}%' OR b.description LIKE '%{$search}%' OR b.content LIKE '%{$search}%'
+        -- 
+        UNION 
+        SELECT 
+        p.id,
+        p.slug,
+        p.title, 
+        p.description, 
+        p.content 
+        FROM posts p WHERE TRUE AND 
+        p.title LIKE '%{$search}%' OR p.description LIKE '%{$search}%' OR p.content LIKE '%{$search}%'
+        -- 
+        UNION 
+        SELECT 
+        c.id,
+        c.slug,
+        c.nome_titulo, 
+        c.nome_subtitulo, 
+        c.descricao 
+        FROM vc_carros c WHERE TRUE AND 
+        c.nome_titulo LIKE '%{$search}%' OR c.nome_subtitulo LIKE '%{$search}%' OR c.descricao LIKE '%{$search}%'
+        ";
+
+        $result = $connect->query($sql);
+        $result = $result->fetchAll();
+
+        echo $this->view->render("theme/site/search", [
+            "title" => "Resultado da busca",
+            "result" => $result,
+        ]);
+
+        exit;
+    }
     /**
      * Monta tela principal
      */

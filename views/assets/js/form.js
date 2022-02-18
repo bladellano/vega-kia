@@ -1,6 +1,6 @@
 $(function () {
 
-    $("form").submit(function (e) {
+    $("form:not([disable-ajax-form])").submit(function (e) {
         e.preventDefault();
 
         let form = $(this);
