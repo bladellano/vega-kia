@@ -8,7 +8,7 @@ class Car extends DataLayer
 {
     public function __construct()
     {
-        parent::__construct("vc_carros", ["nome_titulo", "nome_subtitulo", "slug", "descricao", "id_modelo"]);
+        parent::__construct("vc_carros", ["nome_titulo", "nome_subtitulo", "slug", "descricao", "id_categoria"]);
     }
 
     public function save_(): bool

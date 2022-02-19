@@ -68,11 +68,11 @@
                                          </div>
 
                                          <div class="form-group col-md-12">
-                                             <label for="id_modelo">Modelo</label>
-                                             <select name="id_modelo" id="id_modelo" class="form-control">
+                                             <label for="id_categoria">Categoria</label>
+                                             <select name="id_categoria" id="id_categoria" class="form-control">
                                                  <option value="">--</option>
-                                                 <?php foreach ($modelos as $m) : ?>
-                                                     <option value="<?= $m->id ?>" <?= (isset($car->id_modelo) && $car->id_modelo == $m->id) ? 'selected' : '' ?>><?= $m->nome ?></option>
+                                                 <?php foreach ($categorias as $cat) : ?>
+                                                     <option value="<?= $cat->id ?>" <?= (isset($car->id_categoria) && $car->id_categoria == $cat->id) ? 'selected' : '' ?>><?= $cat->nome ?></option>
                                                  <?php endforeach ?>
                                              </select>
                                          </div>

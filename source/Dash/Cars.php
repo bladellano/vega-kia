@@ -7,6 +7,7 @@ use Source\Models\Car\CarImage;
 use Source\Models\Car\CarCidade;
 use Source\Models\Car\CarModelo;
 use Source\Dash\Controller as DashController;
+use Source\Models\Car\CarCategoria;
 use Source\Models\Car\CarCombustivel;
 use Source\Models\Car\CarUnidadeLoja;
 use Source\Models\Car\CarVersao;
@@ -21,6 +22,7 @@ class Cars extends DashController
         parent::__construct($router);
 
         $this->modelos = (new CarModelo())->find()->order("nome ASC")->fetch(true) ?? [];
+        $this->categorias = (new CarCategoria())->find()->order("nome ASC")->fetch(true) ?? [];
     }
 
     public function deleteImage($data)
@@ -83,6 +85,7 @@ class Cars extends DashController
             "cidades" => $cidades,
             "unidadesLojas" => $unidadesLojas,
             "combustiveis" => $combustiveis,
+            "categorias" => $this->categorias,
         ]);
     }
 
@@ -204,6 +207,7 @@ class Cars extends DashController
             "titleHeader" => "Edição",
             "car" => $car,
             "modelos" => $this->modelos,
+            "categorias" => $this->categorias,
             "cidades" => $cidades,
             "unidadesLojas" => $unidadesLojas,
             "combustiveis" => $combustiveis,
