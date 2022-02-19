@@ -24,12 +24,16 @@ $(function () {
                 ajax_load("close");
 
                 if (su.message) {
+                    console.log('su', su)
                     let view = '<div class="message ' + su.message.type + '">' + su.message.message + '</div>';
                     $(".login_form_callback").html(view);
                     $(".message").effect("bounce");
-                    $('form').each((i,e)=>{
-                        e.reset()
-                    });
+
+                    if (su.message.type != 'error') {
+                        $('form').each((i, e) => {
+                            e.reset()
+                        });
+                    }
                     return;
                 }
 

@@ -45,7 +45,8 @@
                                     <th>Cor</th>
                                     <th>Imagem</th>
                                     <th>Criado</th>
-                                    <th style="width: 60px"></th>
+                                    <th>Atualizado</th>
+                                    <th style="width: 70px"></th>
                                 </tr>
                             </thead>
 
@@ -58,10 +59,10 @@
                                         <td><?= $c->nome_subtitulo ?></td>
                                         <td><?= $c->slug ?></td>
                                         <td>R$ <?=money( $c->valor ) ?></td>
-
                                         <td><input type="color" class="form-control form-control-color" value="<?= $c->cor ?>" title="Cor do veículo"></td>
                                         <td> <img class="img-fluid" height="100" width="100" src="<?= SITE['root'] . DS . $c->imagem_thumb ?>" alt="SEM IMAGEM"></td>
                                         <td><?= convertDatePtbr($c->created_at) ?></td>
+                                        <td><?= convertDatePtbr($c->updated_at) ?></td>
                                         <td>
                                             <a href="cars/edit/<?= $c->id ?>" class="btn btn-default btn-sm" title="Editar"><i class="fas fa-pencil-alt"></i></a>
                                             <a onclick="return confirm('Deseja realmente excluir este registro?')" href="cars/delete/<?= $c->id ?>" class="btn btn-default btn-sm" title="Excluir"><i class="fas fa-trash-alt"></i></a>

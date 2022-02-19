@@ -20,11 +20,11 @@ $(function () {
         </div>
         <div class="form-group col-md-4">
             <label for="ano">Ano</label>
-            <input type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000">
+            <input type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000" onkeyup="onlyNumbers(this)">
         </div>
         <div class="form-group col-md-4">
             <label for="modelo">Modelo</label>
-            <input type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000">
+            <input type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000" onkeyup="onlyNumbers(this)">
         </div>
         <div class="form-group col-md-12">
             <label for="descricao">Principais características</label>
@@ -143,5 +143,14 @@ function runSummernote(element = '.summernote', height = 350) {
     return $(element).summernote({
         height: height,
     });
+}
+
+function onlyNumbers(num) {
+    var er = /[^0-9.]/;
+    er.lastIndex = 0;
+    var campo = num;
+    if (er.test(campo.value)) {
+      campo.value = "";
+    }
 }
 

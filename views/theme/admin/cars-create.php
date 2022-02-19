@@ -97,11 +97,11 @@
                                              </div>
                                              <div class="form-group col-md-4">
                                                  <label for="ano">Ano</label>
-                                                 <input value="<?= isset($ver->ano) ? $ver->ano : "" ?>" type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000">
+                                                 <input value="<?= isset($ver->ano) ? $ver->ano : "" ?>" type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000" onkeyup="onlyNumbers(this)">
                                              </div>
                                              <div class="form-group col-md-4">
                                                  <label for="modelo">Modelo</label>
-                                                 <input value="<?= isset($ver->modelo) ? $ver->modelo : "" ?>" type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000">
+                                                 <input value="<?= isset($ver->modelo) ? $ver->modelo : "" ?>" type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000" onkeyup="onlyNumbers(this)">
                                              </div>
                                              <div class="form-group col-md-12">
                                                  <label for="descricao">Principais características</label>
@@ -126,11 +126,11 @@
                                          </div>
                                          <div class="form-group col-md-4">
                                              <label for="ano">Ano</label>
-                                             <input type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000">
+                                             <input type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000" onkeyup="onlyNumbers(this)">
                                          </div>
                                          <div class="form-group col-md-4">
                                              <label for="modelo">Modelo</label>
-                                             <input type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000">
+                                             <input type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000" onkeyup="onlyNumbers(this)">
                                          </div>
                                          <div class="form-group col-md-12">
                                              <label for="descricao">Principais características</label>
@@ -276,8 +276,8 @@
                                          <?php endif; ?>
 
                                          <?php if (isset($imagensCarro) && !count($imagensCarro)) : ?>
-                                             <div class="alert alert-warning" role="alert">
-                                                 Nenhuma imagem para o carro.
+                                             <div class="alert alert-danger" role="alert">
+                                                 Galeria de imagens vazia. Adicione imagens para o carro.
                                              </div>
                                          <?php endif; ?>
                                      </div>

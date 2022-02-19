@@ -88,14 +88,24 @@ class Cars extends DashController
 
     public function register($data): void
     {
+
         $data['valor'] = moneyToDB($data['valor']);
+        $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['nome_titulo']);
 
         $car = new \Source\Models\Car;
 
-        $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['nome_titulo']);
+        if (in_array("", $data) || $_FILES['imageCar']['error']) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos"
+            ]);
+            return;
+        }
+
+        $versoes = $data['dataVersao'];
+        unset($data['dataVersao']);
 
         /** Imagem Principal */
-
         $uploadImg = new Image('storage/images', 'carros');
 
         if (!$_FILES['imageCar']['error'] && in_array($_FILES['imageCar']["type"], $uploadImg::isAllowed())) {
@@ -104,14 +114,6 @@ class Cars extends DashController
         }
 
         foreach ($data as $key => $value) $car->{$key} = $value;
-
-        if (in_array("", $data)) {
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Preencha todos os campos"
-            ]);
-            return;
-        }
 
         if (!$car->save()) {
 
@@ -123,6 +125,20 @@ class Cars extends DashController
         }
 
         $carId = $car->data()->id;
+
+        /** Adicionando Versões */
+        if (!empty($versoes['nome'][0])) {
+
+            $normalizedFields = normalizeFiles($versoes, 'nome');
+
+            foreach ($normalizedFields as $fields) {
+
+                $versao = new CarVersao();
+                $versao->id_carro = $carId;
+                foreach ($fields as $key => $value) $versao->{$key} = trim($value);
+                $versao->save();
+            }
+        }
 
         /** Imagens do Carro */
         $files = normalizeFiles($_FILES['file']);
@@ -201,11 +217,8 @@ class Cars extends DashController
     public function update($data): void
     {
 
-        /**
-         * Criando versões
-         */
-
-         /** Apaga as versões que já existem */
+        /** Criando versões */
+        /** Apaga as versões que já existem. Adiciona novamente */
         $carVersions = (new CarVersao())->find("id_carro = :id_carro", "id_carro={$data['id']}")->fetch(true) ?? [];
         foreach ($carVersions as $ver)
             $ver->destroy();
@@ -222,7 +235,6 @@ class Cars extends DashController
                 $versao->save();
             }
         }
-
 
         $data['valor'] = moneyToDB($data['valor']);
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['nome_titulo']);
@@ -250,7 +262,7 @@ class Cars extends DashController
             }
         }
 
-        /** Substituição */
+        /** Substituição da imagem principal */
         if (!$_FILES['imageCar']['error'] && in_array($_FILES['imageCar']["type"], $uploadImg::isAllowed())) {
 
             if (file_exists($car->imagem)) {
@@ -294,6 +306,16 @@ class Cars extends DashController
 
         $carImages = (new CarImage())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
 
+        $carVersions = (new CarVersao())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
+
+        /* Apaga a imagem principal */
+
+        if (file_exists($car->imagem)) {
+            unlink($car->imagem);
+            unlink($car->imagem_thumb);
+        }
+
+        /* Apaga as imagens */
         foreach ($carImages as $image) {
 
             if (file_exists($image->imagem)) {
@@ -303,6 +325,10 @@ class Cars extends DashController
 
             (new CarImage())->findById(($image->id))->destroy();
         }
+
+        /** Apaga as versões */
+        foreach ($carVersions as $v)
+            $v->destroy();
 
         if (!$car->destroy()) {
             echo $this->ajaxResponse("message", [
