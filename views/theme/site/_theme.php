@@ -39,7 +39,8 @@
 
     <div class="cookies-container">
         <div class="cookies-content">
-            <p>Para otimizar a sua experiência e proteger seus dados durante a navegação, fazemos uso de nossa Política de Cookies e Política de Privacidade. Ao navegar em nosso site, você concorda com nossas políticas.</p>
+            <p>Para otimizar a sua experiência e proteger seus dados durante a navegação, fazemos uso de nossa <a href="<?=SITE['root']?>/politica-de-cookies">Política de Cookies</a> e 
+                <a href="<?=SITE['root']?>/politica-de-privacidade">Política de Privacidade</a>. Ao navegar em nosso site, você concorda com nossas políticas.</p>
             <div class="cookies-pref"> 
                 <label><input type="checkbox" checked data-function="analytics">Análise de Uso</label>
                 <label><input type="checkbox" checked data-function="marketing">Marketing</label>
