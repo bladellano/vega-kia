@@ -148,19 +148,22 @@ mark {
   transform: translateX(8px);
 }
 .socialNetworks {
-  transition: all 0.5s ease-in-out;
-  background-color: #fff;
-  position: fixed;
-  bottom: 20px;
-  padding: 10px 10px;
-  border-radius: 0 6px 6px 0;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  z-index: 3;
-  left: 0;
-  margin-left: -8px;
+	transition: all 0.5s ease-in-out;
+	background-color: #fff;
+	position: fixed;
+	bottom: 20px;
+	padding: 10px;
+	border-radius: 0 6px 6px 0;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	z-index: 3;
+	left: 0;
+	margin-left: -8px;
+	width: 160px;
+	padding-left: 20px;
 }
 .socialNetworks p {
-  margin: 0;
+	margin: 0;
+	margin-bottom: 6px;
 }
 .socialNetworks a {
   margin-right: 10px;
