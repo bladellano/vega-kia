@@ -88,6 +88,7 @@ class Cars extends DashController
 
     public function register($data): void
     {
+        echo '<pre>$data<br />'; print_r($data); echo '</pre>';die;
 
         $data['valor'] = moneyToDB($data['valor']);
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['nome_titulo']);
