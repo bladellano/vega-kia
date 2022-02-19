@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="<?= asset("css/flexslider.css", 'site'); ?>">
     <link rel="stylesheet" href="<?= asset("css/custom-flexslider.css", 'site'); ?>">
 
+    <link rel="stylesheet" href="<?= asset("css/cookies.css", 'site', 0); ?>">
+
     <link rel="stylesheet" href="<?= asset("css/style.css", 'site', 0); ?>">
     <link rel="stylesheet" href="<?= asset("css/style-mobile.css", 'site'); ?>">
 
@@ -32,6 +34,19 @@
 </head>
 
 <body>
+
+    <!-- Cookies -->
+
+    <div class="cookies-container">
+        <div class="cookies-content">
+            <p>Para otimizar a sua experiência e proteger seus dados durante a navegação, fazemos uso de nossa Política de Cookies e Política de Privacidade. Ao navegar em nosso site, você concorda com nossas políticas.</p>
+            <div class="cookies-pref"> 
+                <label><input type="checkbox" checked data-function="analytics">Análise de Uso</label>
+                <label><input type="checkbox" checked data-function="marketing">Marketing</label>
+            </div>
+            <button class="cookies-save">Aceitar</button>
+        </div>
+    </div>
 
     <!-- Agendamento -->
 
@@ -294,6 +309,8 @@
 
     <script src="<?= asset("js/jquery.flexslider.js", 'site'); ?>"></script>
     <script src="<?= asset("js/script.js", 'site'); ?>"></script>
+
+    <script src="<?= asset("js/cookies.js", 'site'); ?>"></script>
 
     <?= $v->section("scripts"); ?>
 

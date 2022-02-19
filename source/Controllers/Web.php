@@ -68,7 +68,7 @@ class Web extends Controller
         $result = $connect->query($sql);
         $result = $result->fetchAll();
         $qtd = count($result);
-        
+
         echo $this->view->render("theme/site/search", [
             "title" => "Resultado da busca ({$qtd})",
             "result" => $result,
@@ -76,7 +76,6 @@ class Web extends Controller
 
         exit;
     }
-
 
     public function redirectResult()
     {
