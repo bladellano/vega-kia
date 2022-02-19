@@ -42,10 +42,13 @@
     <div class="row">
 
         <div class="form-group col-md-12">
-            <select name="" class="form-control">
-                <option value="">Selecione a loja</option>
-                <option value="BELÉM">BELÉM</option>
-                <option value="ANANINDEUA">ANANINDEUA</option>
+            <select name="servico" class="form-control">
+                <option value="">Selecione o serviço</option>
+                <option value="Veículos novos">Veículos novos</option>
+                <option value="Teste Drive">Teste Drive</option>
+                <option value="Veículos Seminovos">Veículos Seminovos</option>
+                <option value="Peças e acessórios">Peças e acessórios</option>
+                <option value="Serviços">Serviços</option>
             </select>
         </div>
 

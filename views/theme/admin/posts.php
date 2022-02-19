@@ -43,7 +43,8 @@
                                      <th>Slug</th>
                                      <th>Tipo</th>
                                      <th>Criado</th>
-                                     <th style="width: 60px"></th>
+                                     <th>Atualizado</th>
+                                     <th style="width: 70px"></th>
                                  </tr>
                              </thead>
 
@@ -57,6 +58,7 @@
                                          <td><?= $p->slug ?></td>
                                          <td><?= $p->type ?></td>
                                          <td><?= convertDatePtbr($p->created_at)?></td>
+                                         <td><?= convertDatePtbr($p->updated_at)?></td>
                                          <td>
                                              <a href="posts/edit/<?=$p->id?>" class="btn btn-default btn-sm" title="Editar"><i class="fas fa-pencil-alt"></i></a> 
                                              <a onclick="return confirm('Deseja realmente excluir este registro?')" href="posts/delete/<?=$p->id?>" class="btn btn-default btn-sm" title="Excluir"><i class="fas fa-trash-alt"></i></a> 

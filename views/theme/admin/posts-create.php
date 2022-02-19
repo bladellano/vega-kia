@@ -66,6 +66,15 @@
                                  </div>
                                  <!--  -->
 
+                                 <div class="form-group">
+                                     <label for="category_id">Site Map</label>
+                                     <select name="category_id" id="category_id" class="form-control">
+                                         <option value="">--</option>
+                                         <option value="1" <?=(isset($post->category_id) && $post->category_id == 1) ? 'selected' :'' ?>>SIM</option>
+                                         <option value="0" <?=((empty($post->category_id) || $post->category_id==0)) ? 'selected' :'' ?>>NÃO</option>
+                                     </select>
+                                 </div>
+
                              </div>
                              <!-- /.card-body -->
                              <div class="card-footer">

@@ -39,9 +39,10 @@
 
     <div class="cookies-container">
         <div class="cookies-content">
-            <p>Para otimizar a sua experiência e proteger seus dados durante a navegação, fazemos uso de nossa <a href="<?=SITE['root']?>/politica-de-cookies">Política de Cookies</a> e 
-                <a href="<?=SITE['root']?>/politica-de-privacidade">Política de Privacidade</a>. Ao navegar em nosso site, você concorda com nossas políticas.</p>
-            <div class="cookies-pref"> 
+            <p>Para otimizar a sua experiência e proteger seus dados durante a navegação, fazemos uso de nossa <a href="<?= SITE['root'] ?>/politica-de-cookies">Política de Cookies</a> e
+                <a href="<?= SITE['root'] ?>/politica-de-privacidade">Política de Privacidade</a>. Ao navegar em nosso site, você concorda com nossas políticas.
+            </p>
+            <div class="cookies-pref">
                 <label><input type="checkbox" checked data-function="analytics">Análise de Uso</label>
                 <label><input type="checkbox" checked data-function="marketing">Marketing</label>
             </div>
@@ -175,7 +176,7 @@
                     <li><a href="<?= SITE['root'] ?>/pecas-e-acessorios">PEÇAS E ACESSÓRIOS</a></li>
                     <li><a href="<?= SITE['root'] ?>/consorcio">CONSÓRCIO</a></li>
                     <li><a href="<?= SITE['root'] ?>/test-drive">TEST DRIVE</a></li>
-                    <li><a href="<?= SITE['root'] ?>/agendamento" id="btnScheduling">AGENDAMENTO</a></li>
+                    <li><a href="<?= SITE['root'] ?>/agendamento" class="btnScheduling">AGENDAMENTO</a></li>
                     <li><a href="<?= SITE['root'] ?>/venda-direta">VENDA DIRETA</a></li>
                     <li><a href="<?= SITE['root'] ?>/sobre">SOBRE</a></li>
                     <li><a href="<?= SITE['root'] ?>/fale-conosco">FALE CONOSCO</a></li>
@@ -261,12 +262,18 @@
                         <ul>
                             <li><a href="<?= SITE['root'] ?>/novos">Novos</a></li>
                             <li><a href="<?= SITE['root'] ?>/semi-novos">Semi-novos</a></li>
-                            <li><a href="<?= SITE['root'] ?>/pecas-e-acessorios">Peças e acessórios</a></li>
-                            <li><a class="scroll" href="<?= SITE['root'] ?>/#consorcio-seguros">Consórcio</a></li>
-                            <li><a href="<?= SITE['root'] ?>/test-drive">Test Drive</a></li>
-                            <li><a class="scroll" href="<?= SITE['root'] ?>/#servicos">Agendamento</a></li>
-                            <li><a href="<?= SITE['root'] ?>/venda-direta">Venda Direta</a></li>
-                            <li><a class="scroll" href="<?= SITE['root'] ?>/#showroom">Fale Conosco</a></li>
+                            <li><a class="btnScheduling" href="#">Agendamento</a></li>
+
+                            <?php foreach (getSiteMap() as $s) : ?>
+
+                                <li>
+                                    <a href="<?= SITE['root'] . DS . $s->slug ?>">
+                                        <?= $s->title ?>
+                                    </a>
+                                </li>
+
+                            <?php endforeach; ?>
+
                         </ul>
                     </div>
                 </div>

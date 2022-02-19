@@ -23,7 +23,7 @@ $(function () {
     })
 
     /** Agendamento */
-    $('#btnScheduling').click(function (e) {
+    $('.btnScheduling').click(function (e) {
         e.preventDefault();
         $('#preAgendamento').modal();
     });
