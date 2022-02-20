@@ -65,6 +65,7 @@ $app->post("/posts/register", "Posts:register", "posts.register");
 $app->post("/posts/update/{id}", "Posts:update", "posts.update");
 $app->get("/posts/delete/{id}", "Posts:delete", "posts.delete");
 $app->get("/posts/edit/{id}", "Posts:edit", "posts.edit");
+    $app->get("/posts/remove-cover/{id}", "Posts:removeCover", "posts.removecover");
 
 /** Banners */
 $app->get("/banners", "Banners:home", "banners.home");

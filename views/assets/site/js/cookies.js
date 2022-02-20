@@ -1,6 +1,7 @@
 function cookies(functions) {
     const container = document.querySelector('.cookies-container');
     const save = document.querySelector('.cookies-save');
+    const btnClose = document.querySelector('.btnCloseContainerCookies');
 
     if (!container || !save) return null;
 
@@ -26,6 +27,9 @@ function cookies(functions) {
     }
 
     save.addEventListener('click', handleSave);
+    btnClose.addEventListener('click', () => {
+        container.style.display = 'none';
+    });
 
 }
 

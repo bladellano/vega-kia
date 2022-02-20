@@ -38,6 +38,7 @@
     <!-- Cookies -->
 
     <div class="cookies-container">
+        <span class="fa fa-times btnCloseContainerCookies"></span>
         <div class="cookies-content">
             <p>Para otimizar a sua experiência e proteger seus dados durante a navegação, fazemos uso de nossa <a href="<?= SITE['root'] ?>/politica-de-cookies">Política de Cookies</a> e
                 <a href="<?= SITE['root'] ?>/politica-de-privacidade">Política de Privacidade</a>. Ao navegar em nosso site, você concorda com nossas políticas.

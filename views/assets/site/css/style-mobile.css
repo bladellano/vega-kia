@@ -19,7 +19,7 @@
   }
   .wrap_cards_car ul li {
     margin: 2px 1px;
-    width: 170px;
+    flex: 1 1 162px;
   }
   .wrap_cards_car ul {
     display: flex;
@@ -92,7 +92,7 @@
     margin: 6px 0;
   }
   .socialNetworks {
-    width: 52px;
+    width: 64px;
   }
 
   .socialNetworks p {
@@ -107,6 +107,24 @@
 
   input[name="search"] {
     padding: 20px 42px;
+  }
+
+  .sub_menu {
+    min-width: 100%;
+    padding: 2px 14px;
+  }
+  .sub_menu .col {
+    margin: 12px;
+  }
+
+  .navbar li:hover a:not(.d-md-none)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 6%;
+    margin: -1px 0;
+    width: 86%;
+    border: 1px solid var(--kia-preto-noturno);
   }
 
   /**/

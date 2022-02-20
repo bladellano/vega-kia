@@ -128,9 +128,9 @@ $(function () {
 
     $('#slider').flexslider({
         animation: "slide",
-        controlNav: false,
+        controlNav: true,
         animationLoop: false,
-        slideshow: false,
+        slideshow: true,
         sync: "#carousel",
         customDirectionNav: $(".custom-navigation a")
 

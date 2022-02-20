@@ -41,15 +41,46 @@ body {
   font-family: "Kia-Medium";
 }
 
+/* Paginas internas */
+.wrapInternalImage {
+  position: relative;
+}
+.wrapInternalImage img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  filter: brightness(44%);
+}
+.wrapInternalImage p {
+	position: absolute;
+	background-color: var(--kia-vermelho-vibrante);
+	right: 50%;
+	top: 6%;
+	transform: translate(50%,50%);
+	color: #fff;
+	min-width: 200px;
+	text-align: center;
+	padding: 10px 2px;
+	z-index: 1;
+  font-size: 22px;
+}
+
 /* Custom Cookies */
 
+.cookies-container span {
+  position: absolute;
+  top: 4px;
+  right: 36px;
+  z-index: 2;
+  cursor: pointer;
+}
 .cookies-content {
   max-width: 96% !important;
   box-shadow: 0 1px 13px rgba(0, 0, 0, 0.6);
   padding: 3rem 1rem;
 }
 .cookies-save {
-  background-color: red;
+  background-color: var(--kia-vermelho-vibrante);
   font-size: 1.2em;
   padding: 0.8rem 3rem;
 }
@@ -148,22 +179,22 @@ mark {
   transform: translateX(8px);
 }
 .socialNetworks {
-	transition: all 0.5s ease-in-out;
-	background-color: #fff;
-	position: fixed;
-	bottom: 20px;
-	padding: 10px;
-	border-radius: 0 6px 6px 0;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-	z-index: 3;
-	left: 0;
-	margin-left: -8px;
-	width: 160px;
-	padding-left: 20px;
+  transition: all 0.5s ease-in-out;
+  background-color: #fff;
+  position: fixed;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 0 6px 6px 0;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  left: 0;
+  margin-left: -8px;
+  width: 160px;
+  padding-left: 20px;
 }
 .socialNetworks p {
-	margin: 0;
-	margin-bottom: 6px;
+  margin: 0;
+  margin-bottom: 6px;
 }
 .socialNetworks a {
   margin-right: 10px;
@@ -515,6 +546,8 @@ mark {
 /* Custom breadcrumb Site */
 .breadcrumb {
   padding: 15px 4px;
+  margin: 0;
+  background-color: #fff;
 }
 .breadcrumb .breadcrumb-item a {
   color: #333;

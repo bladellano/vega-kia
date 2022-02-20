@@ -39,6 +39,16 @@ class Posts extends DashController
 
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
 
+        /** FILE */
+        $file = $_FILES['file'] ?? NULL;
+        $uploadImg = new \CoffeeCode\Uploader\Image('storage/images', 'posts');
+
+        if (!$file['error'] && in_array($file["type"], $uploadImg::isAllowed())) {
+
+            $data['cover'] = $uploadImg->upload($file, md5(uniqid(time())));
+            $data['cover_thumb'] = $uploadImg->upload($file, "thumb_" . md5(uniqid(time())), 600);
+        }
+
         foreach ($data as $key => $value) $post->{$key} = $value;
 
         if (in_array("", $data)) {
@@ -79,10 +89,24 @@ class Posts extends DashController
 
     public function update($data): void
     {
-
         $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
 
         $post = (new \Source\Models\Post())->findById($data['id']);
+
+        /** FILE */
+        $file = $_FILES['file'] ?? NULL;
+        $uploadImg = new \CoffeeCode\Uploader\Image('storage/images', 'posts');
+
+        if (!$file['error'] && in_array($file["type"], $uploadImg::isAllowed())) {
+
+            if (file_exists($post->cover)) {
+                unlink($post->cover);
+                unlink($post->cover_thumb);
+            }
+
+            $data['cover'] = $uploadImg->upload($file, md5(uniqid(time())));
+            $data['cover_thumb'] = $uploadImg->upload($file, "thumb_" . md5(uniqid(time())), 600);
+        }
 
         unset($data['id']);
 
@@ -107,8 +131,14 @@ class Posts extends DashController
 
     public function delete($data): void
     {
-
         $post = (new \Source\Models\Post())->findById($data['id']);
+
+        /* Apaga a imagem principal */
+
+        if (file_exists($post->cover)) {
+            unlink($post->cover);
+            unlink($post->cover_thumb);
+        }
 
         if (!$post->destroy()) {
             echo $this->ajaxResponse("message", [
@@ -123,5 +153,18 @@ class Posts extends DashController
         $this->router->redirect("posts.home");
 
         return;
+    }
+
+    public function removeCover($data)
+    {
+        $post = (new \Source\Models\Post())->findById($data['id']);
+        $post->cover = NULL;
+        $post->cover_thumb = NULL;
+
+        if ($post->save())
+            flash("success", "Capa excluída com sucesso!");
+
+        header("Location: " . SITE['root'] . "/admin/posts/edit/{$post->id}");
+        exit;
     }
 }

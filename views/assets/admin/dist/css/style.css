@@ -1,10 +1,17 @@
 /** Custom Css */
+
+.custom-file-label::after {
+  color: #fff;
+  content: "Carregar";
+  background-color: #007bff;
+}
+
 #previewImg {
-	width: 210px;
-	object-fit: cover;
-	height: 138px;
-	margin: 10px;
-	border-radius: 6px;
+  width: 210px;
+  object-fit: cover;
+  height: 138px;
+  margin: 10px;
+  border-radius: 6px;
 }
 
 input[type="text"],

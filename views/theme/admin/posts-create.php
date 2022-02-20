@@ -42,6 +42,22 @@
                                  <div class="login_form_callback"> <?= flash(); ?></div>
 
                                  <div class="form-group">
+                                     <label for="content">Capa</label>
+                                     <div class="custom-file">
+                                         <input type="file" class="custom-file-input" id="customFile" name="file" onchange="previewFile(this)">
+                                         <label class="custom-file-label" for="customFile">Escolher arquivo</label>
+                                     </div>
+                                 </div>
+
+                                 <?php if (isset($post->id) && !empty($post->cover) ) : ?>
+                                     <img src="<?= SITE['root'] . DS . $post->cover_thumb ?>" id="previewImg"></img>
+                                     <a class="btn btn-danger btn-sm" href="<?=SITE['root']?>/admin/posts/remove-cover/<?=$post->id?>">  
+                                     <i class="far fa-trash-alt" title="Remover capa"></i></a>
+                                 <?php else : ?>
+                                     <img style="display:none" id="previewImg"></img>
+                                 <?php endif; ?>
+
+                                 <div class="form-group">
                                      <label for="title">Título</label>
                                      <input value="<?= isset($post->title) ? $post->title : "" ?>" type="text" class="form-control" id="title" name="title">
                                  </div>
@@ -56,7 +72,9 @@
                                      <textarea name="content" id="content" cols="30" rows="5" class="summernote"><?= isset($post->content) ? $post->content : "" ?></textarea>
                                  </div>
 
-                                 <div class="form-group">
+                                 <div class="row">
+
+                                 <div class="form-group col-md-6">
                                      <label for="type">Tipo</label>
                                      <select name="type" id="type" class="form-control">
                                          <option value="">--</option>
@@ -66,13 +84,17 @@
                                  </div>
                                  <!--  -->
 
-                                 <div class="form-group">
+                                 <div class="form-group col-md-6">
                                      <label for="category_id">Site Map</label>
+                                     <i class="fas fa-question-circle" 
+                                     style="cursor:help" 
+                                     title="Marcando esta opção, o post será exibido no Site Map do site."></i>
                                      <select name="category_id" id="category_id" class="form-control">
                                          <option value="">--</option>
                                          <option value="1" <?=(isset($post->category_id) && $post->category_id == 1) ? 'selected' :'' ?>>SIM</option>
                                          <option value="0" <?=((empty($post->category_id) || $post->category_id==0)) ? 'selected' :'' ?>>NÃO</option>
                                      </select>
+                                 </div>
                                  </div>
 
                              </div>

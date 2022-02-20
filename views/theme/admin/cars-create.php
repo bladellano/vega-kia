@@ -47,7 +47,7 @@
                                          <label for="content">Imagem do Carro</label>
                                          <div class="custom-file">
                                              <input type="file" class="custom-file-input" id="customFile" name="imageCar" onchange="previewFile(this)">
-                                             <label class="custom-file-label" for="customFile">Choose file</label>
+                                             <label class="custom-file-label" for="customFile">Escolher arquivo</label>
                                          </div>
                                          <?php if (isset($car->id)) : ?>
                                              <img src="<?= SITE['root'] . DS . $car->imagem_thumb ?>" id="previewImg"></img>
@@ -222,7 +222,7 @@
                                      <label for="content">Galeria de imagens</label>
                                      <div class="custom-file">
                                          <input type="file" class="custom-file-input" id="customFile_" name="file[]" multiple>
-                                         <label class="custom-file-label" for="customFile_">Choose file</label>
+                                         <label class="custom-file-label" for="customFile_">Escolher arquivo</label>
                                      </div>
                                  </div>
 

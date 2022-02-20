@@ -41,7 +41,6 @@
 
                                  <div class="login_form_callback"> <?= flash(); ?></div>
 
-
                                  <div class="form-group">
                                      <label for="title">Título</label>
                                      <input value="<?= isset($banner->title) ? $banner->title : "" ?>" type="text" class="form-control" id="title" name="title">
@@ -58,14 +57,14 @@
                                  </div>
                                  <div class="form-group">
                                      <label for="url">Url
-                                         <i class="fas fa-question-circle" style="cursor:pointer" title="Se estiver vazio, o conteúdo a ser exibido será do próprio banner registrado"></i> </label>
+                                         <i class="fas fa-question-circle" style="cursor:help" title="Se estiver vazio, o conteúdo a ser exibido será do próprio banner registrado"></i> </label>
                                      <input placeholder="https:// ou  http://" value="<?= isset($banner->url) ? $banner->url : "" ?>" type="text" class="form-control" id="url" name="url">
                                  </div>
                                  <div class="form-group">
                                      <label for="content">Imagem</label>
                                      <div class="custom-file">
                                          <input type="file" class="custom-file-input" id="customFile" name="file" onchange="previewFile(this)">
-                                         <label class="custom-file-label" for="customFile">Choose file</label>
+                                         <label class="custom-file-label" for="customFile">Escolher arquivo</label>
                                      </div>
                                  </div>
 
