@@ -158,6 +158,12 @@ class Posts extends DashController
     public function removeCover($data)
     {
         $post = (new \Source\Models\Post())->findById($data['id']);
+
+        if (file_exists($post->cover)) {
+            unlink($post->cover);
+            unlink($post->cover_thumb);
+        }
+        
         $post->cover = NULL;
         $post->cover_thumb = NULL;
 
