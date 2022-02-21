@@ -41,6 +41,9 @@ body {
   font-family: "Kia-Medium";
 }
 
+.flexslider.cars.hideFlexControlNav .flex-control-nav {
+  display: none;
+}
 /* Paginas internas */
 .wrapInternalImage {
   position: relative;
