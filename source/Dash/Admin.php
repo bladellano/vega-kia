@@ -2,6 +2,10 @@
 
 namespace Source\Dash;
 
+use Source\Models\Car;
+use Source\Models\Post;
+use Source\Models\User;
+use Source\Models\Banner;
 use Source\Dash\Controller as DashController;
 
 class Admin extends DashController
@@ -15,10 +19,20 @@ class Admin extends DashController
     public function home(): void
     {
 
+        $carsQtd = (new Car())->find()->count();
+        $postsQtd = (new Post())->find()->count();
+        $bannersQtd = (new Banner())->find()->count();
+        $usersQtd = (new User())->find()->count();
+
         echo $this->view->render("theme/admin/home", [
             "title" => "Dash",
             "products" =>  [],
-            "menu" => false
+            "titleHeader" => "Home",
+            "menu" => false,
+            "carsQtd" => $carsQtd,
+            "postsQtd" => $postsQtd,
+            "bannersQtd" => $bannersQtd,
+            "usersQtd" => $usersQtd,
         ]);
     }
 
