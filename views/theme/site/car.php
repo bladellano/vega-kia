@@ -51,23 +51,6 @@
                     </a>
                 </div>
 
-                <!-- <div id="carousel" class="flexslider d-sm-none">
-                    <ul class="slides">
-
-                        <?php foreach ($carImages as $c) : ?>
-                            <li>
-                                <img src="<?= SITE['root'] . DS . $c->imagem_thumb ?>" />
-                            </li>
-                        <?php endforeach; ?>
-
-                    </ul>
-                </div> -->
-
-                <!-- <div class="nav-carousel">
-                    <a href="#" class="btn flex-prev"><img src="<?= SITE['root'] . DS ?>views/assets/site/images/left.png"></a>
-                    <a href="#" class="btn flex-next"><img src="<?= SITE['root'] . DS ?>views/assets/site/images/right.png"></a>
-                </div> -->
-
             </div>
 
             <!-- Custom buttons -->
@@ -205,6 +188,31 @@
         </ul>
     </div>
 </div>
+
+<!-- BANNERS 4 -->
+<?php if(isset($buildImagesFront['FULL_BANNER_4'])): ?>
+<hr>
+<div class="images_agrupadas">
+    <div class="principal">
+        <p><?= $buildImagesFront['FULL_BANNER_4']['titulo'] ?? '--' ?></p>
+        <img src="<?= SITE('root') . DS . $buildImagesFront['FULL_BANNER_4']['imagem'] ?>" alt="SEM IMAGEM">
+    </div>
+    <div class="menores">
+        <ul>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_4_1']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_4_1']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_4_1']['titulo'] ?? '--' ?></p>
+            </li>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_4_2']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_4_2']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_4_2']['titulo'] ?? '--' ?></p>
+            </li>
+            <li class="openBtn" data-content="<?= $buildImagesFront['BANNER_4_3']['descricao'] ?? '--' ?>"><img src="<?= SITE('root') . DS . $buildImagesFront['BANNER_4_3']['imagem'] ?>" alt="SEM IMAGEM">
+                <p><?= $buildImagesFront['BANNER_4_3']['titulo'] ?? '--' ?></p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<?php endif; ?>
 
 <!-- VERSÕES -->
 

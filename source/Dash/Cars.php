@@ -192,6 +192,11 @@ class Cars extends DashController
             'BANNER_3_2',
             'BANNER_3_3',
 
+            'FULL_BANNER_4',
+            'BANNER_4_1',
+            'BANNER_4_2',
+            'BANNER_4_3',
+
             'BANNER_COLUMN_1',
             'BANNER_COLUMN_2',
 
