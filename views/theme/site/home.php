@@ -7,13 +7,7 @@
 
             <?php foreach ($banners as $b) : ?>
                 <li>
-                    <a 
-                    <?php if(empty($b->url)): ?>
-                        href="<?= SITE['root'] . '/banner/' . $b->slug ?>"
-                        <?php else: ?>
-                        target="_blank" href="<?= $b->url ?>"
-                    <?php endif; ?>
-                    >
+                    <a <?php if (empty($b->url)) : ?> href="<?= SITE['root'] . '/banner/' . $b->slug ?>" <?php else : ?> target="_blank" href="<?= $b->url ?>" <?php endif; ?>>
                         <img src="<?= $b->image ?>" />
                     </a>
                 </li>
@@ -31,18 +25,6 @@
         </a>
     </div>
 
-    <!-- Por enquanto suspenso -->
-    <!-- <div id="carousel" class="flexslider d-sm-none">
-        <ul class="slides">
-
-            <?php foreach ($banners as $b) : ?>
-                <li>
-                    <img src="<?= $b->image_thumb ?>" />
-                </li>
-            <?php endforeach; ?>
-
-        </ul>
-    </div> -->
 </div>
 
 <!-- Vega-kia -->
@@ -55,7 +37,54 @@
 </section>
 
 <!-- showroom -->
-<section id="showroom">
+<section>
+    <div class="container">
+
+        <div class="wrapShowroom">
+            <div class="col">
+
+                <img class="imgLogoShowroom" src="https://cdn.autopapo.com.br/box/uploads/2021/01/06133133/novo-logo-da-kia-preto-em-fundo-branco.jpg" alt="">
+                <h2>Veículos Novos</h2>
+
+                <div class="wrapCardsCar">
+
+                    <?php foreach ($cars as $c) : ?>
+
+                        <div class="viewCar">
+                            <h3><?= $c->nome_titulo ?></h3>
+                            <p><?= $c->nome_subtitulo ?></p>
+                            <img src="<?= $c->imagem_thumb ?>" alt="SEM IMAGEM">
+                            <div>
+                                <div class="openBox">
+                                    <a target="_blank" href="<?= SITE['root'] . '/novos/' . $c->slug ?>"><i class="fa fa-plus-circle"></i>VER MAIS</a>
+                                    <a href="#" class="btnScheduling"><i class="fa fa-car"></i>AGENDAR VISITA</a>
+                                    <a href="#" class="btnScheduling"><i class="fa fa-hand-o-up"></i>QUERO ESSE</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+
+                </div>
+
+            </div>
+
+            <div class="col">
+                <div class="wrapMoveableForm">
+                    <?php include('form-contact-dark.php') ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+<section id="showroom" style="display: none;">
     <div class="container">
         <div class="row">
 
@@ -109,7 +138,44 @@
 
 <!-- Serviços -->
 <section id="servicos" class="section_kia">
+
     <div class="container">
+
+        <div class="wrapShowroom">
+            <div class="col">
+                <h2>Serviços - Agendamento online</h2>
+                <hr>
+                <p>Atendimento rápido com selo KIA e qualidade.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card_services">
+                            <img src="views/assets/site/images/servicos01.png" alt="">
+                            <h3>Assitência técnica</h3>
+                            <a href="<?= SITE['root'] ?>/assistencia-tecnica" class="btn btn-default btn-lg">Agende aqui</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card_services">
+                            <img src="views/assets/site/images/servicos03.png" alt="">
+                            <h3>Peças e acessórios</h3>
+                            <a href="<?= SITE['root'] ?>/pecas-e-acessorios" class="btn btn-default btn-lg">Compre aqui</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card_services">
+                            <img src="views/assets/site/images/servicos02.png" alt="">
+                            <h3>Revisão preço fechado</h3>
+                            <a href="<?= SITE['root'] ?>/revisao-preco-fechado" class="btn btn-default btn-lg">Agende aqui</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <div class="container" style="display: none;">
+
         <h2>Serviços - Agendamento online</h2>
         <hr>
         <p>Atendimento rápido com selo KIA e qualidade.</p>

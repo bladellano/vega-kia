@@ -127,6 +127,18 @@
     border: 1px solid var(--kia-preto-noturno);
   }
 
+  .wrapShowroom .col {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    flex: 1 1 400px;
+  }
+  .wrapShowroom {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   /**/
 
   .wrap_cards_car {

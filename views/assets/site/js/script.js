@@ -1,5 +1,40 @@
 $(function () {
 
+    /* Form em movimento */
+
+    let elWrapForm = $('.wrapMoveableForm');
+
+    $(window).scroll(function (e) {
+
+        if (window.pageYOffset < 900) {
+
+            elWrapForm.css({
+                'position': 'relative',
+                'opacity': 1,
+                'top': 0
+            });
+
+        } else if (window.pageYOffset > 900 && window.pageYOffset < 1800) {
+
+            elWrapForm.css({
+                'position': 'fixed',
+                'top': $('.navbar').height() + 20 + 'px',
+                'opacity': 1,
+                'transform': 'translateY(0)',
+                'width': $('.wrapShowroom .col:nth-child(2)').width()
+            });
+
+        } else {
+
+            elWrapForm.css({
+                'position': 'fixed',
+                'opacity': 0,
+                'transform': 'translateY(-50%)'
+            });
+        }
+
+    });
+
     /** Abre os links encontrados pela busca */
     $('.tableSearch a').click(function (e) {
 

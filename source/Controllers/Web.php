@@ -347,9 +347,11 @@ class Web extends Controller
      */
     public function sendFormContact($data)
     {
-        $data['ciencia'] = (isset($data['ciencia'])) ? "SIM" : "NÃO";
+        $data['ciente'] = (isset($data['ciente'])) ? "SIM" : "NÃO";
+        $data['usar_veiculo_usado'] = (isset($data['usar_veiculo_usado'])) ? "SIM" : "NÃO";
+        $data['financiamento'] = (isset($data['financiamento'])) ? "SIM" : "NÃO";
 
-        if (in_array("", $data) || $data['ciencia'] == "NÃO") {
+        if (in_array("", $data) || $data['ciente'] == "NÃO") {
             echo $this->ajaxResponse("message", [
                 "type" => "error",
                 "message" => "Preencha todos os campos"
@@ -357,8 +359,8 @@ class Web extends Controller
             return;
         }
 
-        $message = $this->view->render("theme/site/email-sent", ["data" => $data]);
-
+        $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
+        // print( $message);die;
         $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato", utf8_decode($message));
 
         if (!$mailer->send()) {

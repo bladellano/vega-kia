@@ -41,6 +41,119 @@ body {
   font-family: "Kia-Medium";
 }
 
+/* Novo showroom */
+.wrapShowroom {
+  display: grid;
+  grid-template-columns: 800px auto;
+  grid-gap: 2px;
+  text-align: center;
+}
+
+.wrapShowroom .col {
+  padding: 2px 0;
+}
+
+.wrapShowroom .imgLogoShowroom {
+  object-fit: cover;
+  width: 100px;
+  height: 24px;
+  margin: 0 auto;
+}
+.wrapShowroom .subTitle {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.wrapShowroom h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+.wrapCardsCar {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapCardsCar .viewCar {
+  background-color: #fff;
+  min-width: 390px;
+  transition: all 0.2s ease-in-out;
+  margin: 4px;
+}
+.wrapCardsCar .viewCar img {
+  object-fit: cover;
+  width: 100%;
+  height: 184px;
+}
+.wrapCardsCar .viewCar h3 {
+  color: #000;
+  padding: 6px 8px;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+  font-family: "Kia-Bold";
+  padding-bottom: 0px;
+}
+.wrapCardsCar .viewCar p {
+  font-size: 12px;
+  text-align: left;
+  padding: 6px 8px;
+  padding-top: 0;
+}
+
+.wrapCardsCar .viewCar:hover {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapCardsCar .viewCar:hover div .openBox {
+  opacity: 1;
+}
+
+.wrapCardsCar .viewCar div {
+  margin-top: -30px;
+}
+.wrapCardsCar .viewCar div .openBox {
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.wrapCardsCar .viewCar div .openBox a:hover {
+  text-decoration: none;
+  background-color: var(--kia-vermelho-vibrante);
+}
+.wrapCardsCar .viewCar div .openBox a {
+  flex: 1;
+  background-color: #828f96;
+  font-size: 10px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+.wrapCardsCar .viewCar div .openBox a:nth-child(3):hover {
+  background-color: var(--kia-vermelho-vibrante);
+}
+.wrapCardsCar .viewCar div .openBox a:nth-child(3) {
+  background-color: #000;
+}
+
+.wrapCardsCar .viewCar div .openBox a i {
+  display: block;
+  font-size: 18px;
+}
+
+.wrapMoveableForm {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  top: 0;
+  z-index: 4;
+  opacity: 1;
+}
+/* End - novo showroom */
+
 .flexslider.cars.hideFlexControlNav .flex-control-nav {
   display: none;
 }
@@ -55,16 +168,16 @@ body {
   filter: brightness(44%);
 }
 .wrapInternalImage p {
-	position: absolute;
-	background-color: var(--kia-vermelho-vibrante);
-	right: 50%;
-	top: 6%;
-	transform: translate(50%,50%);
-	color: #fff;
-	min-width: 200px;
-	text-align: center;
-	padding: 10px 2px;
-	z-index: 1;
+  position: absolute;
+  background-color: var(--kia-vermelho-vibrante);
+  right: 50%;
+  top: 6%;
+  transform: translate(50%, 50%);
+  color: #fff;
+  min-width: 200px;
+  text-align: center;
+  padding: 10px 2px;
+  z-index: 1;
   font-size: 22px;
 }
 
@@ -123,7 +236,6 @@ mark {
 #localizacao {
   padding: 0;
   margin: 0;
-  margin-top: 100px;
   margin-bottom: 100px;
 }
 #localizacao hr {
@@ -725,11 +837,17 @@ footer p.icon_socials a {
   color: #fff;
 }
 
-#servicos h2 + hr {
+#servicos .wrapShowroom .col h2 {
+  color: #fff;
+}
+#servicos .wrapShowroom .col hr {
   border-color: #fff;
 }
 
 /* Card services */
+.card_services h3 {
+  font-size: 20px;
+}
 .card_services {
   text-align: center;
   margin: 10px 0;
@@ -738,6 +856,7 @@ footer p.icon_socials a {
   border-image: linear-gradient(180deg, white, transparent);
   border-image-slice: 1;
   cursor: pointer;
+  height: 250px;
 }
 
 .card_services:hover {
@@ -752,6 +871,7 @@ footer p.icon_socials a {
 .card_services img {
   transform: translateY(0%);
   transition: 0.2s;
+  width: 112px;
 }
 
 .card_services:hover img {
@@ -918,8 +1038,8 @@ footer p.icon_socials a {
   text-align: center;
 }
 
-.wrap_form > p {
-  text-align: center;
+.wrap_form p {
+  font-size: 12px;
 }
 
 .wrap_form input[type="text"],
