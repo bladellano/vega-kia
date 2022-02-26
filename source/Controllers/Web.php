@@ -361,7 +361,7 @@ class Web extends Controller
 
         $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
         // print( $message);die;
-        $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato", utf8_decode($message));
+        $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
 
         if (!$mailer->send()) {
 
@@ -370,14 +370,14 @@ class Web extends Controller
                 "message" => "Problema ao enviar e-mail!"
             ]);
             return;
+        } else {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "success",
+                "message" => "Enviado com sucesso!"
+            ]);
+            return;
         }
-
-        flash("success", "Enviado com sucesso!");
-
-        echo $this->ajaxResponse("redirect", [
-            "url" => $this->router->route("web.home")
-        ]);
-        return;
     }
 
     public function getCarHome($data)
