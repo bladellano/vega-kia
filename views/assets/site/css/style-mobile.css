@@ -134,9 +134,74 @@
     font-size: 30px;
     flex: 1 1 400px;
   }
+
   .wrapShowroom {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .wrapMoveableForm {
+    position: relative !important;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+
+  .wrap_form input[type="text"],
+  .wrap_form select,
+  .wrap_form textarea {
+    font-size: 14px;
+  }
+
+  .wrapShowroom .col {
+    background-color: transparent;
+    width: 100%;
+    font-size: inherit;
+    padding: 0;
+  }
+
+  #servicos .wrapShowroom .col:nth-child(2) {
+    display: none;
+  }
+
+  .wrapShowroom {
+    flex-direction: column-reverse;
+  }
+
+  .wrapCardsCar .viewCar {
+    width: 160px;
+    flex: 1 1 160px;
+    min-width: auto;
+    height: 134px;
+  }
+
+  .wrapCardsCar .viewCar img {
+    height: 90px;
+  }
+
+  .wrapCardsCar .viewCar p {
+    display: none;
+  }
+
+  .wrapCardsCar .viewCar h3 {
+    font-size: 14px;
+  }
+
+  .wrapCardsCar .viewCar div {
+    margin-top: -22px;
+  }
+  .wrapCardsCar .viewCar:hover div .openBox {
+    display: none;
+  }
+  .card_services img {
+    width: 122px;
+  }
+  .wrapShowroom .imgLogoShowroom {
+    height: 48px;
+  }
+  #slider.flexslider .flex-viewport ul li img {
+    height: 230px;
   }
 
   /**/

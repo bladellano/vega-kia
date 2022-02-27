@@ -53,7 +53,9 @@
                         <div class="viewCar">
                             <h3><?= $c->nome_titulo ?></h3>
                             <p><?= $c->nome_subtitulo ?></p>
+                            <a target="_blank" href="<?= SITE['root'] . '/novos/' . $c->slug ?>">
                             <img src="<?= $c->imagem_thumb ?>" alt="SEM IMAGEM">
+                            </a>
                             <div>
                                 <div class="openBox">
                                     <a target="_blank" href="<?= SITE['root'] . '/novos/' . $c->slug ?>"><i class="fa fa-plus-circle"></i>VER MAIS</a>

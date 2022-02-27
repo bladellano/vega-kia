@@ -108,7 +108,6 @@ body {
 }
 
 .wrapCardsCar .viewCar:hover div .openBox {
-  /* opacity: 1; */
   transform: translateY(0);
 }
 
@@ -120,7 +119,6 @@ body {
   display: flex;
   justify-content: center;
   transition: all 0.2s ease-in-out;
-  /* opacity: 0; */
   transform: translateY(-100%);
 }
 
@@ -307,7 +305,6 @@ mark {
   z-index: 3;
   left: 0;
   margin-left: -8px;
-  width: 160px;
   padding-left: 20px;
 }
 .socialNetworks p {
