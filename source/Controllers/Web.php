@@ -9,6 +9,7 @@ use Source\Models\Car;
 use Source\Models\Banner;
 use Source\Models\Car\CarImage;
 use Source\Models\Car\CarVersao;
+use Source\Models\Lead;
 
 /**
  * Class Web
@@ -289,6 +290,10 @@ class Web extends Controller
         }
 
         $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
+
+        /** Captura lead */
+        $this->leadCapture($data, $message);
+
         $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
 
         if (!$mailer->send()) {
@@ -320,6 +325,9 @@ class Web extends Controller
         }
 
         $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
+
+        /** Captura lead */
+        $this->leadCapture($data, $message);
 
         $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
 
@@ -360,7 +368,12 @@ class Web extends Controller
         }
 
         $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
-        // print( $message);die;
+
+        /** Captura lead */
+        $this->leadCapture($data, $message);
+
+        #print($message); die;
+
         $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
 
         if (!$mailer->send()) {
@@ -378,6 +391,21 @@ class Web extends Controller
             ]);
             return;
         }
+    }
+
+    private function leadCapture($data, $message, $type = 'form'): bool
+    {
+        $lead = new Lead();
+
+        $lead->name = $data['nome'];
+        $lead->email = $data['email'];
+        $lead->content = base64_encode($message);
+        $lead->origin = $_SERVER['HTTP_ORIGIN'];
+        $lead->type = $type;
+
+        if ($lead->save())
+            return true;
+        return false;
     }
 
     public function getCarHome($data)
