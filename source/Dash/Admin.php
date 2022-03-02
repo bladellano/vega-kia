@@ -3,6 +3,7 @@
 namespace Source\Dash;
 
 use Source\Models\Car;
+use Source\Models\Lead;
 use Source\Models\Post;
 use Source\Models\User;
 use Source\Models\Banner;
@@ -23,6 +24,7 @@ class Admin extends DashController
         $postsQtd = (new Post())->find()->count();
         $bannersQtd = (new Banner())->find()->count();
         $usersQtd = (new User())->find()->count();
+        $leadQtd = (new Lead())->find()->count();
 
         echo $this->view->render("theme/admin/home", [
             "title" => "Dash",
@@ -33,6 +35,7 @@ class Admin extends DashController
             "postsQtd" => $postsQtd,
             "bannersQtd" => $bannersQtd,
             "usersQtd" => $usersQtd,
+            "leadQtd" => $leadQtd,
         ]);
     }
 

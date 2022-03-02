@@ -1,5 +1,11 @@
 /** Custom Css */
 
+/* Adiciona overflow no conteúdo do lead */
+#DataTables_Table_0 td div[style]{
+  overflow: scroll;
+  height: 200px;
+}
+
 .custom-file-label::after {
   color: #fff;
   content: "Carregar";

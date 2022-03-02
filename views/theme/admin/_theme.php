@@ -319,6 +319,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="<?=SITE['root']?>/admin/leads" class="nav-link">
+              <i class="nav-icon fa fa-mail-bulk"></i>
+              <p>
+                Leads
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="<?=SITE['root']?>/admin/users" class="nav-link">
               <i class="nav-icon far fa-user"></i>
               <p>

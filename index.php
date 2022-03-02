@@ -97,6 +97,8 @@ $app->post("/users/update/{id}", "Users:update", "users.update");
 $app->get("/users/delete/{id}", "Users:delete", "users.delete");
 $app->get("/users/edit/{id}", "Users:edit", "users.edit");
 
+/** Leads */
+$app->get("/leads", "Leads:home", "leads.home");
 /**
  * ERRORS
  */
