@@ -212,6 +212,31 @@ class Web extends Controller
         exit;
     }
 
+    public function partsAndAccessories()
+    {
+        $params = http_build_query([
+            'slug' => 'pecas-e-acessorios',
+            'type' =>  'page'
+        ]);
+
+        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
+
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . $page->title,
+            SITE['desc'] . $page->description,
+            DS . $page->slug,
+            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+        );
+
+        echo $this->view->render("theme/site/page", [
+            "head" => $head,
+            "page" => $page,
+            "showForm" => 'form-scheduling.php',
+            "typeForm" => 'container'
+        ]);
+        exit;
+    }
+
     public function testDrive(): void
     {
 

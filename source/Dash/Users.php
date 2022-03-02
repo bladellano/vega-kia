@@ -79,8 +79,6 @@ class Users extends DashController
     public function update($data): void
     {
 
-        // $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
-
         $user = (new \Source\Models\User())->findById($data['id']);
 
         unset($data['id']);

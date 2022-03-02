@@ -1,24 +1,45 @@
 <?php
 
+
 /**
  * SITE CONFIG
  */
 
 define("SITE", [
-    "name" => "Lorem ipsum is simply",
-    "desc" => "Lorem ipsum is simply..",
-    "domain" => "site.com.br",
+    "name" => "HOME SITE LTDA",
+    "desc" => "Descrição para os motores de busca",
+    "domain" => "dominio.com.br",
     "locale" => "pt_BR",
-    "root" => "http://127.0.0.1/site"
+    "root" => "https://dominio.com.br",
+    /* Optimizer */
+    "fb_page" =>"",
+    "fb_author" =>"",
+    "app_id" =>"",
+]);
+
+/**
+ * CONFIG E-MAIL
+ */
+
+define("MAIL", [
+    "mail_email" => "faleconosco@site.com.br",
+    "mail_password" => "!@#$%",
+    "mail_email_inbox" => "faleconosco@site.com.br",
+    "mail_host" => "smtp.titan.email",
+    "mail_from_name" => "Site Empresa Ltda",
+    "mail_port" => 465,
+    "mail_smtp_secure" => "ssl",
 ]);
 
 define("DS", DIRECTORY_SEPARATOR);
 /**
  * SITE MINIFY
  */
-if ($_SERVER['SERVER_NAME'] == "127.0.0.1") {
+
+/* if ($_SERVER['SERVER_NAME'] == "127.0.0.1") {
     require __DIR__ . "/Minify.php";
 }
+ */
 
 /**
  * DATABASE CONNECT
@@ -30,7 +51,7 @@ define("DATA_LAYER_CONFIG", [
     "port" => "3306",
     "dbname" => "db_name",
     "username" => "root",
-    "passwd" => "root",
+    "passwd" => "!@#$%",
     "options" => [
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

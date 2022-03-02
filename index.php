@@ -30,8 +30,8 @@ $app->post("/redirect-result", "Web:redirectResult", "web.redirectresult");
 /** Páginas da Web */
 $app->get("/semi-novos", "Web:semiNew", "web.seminew");
 $app->get("/test-drive", "Web:testDrive", "web.testdrive");
+$app->get("/pecas-e-acessorios", "Web:partsAndAccessories", "web.partsandaccessories");
 $app->get("/fale-conosco", "Web:contactUs", "web.contactus");
-$app->get("/novos", "Web:news", "web.news");
 $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
 
 $app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");

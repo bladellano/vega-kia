@@ -27,7 +27,7 @@ class Authenticator
             return false;
 
         unset($user->password);
-        // Session::add('user', $user);
+
         Session::add('user', [
             "id" => $user->id,
             "first_name" => $user->first_name,
