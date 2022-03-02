@@ -278,6 +278,7 @@ class Web extends Controller
 
     public function sendFormContactUs($data)
     {
+        
         $data['aceita_receber_email'] = isset($data['aceita_receber_email']) ? 'SIM' : 'NÃO';
         $data['aceita_receber_sms'] = isset($data['aceita_receber_sms']) ? 'SIM' : 'NÃO';
 
@@ -400,7 +401,7 @@ class Web extends Controller
         $lead->name = $data['nome'];
         $lead->email = $data['email'];
         $lead->content = base64_encode($message);
-        $lead->origin = $_SERVER['HTTP_ORIGIN'];
+        $lead->origin = $_SERVER['HTTP_REFERER'];
         $lead->type = $type;
 
         if ($lead->save())
