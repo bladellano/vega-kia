@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="<?= asset("css/message.css"); ?>">
     <link rel="stylesheet" href="<?= asset("css/load.css"); ?>">
 
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
     <?php if (isset($title)) : ?>
         <title>VEGA KIA | <?= $title ?></title>
     <?php endif; ?>

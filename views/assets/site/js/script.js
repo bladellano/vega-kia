@@ -1,5 +1,22 @@
 $(function () {
 
+    /** ScrollReveal */
+
+    var slideLeft = {
+        distance: '150%',
+        origin: 'left',
+        opacity: 0,
+    };
+
+    var slideBottom = {
+        distance: '150%',
+        origin: 'right',
+        opacity: 0,
+    };
+
+    ScrollReveal().reveal('.principal,.wrapImage, #vega-kia', slideLeft);
+    ScrollReveal().reveal('.openBtn', slideBottom);
+
     /* Form em movimento */
 
     let elWrapForm = $('.wrapMoveableForm');
