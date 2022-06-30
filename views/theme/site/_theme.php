@@ -243,6 +243,8 @@
                     </p>
                     <h4>Localização:</h4>
                     <p>BR, KM 1.</p>
+                    <h4>E-mail:</h4>
+                    <p>faleconosco@vegakia.com.br</p>
 
                 </div>
                 <div class="col-md-3">
